@@ -21,13 +21,14 @@ a:focus, a:hover{
 	text-decoration: none;
 }
 
-.sway{width:100%;max-width:520px;margin: 0px auto;}
+.sway{width:100%;max-width:520px;margin: 0px auto;overflow-x:hidden;position:relative;}
 
 .page-template .status-bar{
 	background:#171616 url(../images/mobile-top-img.jpg) no-repeat 0 0;
 	background-size:100% auto;
 	height:35px;
 	width:100%;
+	z-index:200;
 }
 
 .top-title {
@@ -1047,7 +1048,7 @@ background: transparent;
     height: 25px;
     background-size: 100% auto;
 	margin-bottom: -25px;
-    z-index: 20;
+    z-index: 200;
     position: relative;
 }
 
@@ -1412,13 +1413,76 @@ background: transparent;
     border-radius: 10px;
 }
 
+/*	Menu	*/
+body.menu-active .status-bar{background-color: #171616;}
+
+body.menu-active #container{
+	z-index: 105;
+    background: #fff;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    left: 85%;
+}
+
+body.menu-active .sway{background-color: #171616;overflow:hidden;}
+
+#menu-sidebar{
+	background: #171616;
+    overflow: hidden;
+    height: 100%;
+    min-height: 505px;
+    position: relative;
+    width: 100%;
+    z-index: 101;
+    padding-right: 15%;
+	padding-top: 25px;
+}
+#menu-sidebar h2{
+	text-align: center;
+    color: #fff;
+    font-weight: 900;
+    font-style: italic;
+}
+#menu-sidebar .menu{
+	padding: 0px;
+    margin: 50px 0px 0px;
+    list-style: none;
+}
+#menu-sidebar .menu li{    border-bottom: 1px solid #222523;}
+#menu-sidebar .menu li a{
+    color: #fff;
+    font-size: 18px;
+    padding: 15px 35px;
+    display: block;
+}
 
 
+#menu-sidebar .account-actions{
+	position: absolute;
+    bottom: 0;
+    padding: 0px;
+    margin: 50px 0px 0px;
+    list-style: none;
+    width: 100%;
+}
+#menu-sidebar .account-actions li{ border-top: 1px solid #222523;}
+#menu-sidebar .account-actions li a{
+    color: #f8df64;
+    font-size: 18px;
+    padding: 15px 35px;
+    display: block;
+}
 
 
-
-
-
+#container{
+	z-index: 105;
+    background: #fff;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    left: 85%;
+}
 
 
 
