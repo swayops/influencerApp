@@ -1,16 +1,16 @@
-// Menu
+// DealDetail
 import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 
 import { Sway, HasAPI } from './sway';
 
 @Component({
-	selector: 'menu',
-	templateUrl: './views/menu.html',
+	selector: 'dealDetail',
+	templateUrl: './views/dealDetail.html',
 })
-export class MenuCmp extends HasAPI {
+export class DealDetailCmp extends HasAPI {
 	constructor(title: Title, public api: Sway) {
 		super(api);
-		title.setTitle('Menu');
+		title.setTitle('Deal Details');
 	}
 }

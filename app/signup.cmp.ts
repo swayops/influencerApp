@@ -11,6 +11,6 @@ import { Sway, HasAPI } from './sway';
 export class SignupCmp extends HasAPI {
 	constructor(title: Title, public api: Sway) {
 		super(api);
-		title.setTitle('Sign Up!');
+		title.setTitle('Sign Up');
 	}
 }

@@ -1,16 +1,16 @@
-// Menu
+// Connect
 import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 
 import { Sway, HasAPI } from './sway';
 
 @Component({
-	selector: 'menu',
-	templateUrl: './views/menu.html',
+	selector: 'connect',
+	templateUrl: './views/connect.html',
 })
-export class MenuCmp extends HasAPI {
+export class ConnectCmp extends HasAPI {
 	constructor(title: Title, public api: Sway) {
 		super(api);
-		title.setTitle('Menu');
+		title.setTitle('Connect Your Social Accounts');
 	}
 }

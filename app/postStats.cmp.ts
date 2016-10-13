@@ -11,5 +11,6 @@ import { Sway, HasAPI } from './sway';
 export class PostStatsCmp extends HasAPI {
 	constructor(title: Title, public api: Sway) {
 		super(api);
+		title.setTitle('Post Stats');
 	}
 }
