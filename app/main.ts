@@ -8,9 +8,14 @@ import { HttpModule } from '@angular/http';
 import { AppCmp, NotFoundCmp } from './app.cmp';
 import { AuthGuard, Sway } from './sway';
 
-// import { LoginCmp } from './login';
-// import { SignUpCmp } from './signup';
+import { LoginCmp } from './login.cmp';
+import { SignupCmp } from './signup.cmp';
 // import { ForgotPasswordCmp } from './forgotPassword';
+
+import { MenuCmp } from './menu.cmp';
+import * as W from './welcome.cmps';
+
+import { PostStatsCmp } from './postStats.cmp';
 
 // import { DashboardCmp } from './dashboard';
 // import { MediaAgenciesCmp } from './mAgencies';
@@ -122,14 +127,50 @@ export const ALL_ROUTES = [
 	// 	component: CheckPayoutsCmp,
 	// 	canActivate: [AuthGuard],
 	// },
-	// {
-	// 	path: 'login',
-	// 	component: LoginCmp,
-	// },
-	// {
-	// 	path: 'signup',
-	// 	component: SignUpCmp,
-	// },
+	// TODO: merge in 1 component
+	{
+		path: 'welcome',
+		component: W.WelcomeCmp,
+		canActivate: [AuthGuard],
+	},
+	{
+		path: 'walkthrough/1',
+		component: W.Walkthrough1Cmp,
+		canActivate: [AuthGuard],
+	},
+	{
+		path: 'walkthrough/2',
+		component: W.Walkthrough2Cmp,
+		canActivate: [AuthGuard],
+	},
+	{
+		path: 'walkthrough/3',
+		component: W.Walkthrough3Cmp,
+		canActivate: [AuthGuard],
+	},
+	{
+		path: 'walkthrough/4',
+		component: W.Walkthrough4Cmp,
+		canActivate: [AuthGuard],
+	},
+	{
+		path: 'postStats/:id',
+		component: PostStatsCmp,
+		canActivate: [AuthGuard],
+	},
+	{
+		path: 'menu',
+		component: MenuCmp,
+		canActivate: [AuthGuard],
+	},
+	{
+		path: 'login',
+		component: LoginCmp,
+	},
+	{
+		path: 'signup',
+		component: SignupCmp,
+	},
 	// {
 	// 	path: 'resetPassword/:token',
 	// 	component: ResetPasswordCmp,
@@ -152,7 +193,8 @@ export const ALL_ROUTES = [
 	declarations: [
 		AppCmp, // app
 
-		// components
+		// components / pages
+		LoginCmp, SignupCmp, MenuCmp, PostStatsCmp,
 		// HeaderCmp, LeftNavCmp, FooterCmp,
 		// DashboardCmp, LoginCmp, SignUpCmp,
 		// ForgotPasswordCmp, NotFoundCmp, MediaAgenciesCmp,

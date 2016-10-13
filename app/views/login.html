@@ -1,0 +1,15 @@
+<a href="#" id="logo"><img src="/static/images/logo.png"></a>
+
+<div class="content signup-form">
+	<form id="sigup" #f (ngSubmit)="Login($event)">
+		<div class="field text-field"><input type="text" name="email" placeholder="Login Email"></div>
+		<div class="field text-field"><input type="password" name="pass" placeholder="Password"></div>
+		<div class="field link-field-default">
+			<label><a [routerLink]="['/forgotPassword']">Forgot Password?</a></label>
+		</div>
+		<div class="fix-to-bot">
+			<div class="field submit-field"><button type="submit" class="btn btn-primary">Login</button></div>
+			<div class="field link-field"><a [routerLink]="['/signup']" class="have-an-account">Don't have an account?</a></div>
+		</div>
+	</form>
+</div>
