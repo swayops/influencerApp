@@ -192,7 +192,7 @@ export class AppCmp extends HasAPI {
 
 	reinitPageScripts() {
 		this.api.error = null;
-		this.updateTags();
+		//this.updateTags();
 		this.initIncrGroup();
 		this.initSliderRange();
 		this.reinitUI();

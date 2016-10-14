@@ -1,19 +1,19 @@
 <div class="content signup-form">
-	<a href="#" id="logo"><img src="/static/images/logo.png"></a>
-	<form id="sigup" (ngSubmit)="Signup($event)">
-		<div class="field text-field"><input type="text" name="name" placeholder="Name"></div>
-		<div class="field text-field"><input type="text" name="age" placeholder="Age"></div>
-		<div class="field text-field"><input type="text" name="email" placeholder="Login Email"></div>
-		<div class="field text-field"><input type="password" name="password" placeholder="Password"></div>
+	<a href="#" id="logo"><img src="/infApp/static/images/logo.png"></a>
+	<form id="sigup" #f (ngSubmit)="Signup($event)">
+		<div class="field text-field"><input type="text" name="name" placeholder="Name" [(ngModel)]="data.name" required></div>
+		<div class="field text-field"><input type="number" name="age" placeholder="Age" [(ngModel)]="data.age" required></div>
+		<div class="field text-field"><input type="email" name="email" placeholder="Login Email" [(ngModel)]="data.email" required></div>
+		<div class="field text-field"><input type="password" name="password" placeholder="Password" [(ngModel)]="data.password" required></div>
 		<div class="field checkbox-field">
-			<label>I agree to the <a target="_BLANK" href="http://swayops.com/terms.html">terms</a> &amp; <a target="_BLANK" href="http://swayops.com/privacy.html">privacy policy</a></label>
+			<label>I agree to the <a target="_blank" href="http://swayops.com/terms.html">terms</a> &amp; <a target="_blank" href="http://swayops.com/privacy.html">privacy policy</a></label>
 			<div class="switch">
-				<input id="cmn-toggle" class="cmn-toggle cmn-toggle-round-flat" checked type="checkbox">
+				<input id="cmn-toggle" class="cmn-toggle cmn-toggle-round-flat" checked type="checkbox" #chk>
 				<label for="cmn-toggle"></label>
 			</div>
 		</div>
 		<div class="fix-to-bot">
-			<div class="field submit-field"><button type="submit" class="btn btn-primary">Give Me Deals!</button></div>
+			<div class="field submit-field"><button type="submit" class="btn btn-primary" [disabled]="f.valid && chk.checked">Give Me Deals!</button></div>
 			<div class="field link-field">
 				<a [routerLink]="['/signin']" class="have-an-account">Already have an account?</a></div>
 		</div>

@@ -133,6 +133,10 @@ export const ALL_ROUTES = [
 		path: 'signup',
 		component: SignupCmp,
 	},
+	{
+		path: 'signup/:inviteCode',
+		component: SignupCmp,
+	},
 	// {
 	// 	path: 'resetPassword/:token',
 	// 	component: ResetPasswordCmp,
