@@ -39,6 +39,7 @@ export class AppCmp extends HasAPI {
 				if (lastRoute && lastRoute !== evt.url) {
 					api.SetCurrentUser(null); // workaround for nav
 				}
+				document.body.className = evt.url.substr(1).replace('/', '-') + ' user page-template';
 				return;
 			}
 			if (evt instanceof NavigationEnd) {
@@ -49,10 +50,6 @@ export class AppCmp extends HasAPI {
 						document.body.classList.remove('user-logged-in');
 					}
 					const content = document.querySelector('router-outlet ~ *');
-					if (!content.firstElementChild.classList.contains('grid-62')) {
-						content.classList.add('content-holder', 'grid-parent', 'center-widget');
-						if (!this.noNav) content.classList.add('grid-80', 'mobile-grid-100');
-					}
 					content.classList.add('main-view');
 					setTimeout(() => this.reinitPageScripts(), 100);
 				});
