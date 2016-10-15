@@ -13,4 +13,8 @@ export class LoginCmp extends HasAPI {
 		super(api);
 		title.setTitle('Login');
 	}
+
+	Login(evt: Event) {
+
+	}
 }
