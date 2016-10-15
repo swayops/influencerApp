@@ -39,7 +39,7 @@ export class AppCmp extends HasAPI {
 				if (lastRoute && lastRoute !== evt.url) {
 					api.SetCurrentUser(null); // workaround for nav
 				}
-				document.body.className = evt.url.substr(1).replace('/', '-') + ' user page-template';
+				document.body.className = getClassName(evt.url.substr(1).replace('/', '-')) + ' page-template';
 				return;
 			}
 			if (evt instanceof NavigationEnd) {
@@ -196,3 +196,13 @@ export class AppCmp extends HasAPI {
 	}
 }
 
+const pageMapping = {
+	'signup': 'signup user',
+	'login': 'signup user',
+};
+
+function getClassName(p: string): string {
+	const v = pageMapping[p];
+	if (v) return v;
+	return p;
+}
