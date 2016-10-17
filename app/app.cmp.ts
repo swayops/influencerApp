@@ -201,8 +201,14 @@ const pageMapping = {
 	'login': 'signup user',
 	'welcome': 'front',
 	'walkthrough': 'walkthrough-template',
-	'deal-detailed-page': 'deal-page',
-	'deal-pending-page': 'deal-page',
+	'dealFeed':'endorsement',
+	'dealDetail': 'deal-detailed-page deal-page',
+	'pendingDeal': 'deal-pending-page deal-page',
+	'influencer':'influencer-page',
+	'brandPage':'brand-page',
+	'earningStats':'earning-stats-page',
+	'postStats':'post-stats-page',
+	'editProfile':'edit-profile-page',
 };
 
 function getClassName(p: string): string {
