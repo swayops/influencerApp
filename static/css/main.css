@@ -2,6 +2,7 @@
 
 html,
 body{height:100%;}
+app{height:100%;}
 body *{outline:none;}
 .sway,
 .sway>.row,
@@ -275,6 +276,7 @@ background: transparent;
     font-size: 16px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.24);
     padding-bottom: 2px;
+    font-weight: 300;
 }
 .user #sigup .checkbox-field .switch{
 	display: inline-block;
@@ -346,9 +348,9 @@ background: transparent;
 
 #sigup .submit-field{
 	text-align: center;
-    margin: 70px 0px 55px;
+    margin: 5px 0px 15px;
 }
-#sigup .submit-field input{
+#sigup .submit-field button{
 	background: #009fe8;
     font-size: 20px;
     border: none;
@@ -370,6 +372,7 @@ background: transparent;
     font-size: 16px;
 	border-bottom: none;
     padding-bottom: 0px;
+    font-weight: 300;
 }
 
 .user .fix-to-bot{
