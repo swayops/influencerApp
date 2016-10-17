@@ -1,14 +1,14 @@
 <a href="#" id="logo"><img src="/infApp/static/images/logo.png"></a>
 
 <div class="content signup-form">
-	<form id="sigup" #f (ngSubmit)="Login($event, f.value)">
-		<div class="field text-field"><input type="email" name="email" placeholder="Login Email" required></div>
-		<div class="field text-field"><input type="password" name="pass" placeholder="Password" min="8" required></div>
+	<form id="sigup" #f="ngForm" (ngSubmit)="Login()">
+		<div class="field text-field"><input type="email" name="username" [(ngModel)]="data.email" placeholder="Login Email" required></div>
+		<div class="field text-field"><input type="password" name="password" [(ngModel)]="data.pass" placeholder="Password" min="8" required></div>
 		<div class="field link-field-default">
 			<label><a [routerLink]="['/forgotPassword']">Forgot Password?</a></label>
 		</div>
 		<div class="fix-to-bot">
-			<div class="field submit-field"><button type="submit" class="btn btn-primary" [disabled]="f.valid">Login</button></div>
+			<div class="field submit-field"><button type="submit" class="btn btn-primary" [disabled]="!f.valid || loading">Login</button></div>
 			<div class="field link-field"><a [routerLink]="['/signup']" class="have-an-account">Don't have an account?</a></div>
 		</div>
 	</form>
