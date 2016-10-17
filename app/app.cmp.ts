@@ -197,8 +197,8 @@ export class AppCmp extends HasAPI {
 }
 
 const pageMapping = {
-	'signup': 'user',
-	'login': 'user',
+	'signup': 'user signup',
+	'login': 'user signup',
 	'welcome': 'front',
 	'walkthrough': 'walkthrough-template',
 	'deal-detailed-page': 'deal-page',
