@@ -5,7 +5,7 @@ import { Title } from '@angular/platform-browser';
 import { Sway, HasAPI } from './sway';
 
 @Component({
-	selector: 'pendingDeal',
+	selector: 'deal-pending-page',
 	templateUrl: './views/pendingDeal.html',
 })
 export class PendingDealCmp extends HasAPI {

@@ -5,7 +5,7 @@ import { Title } from '@angular/platform-browser';
 import { Sway, HasAPI } from './sway';
 
 @Component({
-	selector: 'dealFeed',
+	selector: 'endorsement',
 	templateUrl: './views/dealFeed.html',
 })
 export class DealFeedCmp extends HasAPI {
