@@ -16,7 +16,7 @@ export class LoginCmp extends HasAPI {
 		title.setTitle('Login');
 	}
 
-	Login(evt: Event) {
+	Login() {
 		this.loading = true;
 		this.api.Login(this.data, err => {
 			this.loading = false;

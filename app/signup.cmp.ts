@@ -10,15 +10,24 @@ import { Sway, HasAPI } from './sway';
 	templateUrl: './views/signup.html',
 })
 export class SignupCmp extends HasAPI {
-	public data: any = {};
+	public loading = false;
+	public data: any = {
+		influencer: {
+			inviteCode: null,
+		},
+	};
 	constructor(title: Title, public api: Sway, route: ActivatedRoute) {
 		super(api);
 		title.setTitle('Sign Up');
-		const inviteCode = route.snapshot.params['inviteCode'];
-		if (inviteCode) this.data.inviteCode = inviteCode;
+		this.data.influencer.inviteCode = route.snapshot.params['inviteCode'];
 	}
 
-	Signup(evt: Event) {
-		console.log(evt);
+	SignUp() {
+		this.loading = true;
+		this.data.pass2 = this.data.pass;
+		this.api.SignUp(this.data, err => {
+			this.loading = false;
+			this.AddNotification('error', err.msg);
+		});
 	}
 }
