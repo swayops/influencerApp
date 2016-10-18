@@ -1,6 +1,6 @@
 <div class="content signup-form">
 	<a href="#" id="logo"><img src="/infApp/static/images/logo.png"></a>
-	<form id="sigup" #f (ngSubmit)="SignUp()">
+	<form id="sigup" #f="ngForm" (ngSubmit)="SignUp()">
 		<div class="field text-field"><input type="text" name="name" placeholder="Name" [(ngModel)]="data.name" required></div>
 		<div class="field text-field"><input type="number" name="age" placeholder="Age" [(ngModel)]="data.age" required></div>
 		<div class="field text-field"><input type="email" name="email" placeholder="Login Email" [(ngModel)]="data.email" required></div>
@@ -13,7 +13,7 @@
 			</div>
 		</div>
 		<div class="fix-to-bot">
-			<div class="field submit-field"><button type="submit" class="btn btn-primary">Endorse Me!</button></div>
+			<div class="field submit-field"><button type="submit" class="btn btn-primary" [disabled]="!f.valid || loading">Endorse Me!</button></div>
 			<div class="field link-field"><a [routerLink]="['/login']" class="have-an-account">Already have an account?</a></div>
 		</div>
 	</form>
