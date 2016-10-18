@@ -27,17 +27,7 @@ export class DealDetailCmp extends HasAPI {
 			uid = this.user.id;
 		// /assignDeal/:influencerId/:campaignId/:dealId/:platform
 		this.api.Get('assignDeal/' + uid + '/' + d.campaignId + '/' + d.id + '/' + d.platforms[0], data => {
-			this.deal = data;
+			this.api.GoTo('acceptedDealAlert', data.assigned);
 		}, err => this.err = err.msg);
 	}
-
-	get DaysLeft(): string {
-		const assigned = this.deal.assigned * 1000, // go times are in seconds
-			now = Date.now(),
-			days = (assigned - now) / oneDay;
-
-		return (14 - days).toFixed(0);
-	}
 }
-
-const oneDay = 24 * 66 * 66 * 1000;

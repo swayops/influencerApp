@@ -189,7 +189,7 @@ export class AppCmp extends HasAPI {
 
 	reinitPageScripts() {
 		this.api.error = null;
-		//this.updateTags();
+		// this.updateTags();
 		this.initIncrGroup();
 		this.initSliderRange();
 		this.reinitUI();
@@ -201,19 +201,21 @@ const pageMapping = {
 	'login': 'signup user',
 	'welcome': 'front',
 	'walkthrough': 'walkthrough-template',
-	'dealFeed':'endorsement',
+	'dealFeed': 'endorsement',
 	'dealDetail': 'deal-detailed-page deal-page',
 	'pendingDeal': 'deal-pending-page deal-page',
-	'influencer':'influencer-page',
-	'brandPage':'brand-page',
-	'earningStats':'earning-stats-page',
-	'postStats':'post-stats-page',
-	'editProfile':'edit-profile-page',
+	'influencer': 'influencer-page',
+	'brandPage': 'brand-page',
+	'earningStats': 'earning-stats-page',
+	'postStats': 'post-stats-page',
+	'editProfile': 'edit-profile-page',
+	'acceptedDealAlert': 'deal-page',
 };
 
 function getClassName(p: string): string {
 	const idx = p.indexOf('/', 1),
-		page = idx > -1 ? p.substr(1, idx - 1) : p.substr(1);
+		page = idx > -1 ? p.substr(1, idx - 1) : p.substr(1),
+		parts = p.split('/').filter(v => !!v);
 
-	return p.replace(/\//g, '') + ' ' + (pageMapping[page] || '');
+	return parts[0] + ' ' + (pageMapping[page] || '');
 }

@@ -32,8 +32,6 @@
 	</div>
 	<div class="action">
 		<div class="alert alert-danger" role="alert" *ngIf="!!err">{{ err }}</div>
-		<div class="alert alert-success" role="alert" *ngIf="deal.shortenedLink">
-			Successfully Accepted the deal, you have {{ DaysLeft }} days left to complete it.</div>
 		<button class="btn btn-deal" (click)="Accept()" [disabled]="!!err || deal.shortenedLink"><span class="plus-ico"></span>Accept Endorsement</button>
 	</div>
 	<div class="share-this">

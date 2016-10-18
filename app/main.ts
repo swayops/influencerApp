@@ -127,7 +127,7 @@ export const ALL_ROUTES = [
 		canActivate: [AuthGuard],
 	},
 	{
-		path: 'acceptedDealAlert/:id',
+		path: 'acceptedDealAlert/:ts',
 		component: AcceptedDealAlertCmp,
 		canActivate: [AuthGuard],
 	},
