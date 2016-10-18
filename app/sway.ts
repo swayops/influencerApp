@@ -187,12 +187,12 @@ export class HasAPI {
 	}
 
 	get HasCompleteProfile(): boolean {
-		const inf = this.user.inf;
-		return (inf.male || inf.female) && inf.categories;
+		const inf = this.user.inf || {};
+		return (inf.male || inf.female) && !!inf.categories;
 	}
 
 	get HasAddress(): boolean {
-		const inf = this.user.inf;
+		const inf = this.user.inf || {};
 		return !!inf.address;
 	}
 }
