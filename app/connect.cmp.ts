@@ -16,8 +16,8 @@ export class ConnectCmp extends HasAPI {
 		title.setTitle('Connect Your Social Accounts');
 		const inf = this.user.inf || {};
 		this.data = {
-			instagram: inf.instagram && inf.instagram.id,
-			youtube: inf.youtube && inf.youtube.id,
+			instagram: inf.instagram && inf.instagram.userName,
+			youtube: inf.youtube && inf.youtube.userName,
 			twitter: inf.twitter && inf.twitter.id,
 			facebook: inf.facebook && inf.facebook.id,
 		};

@@ -32,7 +32,7 @@ export class DealDetailCmp extends HasAPI {
 	}
 
 	get DaysLeft(): string {
-		const assigned = <number>this.deal.assigned * 1000, // go times are in seconds
+		const assigned = this.deal.assigned * 1000, // go times are in seconds
 			now = Date.now(),
 			days = (assigned - now) / oneDay;
 

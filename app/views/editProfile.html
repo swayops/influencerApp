@@ -19,18 +19,23 @@
 		<div class="field-group">
 			<h3 class="field-group-hdr">CONTACT INFO</h3>
 			<div class="field two-cols">
-				<label>Full Name</label><input type="text" name="" value="Nick Wake" placeholder="">
+				<label>Full Name</label><input type="text" name="name" [(ngModel)]="data.name" placeholder="">
 			</div>
 			<div class="field two-cols">
-				<label>Gender</label><input type="text" name="" value="Female" placeholder="">
+				<label>Gender</label>
+				<select class="form-control" name="gender" [(ngModel)]="data.gender">
+					<option value="">Not applicable</option>
+					<option value="f">Female</option>
+					<option value="m">Male</option>
+				</select>
 			</div>
 			<div class="field two-cols">
-				<label>PHONE (<span>For security & notifications</span>)</label><input type="text" name="" value="805-720-1198" placeholder="">
+				<label>Phone (<span>For security &amp; notifications</span>)</label><input type="tel" name="phone" [(ngModel)]="data.phone" placeholder="555-555-5555">
 			</div>
 			<div class="field checkbox-field two-cols">
-				<label>SEND PUSH NOTIFICATIONS</label>
+				<label>Send Deal Alerts</label>
 				<div class="switch">
-					<input id="cmn-toggle" class="cmn-toggle cmn-toggle-round-flat" checked type="checkbox">
+					<input id="cmn-toggle" class="cmn-toggle cmn-toggle-round-flat" type="checkbox" [(ngModel)]="data.dealPing">
 					<label for="cmn-toggle"></label>
 				</div>
 			</div>
@@ -55,13 +60,13 @@
 		<div class="field-group">
 			<h3 class="field-group-hdr">LOGIN INFO</h3>
 			<div class="field two-cols">
-				<label>Email</label><input type="text" name="" value="nick@swayops.com" placeholder="Enter your email">
+				<label>Email</label><input type="email" name="email" [(ngModel)]="data.email" placeholder="Enter your email">
 			</div>
 			<div class="field two-cols">
-				<label>New Password</label><input type="password" name="" value="*********" placeholder="Enter your password">
+				<label>New Password</label><input type="password" name="pass" [(ngModel)]="data.pass" placeholder="Enter your password">
 			</div>
 			<div class="field two-cols">
-				<label>Retype</label><input type="password" name="" value="*********" placeholder="Confirm password">
+				<label>Retype</label><input type="password" name="pass2" [(ngModel)]="data.pass2" placeholder="Confirm password">
 			</div>
 		</div>
 		<div class="field-group">
@@ -71,16 +76,16 @@
 				<span>*Accounts must be publicly viewable.</span>
 			</div>
 			<div class="field two-cols">
-				<label>Instagram:</label><input type="text" name="" value="Enter your username">
+				<label>Instagram:</label><input type="text" name="instagram" [(ngModel)]="data.instagram" placeholder="Enter your username">
 			</div>
 			<div class="field two-cols">
-				<label>Youtube:</label><input type="text" name="" value="Enter your username">
+				<label>Youtube:</label><input type="text" name="youtube" [(ngModel)]="data.youtube" placeholder="Enter your username">
 			</div>
 			<div class="field two-cols">
-				<label>Twitter:</label><input type="text" name="" value="Enter your username">
+				<label>Twitter:</label><input type="text" name="twitter" [(ngModel)]="data.twitter" placeholder="Enter your username">
 			</div>
 			<div class="field two-cols">
-				<label>Facebook:</label><input type="text" name="" value="Enter your username">
+				<label>Facebook:</label><input type="text" name="facebook" [(ngModel)]="data.facebook" placeholder="Enter your username">
 			</div>
 			<div class="fix-to-bot">
 				<div class="field submit-field"><input type="submit" class="btn btn-primary" name="" value="Save Changes"></div>
