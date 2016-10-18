@@ -6,26 +6,26 @@
 </div>
 
 <div class="content">
-	<form id="connect" class="user-form" action="" method="">
+	<form id="connect" class="user-form" (ngSubmit)="LinkAccounts()">
 		<div class="instruction">
 			<h4>ATLEAST 1 ACCOUNT IS REQUIRED:</h4>
 			<span>*Accounts must be publicly viewable.</span>
 		</div>
 		<div class="field two-cols">
-			<label>Instagram:</label><input type="text" name="" value="" placeholder="Enter your username">
+			<label>Instagram:</label><input type="text" name="instagram" [(ngModel)]="data.instagram" placeholder="Enter your username">
 		</div>
 		<div class="field two-cols">
-			<label>Youtube:</label><input type="text" name="" value="" placeholder="Enter your username">
+			<label>Youtube:</label><input type="text" name="youtube" [(ngModel)]="data.youtube" placeholder="Enter your username">
 		</div>
 		<div class="field two-cols">
-			<label>Twitter:</label><input type="text" name="" value="" placeholder="Enter your username">
+			<label>Twitter:</label><input type="text" name="twitter" [(ngModel)]="data.twitter" placeholder="Enter your username">
 		</div>
 		<div class="field two-cols">
-			<label>Facebook:</label><input type="text" name="" value="" placeholder="Enter your username">
+			<label>Facebook:</label><input type="text" name="facebook" [(ngModel)]="data.facebook" placeholder="Enter your username">
 		</div>
 		<div class="fix-to-bot">
 			<!--take user to deal feed after this-->
-			<div class="field submit-field"><input type="submit" class="btn btn-primary" name="" value="Save Accounts"></div>
+			<div class="field submit-field"><button type="submit" class="btn btn-primary" [disabled]="loading">Save Accounts</button></div>
 		</div>
 	</form>
 </div>
