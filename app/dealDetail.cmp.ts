@@ -16,8 +16,7 @@ export class DealDetailCmp extends HasAPI {
 		super(api);
 		title.setTitle('Deal Details');
 		const dealID = route.snapshot.params['id'];
-		console.log(route.snapshot.data);
-		// TODO get a single deal endpoint
+
 		this.api.Get('getDeal/' + this.user.id + '/' + dealID, data => {
 			this.deal = data;
 		}, err => this.err = err.msg);
@@ -31,4 +30,14 @@ export class DealDetailCmp extends HasAPI {
 			this.deal = data;
 		}, err => this.err = err.msg);
 	}
+
+	get DaysLeft(): string {
+		const assigned = <number>this.deal.assigned * 1000, // go times are in seconds
+			now = Date.now(),
+			days = (assigned - now) / oneDay;
+
+		return (14 - days).toFixed(0);
+	}
 }
+
+const oneDay = 24 * 66 * 66 * 1000;
