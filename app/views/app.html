@@ -2,7 +2,7 @@
 	<div class="row">
 		<div class="col-md-12">
 			<div>
-				<div *ngFor="let n of notifications" class="notification {{n.type}}">
+				<div *ngFor="let n of notifications" class="alert alert-{{n.type}}" role="alert">
 					<h3>{{n.type}}</h3>
 					<p>{{n.msg}}</p>
 					<span class="fui-cross" onclick="this.parentNode.parentNode.removeChild(this.parentNode);" title="Close"></span>
