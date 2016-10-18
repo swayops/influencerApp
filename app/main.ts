@@ -1,6 +1,6 @@
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { Title, BrowserModule } from '@angular/platform-browser';
-import { NgModule, enableProdMode } from '@angular/core';
+import { NgModule, enableProdMode, Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
@@ -37,11 +37,27 @@ if (PRODUCTION) {
 	enableProdMode();
 }
 
+
+@Component({
+	selector: 'home',
+	template: '<div></div>',
+})
+export class HomeCmp {
+	constructor(api: Sway) {
+		api.GoHome();
+	}
+}
+
 export const ALL_ROUTES = [
 	{
 		path: '',
-		redirectTo: '/dashboard',
+		redirectTo: '/home',
 		pathMatch: 'full',
+	},
+	{
+		path: 'home',
+		component: HomeCmp,
+		canActivate: [AuthGuard],
 	},
 	{
 		path: 'editProfile',
