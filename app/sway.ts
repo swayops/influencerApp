@@ -185,6 +185,16 @@ export class HasAPI {
 			scrollTop: 0,
 		}, speed);
 	}
+
+	get HasCompleteProfile(): boolean {
+		const inf = this.user.inf;
+		return (inf.male || inf.female) && inf.categories;
+	}
+
+	get HasAddress(): boolean {
+		const inf = this.user.inf;
+		return !!inf.address;
+	}
 }
 
 export interface SignUpInfo {
