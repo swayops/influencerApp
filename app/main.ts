@@ -101,7 +101,7 @@ export const ALL_ROUTES = [
 		canActivate: [AuthGuard],
 	},
 	{
-		path: 'dealFeed/:id',
+		path: 'dealFeed',
 		component: DealFeedCmp,
 		canActivate: [AuthGuard],
 	},

@@ -78,14 +78,10 @@ export class Sway {
 
 	GoHome() {
 		const user = this.CurrentUser;
-		if (user.admin) {
-			this.GoTo('/dashboard');
-		} else if (user.advertiser) {
-			this.GoTo(user.hasCmps ? '/reporting' : '/createCampaign', user.id);
-		} else if (user.adAgency) {
-			this.GoTo('/mAdvertisers', user.id);
-		} else if (user.talentAgency) {
-			this.GoTo('/mTalents', user.id);
+		if (user.inf.dealPing) {
+			this.GoTo('/dealFeed');
+		} else {
+			this.GoTo('/welcome');
 		}
 	}
 
@@ -176,6 +172,7 @@ export class HasAPI {
 	AddNotification(type: string, msg: any, timeout: number = null) {
 		if (timeout == null) timeout = 10000;
 		if (typeof msg === 'object' && 'msg' in msg) msg = msg.msg;
+		if (type === 'error') type = 'danger'; // workaround for bootstrap notifications
 		allNotifications.push({ type, msg, timeout });
 	}
 
