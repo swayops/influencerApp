@@ -16,7 +16,7 @@
 		<h3>Featured:</h3>
 		<h2>{{ featured.cmpName }}</h2>
 		<p>PAYOUT REMAINING: <span>${{ featured.spendable }}</span></p>
-		<p>PERKS: <span>{{ featured.perks?.name || 'N/A' }}</span></p>
+		<p *ngIf="featured.perks">PERKS: <span>{{ featured.perks?.name || 'N/A' }}</span></p>
 		<p>ACCEPTED: <span>{{ featured.platforms?.join(', ') }}</span></p>
 		<div class="banner-links">
 			<span>dot</span>
@@ -34,7 +34,7 @@
 				<h4>{{ d.cmpName }}</h4>
 				<ul class="cat">
 					<li>PAYOUT REMAINING: <span>${{ d.spendable }}</span></li>
-					<li>PERKS: <span>{{ d.perks?.name || 'N/A' }}</span></li>
+					<li *ngIf="d.perks">PERKS: <span>{{ d.perks?.name || 'N/A' }}</span></li>
 					<li>ACCEPTED: <span>{{ d.platforms?.join(', ') }}</span></li>
 				</ul>
 				<a [routerLink]="['/dealDetail', d.id]" class="btn btn-view">View Endorsement</a>

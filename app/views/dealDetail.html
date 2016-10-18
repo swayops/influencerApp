@@ -14,7 +14,7 @@
 			<h2>{{ deal.cmpName }}</h2>
 			<ul>
 				<li>PAYOUT REMAINING: <span class="value">${{ deal.spendable }}</span></li>
-				<li>Perks: <span class="value">{{ deal.perks?.name || 'N/A' }}</span></li>
+				<li *ngIf="deal.perks">Perks: <span class="value">{{ deal.perks.name || 'N/A' }}</span></li>
 				<li>Accepted: <span class="value">{{ deal.platforms?.join(', ') }}</span></li>
 			</ul>
 		</div>
