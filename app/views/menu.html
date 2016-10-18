@@ -2,14 +2,14 @@
 	<h2>MENU</h2>
 
 	<ul class="menu">
-		<li><a href="#">Home</a></li>
-		<li><a href="#">Your Profile</a></li>
-		<li><a href="#">Your Endorsements</a></li>
-		<li><a href="#">Stats</a></li>
+		<li><a [routerLink]="['/']">Home Feed</a></li>
+		<li><a [routerLink]="['/editProfile']">Your Profile</a></li>
+		<li><a [routerLink]="['/pendingDeal']">Your Endorsements</a></li>
+		<li><a [routerLink]="['/earningStats']">Stats</a></li>
 	</ul>
 
 	<ul class="account-actions">
-		<li><a href="#">Edit Profile</a></li>
-		<li><a href="#">Cashout Earnings</a></li>
+		<li><a [routerLink]="['/editProfile']">Edit Profile</a></li>
+		<li><a [routerLink]="['/helloSign']">Cashout Earnings</a></li>
 	</ul>
 </div>
