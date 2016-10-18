@@ -77,8 +77,8 @@ export class Sway {
 	}
 
 	GoHome() {
-		const user = this.CurrentUser;
-		if (user.inf.dealPing) {
+		const inf = this.CurrentUser.inf || {};
+		if (inf.dealPing) {
 			this.GoTo('/dealFeed');
 		} else {
 			this.GoTo('/welcome');
