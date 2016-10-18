@@ -16,7 +16,7 @@
 		<div class="banner-links">
 			<span>dot</span>
 			<a href="{{ featured.link }}" target="_blank">VIEW BRAND</a> |
-			<a [routerLink]="['/dealDetail', featured.id]">VIEW ENDORSEMENT</a>
+			<a [routerLink]="['/dealDetail', featured.id, featured]">VIEW ENDORSEMENT</a>
 		</div>
 	</div>
 </div>
@@ -35,7 +35,7 @@
 					<li>PERKS: <span>{{ d.perks?.name || 'N/A' }}</span></li>
 					<li>ACCEPTED: <span>{{ d.platforms?.join(', ') }}</span></li>
 				</ul>
-				<a [routerLink]="['/dealDetail', d.id]" class="btn btn-view">View Endorsement</a>
+				<a [routerLink]="['/dealDetail', d.id, d]" class="btn btn-view">View Endorsement</a>
 			</div>
 		</li>
 	</ul>

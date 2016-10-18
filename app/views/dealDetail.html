@@ -7,32 +7,32 @@
 	</div>
 </div>
 
-<div class="content">
+<div class="content" *ngIf="deal">
 	<div class="feature-thumbnail"><img src="/infApp/static/images/deal-featured-img.jpg"></div>
 	<div class="details">
 		<div class="deal-info">
-			<h2>Skinny Bunny Tea</h2>
+			<h2>{{ deal.cmpName }}</h2>
 			<ul>
-				<li>PAYOUT REMAINING: <span class="value">$10,259</span></li>
-				<li>Perks: <span class="value">None</span></li>
-				<li>Accepted: <span class="value">FB, Twitter, YouTube, Instagram</span></li>
+				<li>PAYOUT REMAINING: <span class="value">${{ deal.spendable }}</span></li>
+				<li>Perks: <span class="value">{{ deal.perks?.name || 'N/A' }}</span></li>
+				<li>Accepted: <span class="value">{{ deal.platforms?.join(', ') }}</span></li>
 			</ul>
 		</div>
 		<div class="deal-content">
-			<p><span class="intro">TASK:</span> Take a cute/ classy photo at the gym. Selfie, with friends, or 3rd party taken accepted.
-				Images should preferably contain a focus on the core etc etc.</p>
+			<p><span class="intro">TASK: </span>{{ deal.task }}</p>
 			<h4>YOUR POST MUST CONTAIN:</h4>
 			<ul>
-				<li>Caption: <span class="value">I love skinny bunny tea because it helps me feel good.</span></li>
-				<li>Link in caption: <span class="value">http://swayops.com/3234</span></li>
-				<li>Perks: <span class="value">The physical good or coupon must appear within the post</span></li>
-				<li>Hashtags: <span class="value">#skinnyBunnyTea, #beauty, #ad</span></li>
-				<li>Mentions: <span class="value">@skinnybunny</span></li>
+				<!--<li>Caption: <span class="value">I love skinny bunny tea because it helps me feel good.</span></li>-->
+				<li *ngIf="deal.link">Link in caption: <span class="value">{{ deal.shortenedLink || deal.link }}</span></li>
+				<!--<li>Perks: <span class="value">The physical good or coupon must appear within the post</span></li>-->
+				<li *ngIf="deal.tags">Hashtags: <span class="value">{{ deal.tags?.join(', ') }}</span></li>
+				<li *ngIf="deal.mention">Mentions: <span class="value">{{ deal.mention }}</span></li>
 			</ul>
 		</div>
 	</div>
 	<div class="action">
-		<a href="#" class="btn btn-deal"><span class="plus-ico"></span>Accept Endorsement</a>
+		<div class="alert alert-danger" role="alert" *ngIf="!!err">{{ err }}</div>
+		<button class="btn btn-deal" (click)="Accept()" [disabled]="!!err || done"><span class="plus-ico"></span>Accept Endorsement</button>
 	</div>
 	<div class="share-this">
 		<a href="#">Share this deal</a>
