@@ -1,3 +1,8 @@
+<div class="alert alert-info" role="alert" *ngIf="!HasCompleteProfile">Waiting on admin approval!</div>
+<div class="alert alert-warning" role="alert" *ngIf="!HasAddress">
+	Please set address in your profile to gain access to more deals: <a [routerLink]="['/editProfile']" >Lets do it</a>
+</div>
+
 <div class="endorsement-banner">
 	<div class="banner-top">
 		<div class="menu"><a [routerLink]="['/menu']"><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span></a></div>
@@ -5,11 +10,6 @@
 			<h1>SWAY</h1>
 		</div>
 		<div class="search"><a href="#"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a></div>
-	</div>
-
-	<div class="alert alert-info" role="alert" *ngIf="!HasCompleteProfile">Waiting on admin approval!</div>
-	<div class="alert alert-warning" role="alert" *ngIf="!HasAddress">
-		Please set address in your profile to gain access to more deals: <a [routerLink]="['/editProfile']" >Lets do it</a>
 	</div>
 
 	<div class="banner-content" *ngIf="featured">
