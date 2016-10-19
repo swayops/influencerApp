@@ -1,6 +1,9 @@
 // EditProfile
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+
+import { ImageCropperComponent, CropperSettings } from 'ng2-img-cropper';
+import { ModalEvent } from './modal';
 
 import { Sway, HasAPI } from './sway';
 
@@ -9,8 +12,25 @@ import { Sway, HasAPI } from './sway';
 	templateUrl: './views/editProfile.html',
 })
 export class EditProfileCmp extends HasAPI {
+	public selImageButtons = [
+		{name: 'Cancel', class: 'btn-blue ghost'},
+		{name: 'Save & crop image »', class: 'btn-info', click: evt => this.setImage(evt)},
+	];
 	public data: any;
 	public loading = false;
+
+	@ViewChild('cropper') public cropper: ImageCropperComponent;
+	public cropperSettings = Object.assign(new CropperSettings(), {
+		keepAspect: true,
+		responsive: true,
+		canvasWidth: 300,
+		canvasHeight: 300,
+		croppedWidth: 300,
+		croppedHeight: 300,
+		noFileInput: true,
+		minHeight: 300,
+	});
+	public cropData: any = {};
 
 	constructor(title: Title, public api: Sway) {
 		super(api);
@@ -20,7 +40,7 @@ export class EditProfileCmp extends HasAPI {
 		inf.address = inf.address || {};
 		this.data = {
 			name: u.name,
-			data: u.imageUrl,
+			imageUrl: u.imageUrl,
 			email: u.email,
 			influencer: {
 				gender: inf.male ? 'm' : inf.female ? 'f' : '',
@@ -41,6 +61,30 @@ export class EditProfileCmp extends HasAPI {
 			},
 		};
 		this.api.Get('ip', data => this.data.influencer.ip = data.ip);
+		this.cropperSettings.rounded = true;
+	}
+
+	loadImage(e: any) {
+		e.stopPropagation();
+		e.preventDefault();
+
+		const image = new Image(),
+			file = (e.target.files || e.dataTransfer.files)[0],
+			rd = new FileReader(),
+			cropper = this.cropper;
+
+		rd.onloadend = (evt: any) => {
+			image.src = evt.target.result;
+			cropper.setImage(image);
+		};
+
+		rd.readAsDataURL(file);
+	}
+
+	setImage(evt: ModalEvent) {
+		evt.Cancel();
+		evt.dlg.hide();
+		this.data.imageUrl = this.cropData.image;
 	}
 
 	Save() {

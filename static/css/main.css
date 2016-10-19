@@ -334,16 +334,16 @@ background: transparent;
   background-color: #fff;
 }
 .user ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: #fff;font-weight:300;
+  color: #808080;font-weight:300;
 }
 .user ::-moz-placeholder { /* Firefox 19+ */
-  color: #fff;font-weight:300;
+  color: #808080;font-weight:300;
 }
 .user :-ms-input-placeholder { /* IE 10+ */
-  color: #fff;font-weight:300;
+  color: #808080;font-weight:300;
 }
 .user :-moz-placeholder { /* Firefox 18- */
-  color: #fff;font-weight:300;
+  color: #808080;font-weight:300;
 }
 
 #sigup .submit-field{
@@ -1491,3 +1491,70 @@ body.menu-active .sway{background-color: #171616;overflow:hidden;}
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
+
+.hidden {
+	display: none;
+}
+
+.clearfix.br:after {
+	height: 19px;
+}
+
+modal, .dialog {
+	margin: auto auto;
+	padding: 0;
+	border: 0;
+	display: none;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	width: 100%;
+	height: 100%;
+	z-index: 1000;
+	overflow: auto;
+}
+
+modal.visible, .dialog.visible {
+	display: block;
+}
+
+modal > div, .dialog > div {
+	margin: 10px auto;
+	background: white;
+	padding: 10px 20px;
+	max-width: 600px;
+	border-radius: 10px;
+}
+
+modal > div > h2, .dialog > div > h2 {
+	padding-top: 10px !important;
+}
+
+modal > div > .buttons > .btn, .dialog > div > .buttons > .btn {
+	margin-right: 5px;
+}
+
+modal label {
+	display: inline-block;
+}
+
+.nosel {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+input[type="file"] {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+

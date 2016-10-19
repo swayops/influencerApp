@@ -10,9 +10,23 @@
 			<div class="save"><button type="submit" class="btn btn-primary" [disabled]="!f.valid || loading">save</button></div>
 		</div>
 		<div class="overlay">
-			<div class="holder"><a href="#" class="camera">save</a><a href="#" class="camera-mini">save</a></div>
+			<div class="holder"><a class="camera" (click)="selImage.show()">save</a><a href="#" class="camera-mini">save</a></div>
 		</div>
-		<div class="user-thumb"><img src="{{ data.imageUrl || '/infApp/static/images/influencer-profile.png' }}"></div>
+		<div class="user-thumb">
+			<img src="{{ data.imageUrl || '/infApp/static/images/influencer-profile.png' }}" *ngIf="!cropData.image">
+			<img [src]="cropData.image" *ngIf="cropData.image">
+			<modal title="Select Your Profile Picture" #selImage [buttons]=selImageButtons>
+				<div style="width: 750px;" class="nosel">
+					<div>
+						<input id="custom-input" type="file" (change)="loadImage($event)">
+						<label for="custom-input" class="btn btn-xs btn-green1"><strong>Choose file &#187;</strong></label>
+					</div>
+					<br>
+					<img-cropper #cropper [image]="cropData" [settings]="cropperSettings"></img-cropper>
+					<br><br>
+				</div>
+			</modal>
+		</div>
 	</div>
 	<!-- TODO: clean up -->
 	<div class="content">
