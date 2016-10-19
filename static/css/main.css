@@ -1487,13 +1487,7 @@ body.menu-active .sway{background-color: #171616;overflow:hidden;}
     left: 85%;
 }
 
-
-
-
-
-
-
-
-
-
-
+.alert {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

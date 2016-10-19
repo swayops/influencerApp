@@ -29,6 +29,10 @@ export class Sway {
 
 	ReloadUser(redir = false, onError?: (err: any) => void) {
 		return this.Get('user', user => {
+			if (!user.inf) {
+				if (onError) onError({msg: 'Only Influencers Allowed'});
+				return;
+			}
 			this.mainUser = user;
 			if (redir) {
 				if (this.redirectUrl) {
