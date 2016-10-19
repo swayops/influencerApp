@@ -45,6 +45,13 @@ export class EditProfileCmp extends HasAPI {
 
 	Save() {
 		this.loading = true;
+
+		const gender = this.data.influencer.gender;
+		Object.assign(this.data.influencer, {
+			male: gender === 'm',
+			female: gender === 'f',
+		});
+
 		this.api.Put('influencer/' + this.user.id, this.data, resp => {
 			this.api.ReloadUser();
 			this.api.GoHome();
