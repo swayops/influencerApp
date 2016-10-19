@@ -20,7 +20,7 @@
 		<p>ACCEPTED: <span>{{ featured.platforms?.join(', ') }}</span></p>
 		<div class="banner-links">
 			<span>dot</span>
-			<a [routerLink]="['/dealDetail', featured.id]">VIEW ENDORSEMENT</a>
+			<a [routerLink]="['/dealDetail', featured.campaignId, featured.id]">VIEW ENDORSEMENT</a>
 		</div>
 	</div>
 </div>
@@ -36,7 +36,7 @@
 					<li *ngIf="d.perks">PERKS: <span>{{ d.perks?.name || 'N/A' }}</span></li>
 					<li>ACCEPTED: <span>{{ d.platforms?.join(', ') }}</span></li>
 				</ul>
-				<a [routerLink]="['/dealDetail', d.id]" class="btn btn-view">View Endorsement</a>
+				<a [routerLink]="['/dealDetail', featured.campaignId, d.id]" class="btn btn-view">View Endorsement</a>
 			</div>
 		</li>
 	</ul>

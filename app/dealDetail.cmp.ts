@@ -15,9 +15,10 @@ export class DealDetailCmp extends HasAPI {
 	constructor(title: Title, public api: Sway, route: ActivatedRoute) {
 		super(api);
 		title.setTitle('Deal Details');
-		const dealID = route.snapshot.params['id'];
+		const cmpID = route.snapshot.params['cid'],
+			dealID = route.snapshot.params['id'];
 
-		this.api.Get('getDeal/' + this.user.id + '/' + dealID, data => {
+		this.api.Get('getDeal/' + this.user.id + '/' + cmpID + '/' + dealID, data => {
 			this.deal = data;
 		}, err => this.err = err.msg);
 	}

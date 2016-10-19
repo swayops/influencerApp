@@ -122,7 +122,7 @@ export const ALL_ROUTES = [
 		canActivate: [AuthGuard],
 	},
 	{
-		path: 'dealDetail/:id',
+		path: 'dealDetail/:cid/:id',
 		component: DealDetailCmp,
 		canActivate: [AuthGuard],
 	},
