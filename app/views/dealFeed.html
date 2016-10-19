@@ -36,7 +36,7 @@
 					<li *ngIf="d.perks">PERKS: <span>{{ d.perks?.name || 'N/A' }}</span></li>
 					<li>ACCEPTED: <span>{{ d.platforms?.join(', ') }}</span></li>
 				</ul>
-				<a [routerLink]="['/dealDetail', featured.campaignId, d.id]" class="btn btn-view">View Endorsement</a>
+				<a [routerLink]="['/dealDetail', d.campaignId, d.id]" class="btn btn-view">View Endorsement</a>
 			</div>
 		</li>
 	</ul>
