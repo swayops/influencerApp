@@ -27,7 +27,7 @@ import { DealFeedCmp } from './dealFeed.cmp';
 import { DealDetailCmp } from './dealDetail.cmp';
 import { AcceptedDealAlertCmp } from './acceptedDealAlert.cmp';
 
-// import { FilterArrayPipe } from './utils';
+import { FilterArrayPipe, FormatNumberPipe } from './utils';
 
 import { Modal } from './modal';
 
@@ -178,7 +178,8 @@ export const ALL_ROUTES = [
 		AppCmp, // app
 
 		// pipes and utils
-		// FilterArrayPipe,
+		FilterArrayPipe,
+		FormatNumberPipe,
 
 		Modal,
 
