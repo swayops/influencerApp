@@ -201,6 +201,7 @@ const pageMapping = {
 	'login': 'signup user',
 	'welcome': 'front',
 	'walkthrough': 'walkthrough-template',
+	'walkthrough4':'walkthrough4',
 	'dealFeed': 'endorsement',
 	'dealDetail': 'deal-detailed-page deal-page',
 	'pendingDeal': 'deal-pending-page deal-page',
