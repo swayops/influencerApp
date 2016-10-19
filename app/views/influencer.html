@@ -3,37 +3,22 @@
 </div>
 
 <div class="content">
-	<h2>Nick Waken</h2>
-	<p>Connected Networks: <span>FB, Twitter, YouTube, Instagram</span></p>
+	<h2>{{ bio.name }}</h2>
+	<p>Connected Networks: <span>{{ bio.networks?.join(', ') }}</span></p>
 
 	<div class="counter">
-		<div class="deals"><span class="count">234</span><label>DEALS</label></div>
-		<div class="followers"><span class="count">239K</span><label>FOLLOWERS</label></div>
-		<div class="engagements"><span class="count">5.7M</span><label>ENGAGEMENTS</label></div>
+		<div class="deals"><span class="count">{{ bio.deals | fmtNum }}</span><label>DEALS</label></div>
+		<div class="followers"><span class="count">{{ bio.followers | fmtNum }}</span><label>FOLLOWERS</label></div>
+		<div class="engagements"><span class="count">{{ bio.engagements | fmtNum }}</span><label>ENGAGEMENTS</label></div>
 	</div>
 
 	<div class="recent">
 		<h5>RECENT ENDORSEMENTS</h5>
 		<ul class="recent-endorsement">
-			<li [routerLink]="['/postStats']" class="endor-item">
-				<img src="/infApp/static/images/endorsement/influencer-endorcement-item1.jpg">
-				<h4>NIKE <br>Fitness</h4>
-				<span class="ctr">94.4K ENGAGEMENTS</span>
-			</li>
-			<li class="endor-item">
-				<img src="/infApp/static/images/endorsement/influencer-endorcement-item2.jpg">
-				<h4>Bern <br>Helmets</h4>
-				<span class="ctr">94.4K ENGAGEMENTS</span>
-			</li>
-			<li class="endor-item">
-				<img src="/infApp/static/images/endorsement/influencer-endorcement-item3.jpg">
-				<h4>Metal <br>Mulisha</h4>
-				<span class="ctr">94.4K ENGAGEMENTS</span>
-			</li>
-			<li class="endor-item">
-				<img src="/infApp/static/images/endorsement/influencer-endorcement-item4.jpg">
-				<h4>Berlin <br>Travel</h4>
-				<span class="ctr">94.4K ENGAGEMENTS</span>
+			<li *ngFor="let d of bio.completedDeals" class="endor-item">
+				<img [src]=d.image>
+				<h4>{{ d.name }}</h4>
+				<span class="ctr">{{ d.engagements | fmtNum }} ENGAGEMENTS</span>
 			</li>
 		</ul>
 	</div>

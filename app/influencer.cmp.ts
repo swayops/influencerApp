@@ -9,8 +9,10 @@ import { Sway, HasAPI } from './sway';
 	templateUrl: './views/influencer.html',
 })
 export class InfluencerCmp extends HasAPI {
+	public bio: any = {};
 	constructor(title: Title, public api: Sway) {
 		super(api);
 		title.setTitle('Influencer');
+		this.api.Get('bio/' + this.user.id, resp => this.bio = resp || {});
 	}
 }
