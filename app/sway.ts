@@ -23,8 +23,14 @@ export class Sway {
 	Login(info: { email: string, pass: string }, onError?: (err: any) => void) {
 		this.Reset();
 		return this.Post('signIn', info, data => {
-			return this.Get('user', user => {
-				this.mainUser = user;
+			return this.ReloadUser(true, onError);
+		}, onError);
+	}
+
+	ReloadUser(redir = false, onError?: (err: any) => void) {
+		return this.Get('user', user => {
+			this.mainUser = user;
+			if (redir) {
 				if (this.redirectUrl) {
 					this.GoTo(this.redirectUrl);
 				} else {
@@ -32,7 +38,7 @@ export class Sway {
 				}
 				this.redirectUrl = '';
 				this.loginStatus = 1;
-			}, onError);
+			}
 		}, onError);
 	}
 
@@ -105,7 +111,7 @@ export class Sway {
 	public handleError(err: Response): Observable<{}> {
 		let errData = err.json();
 		if ('target' in errData) {
-			errData = { status: 'error', msg: 'Connection Error'};
+			errData = { status: 'error', msg: 'Connection Error' };
 		}
 		this.error = errData;
 		if (this.error.code === 401) this.loginStatus = 2;
@@ -217,6 +223,7 @@ interface User {
 	id: string;
 	parentId: string;
 	name: string;
+	imageUrl: string;
 	email: string;
 	phone: string;
 	address: string;
