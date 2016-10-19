@@ -216,6 +216,6 @@ function getClassName(p: string): string {
 	const idx = p.indexOf('/', 1),
 		page = idx > -1 ? p.substr(1, idx - 1) : p.substr(1),
 		parts = p.split('/').filter(v => !!v);
-
+	if (parts.length > 1) parts[0] += ' ' + parts.join('');
 	return parts[0] + ' ' + (pageMapping[page] || '');
 }
