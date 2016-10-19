@@ -7,7 +7,7 @@
 			<div class="page-title">
 				<h1>EDIT PROFILE</h1>
 			</div>
-			<div class="save"><a href="#">Save</a></div>
+			<div class="save"><button type="submit" class="btn btn-primary" [disabled]="!f.valid || loading">save</button></div>
 		</div>
 		<div class="overlay">
 			<div class="holder"><a href="#" class="camera">save</a><a href="#" class="camera-mini">save</a></div>
@@ -50,11 +50,11 @@
 				<label>Address 2</label><input type="text" name="address2" [(ngModel)]="data.influencer.address.address_line2" placeholder="Apt. 6">
 			</div>
 			<div class="field two-cols">
-				<label>State</label><input type="text" name="state" [(ngModel)]="data.influencer.address.address_state" placeholder="NY"
-					required minlength="2" maxlength="2">
+				<label>City</label><input type="text" name="city" [(ngModel)]="data.influencer.address.address_city" placeholder="New York">
 			</div>
 			<div class="field two-cols">
-				<label>City</label><input type="text" name="city" [(ngModel)]="data.influencer.address.address_city" placeholder="New York">
+				<label>State</label><input type="text" name="state" [(ngModel)]="data.influencer.address.address_state" placeholder="NY"
+					required minlength="2" maxlength="2">
 			</div>
 			<div class="field two-cols">
 				<label>ZIP</label><input type="text" name="zip" [(ngModel)]="data.influencer.address.address_zip" placeholder="10014"
