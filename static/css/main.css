@@ -15,7 +15,7 @@ body{
 	font-family:"Lato", Calibri, Trebuchet, sans-serif !important;
 	font-size:16px;
 	font-weight:400;
-	
+
 }
 
 a:focus, a:hover{
@@ -149,7 +149,7 @@ a:focus, a:hover{
 }
 
 .walkthrough4 .walkthrough4-img{
-	
+
 }
 
 .walkthrough4 .walkthrough4-img img{width:100%;}
@@ -428,7 +428,7 @@ background: transparent;
 }
 .user-form .instruction span{font-size:14px;color:#000;}
 
-.user-form .submit-field input{
+.user-form .submit-field .btn{
 	background: #009fe8;
     font-size: 20px;
     border: none;
@@ -846,16 +846,16 @@ background: transparent;
   background-color: #fff;
 }
 #profile ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: #fff;font-weight:300;
+  color: #808080;font-weight:300;
 }
 #profile ::-moz-placeholder { /* Firefox 19+ */
-  color: #fff;font-weight:300;
+  color: #808080;font-weight:300;
 }
 #profile :-ms-input-placeholder { /* IE 10+ */
-  color: #fff;font-weight:300;
+  color: #808080;font-weight:300;
 }
 #profile :-moz-placeholder { /* Firefox 18- */
-  color: #fff;font-weight:300;
+  color: #808080;font-weight:300;
 }
 
 
@@ -892,7 +892,7 @@ background: transparent;
     width: 15px;
     height: 25px;
     display: block;
-	
+
 }
 
 .deal-page .content h2{
