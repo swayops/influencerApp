@@ -20,7 +20,7 @@ import { InfluencerCmp } from './influencer.cmp';
 import { ConnectCmp } from './connect.cmp';
 import { BrandPageCmp } from './brandPage.cmp';
 
-import { PendingDealCmp } from './pendingDeal.cmp';
+import { DealsCmp } from './deals.cmp';
 import { PostStatsCmp } from './postStats.cmp';
 import { EarningStatsCmp } from './earningStats.cmp';
 import { DealFeedCmp } from './dealFeed.cmp';
@@ -109,12 +109,12 @@ export const ALL_ROUTES = [
 		canActivate: [AuthGuard],
 	},
 	{
-		path: 'pendingDeals/:id',
-		component: PendingDealCmp,
+		path: 'deals',
+		component: DealsCmp,
 		canActivate: [AuthGuard],
 	},
 	{
-		path: 'earningStats/:id',
+		path: 'earningStats',
 		component: EarningStatsCmp,
 		canActivate: [AuthGuard],
 	},

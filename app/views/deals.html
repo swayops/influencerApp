@@ -7,10 +7,22 @@
 
 <div class="content">
 	<div class="tabs">
-		<div class="tab"><a href="#">Completed</a></div>
-		<div class="tab"><a href="#" class="active">Pending</a></div>
+		<div class="tab"><a href="#" class="active">Completed</a></div>
+		<div class="tab"><a href="#">Pending</a></div>
 	</div>
-	<ul class="endorsement-list">
+	<ul class="endorsement-list completed-deals">
+		<li class="endorsement-item" *ngFor="let d of completed">
+			<div class="thumb"><img src="{{ d.cmpImg }}"></div>
+			<div class="details">
+				<h4>{{ d.cmpName }}</h4>
+				<ul class="cat">
+					<li>PAYOUT REMAINING: <span>${{ d.spendable }}</span></li>
+					<li *ngIf="d.perks">PERKS: <span>{{ d.perks?.name || 'N/A' }}</span></li>
+					<li>ACCEPTED: <span>{{ d.platforms?.join(', ') }}</span></li>
+				</ul>
+				<a [routerLink]="['/dealDetail', d.campaignId, d.id]" class="btn btn-view">View Endorsement</a>
+			</div>
+		</li>
 		<li class="endorsement-item">
 			<div class="thumb"><img src="/infApp/static/images/endorsement/img1.jpg"></div>
 			<div class="details">

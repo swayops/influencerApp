@@ -204,7 +204,7 @@ const pageMapping = {
 	'walkthrough4':'walkthrough4',
 	'dealFeed': 'endorsement',
 	'dealDetail': 'deal-detailed-page deal-page',
-	'pendingDeal': 'deal-pending-page deal-page',
+	'deals': 'deal-pending-page deal-page',
 	'influencer': 'influencer-page',
 	'brandPage': 'brand-page',
 	'earningStats': 'earning-stats-page',

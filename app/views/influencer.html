@@ -15,7 +15,7 @@
 	<div class="recent">
 		<h5>RECENT ENDORSEMENTS</h5>
 		<ul class="recent-endorsement">
-			<li *ngFor="let d of bio.completedDeals" class="endor-item">
+			<li *ngFor="let d of bio.completedDeals" [routerLink]="['/postStats', d.id]" class="endor-item" style="cursor: pointer">
 				<img [src]=d.image>
 				<h4>{{ d.name }}</h4>
 				<span class="ctr">{{ d.engagements | fmtNum }} ENGAGEMENTS</span>
