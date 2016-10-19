@@ -29,6 +29,8 @@ import { AcceptedDealAlertCmp } from './acceptedDealAlert.cmp';
 
 // import { FilterArrayPipe } from './utils';
 
+import { Modal } from './modal';
+
 import { ImageCropperComponent } from 'ng2-img-cropper';
 
 declare var PRODUCTION: boolean;
@@ -177,6 +179,8 @@ export const ALL_ROUTES = [
 
 		// pipes and utils
 		// FilterArrayPipe,
+
+		Modal,
 
 		ImageCropperComponent,
 	].concat(ALL_ROUTES.map(v => (<any> v).component).filter(v => !!v)),
