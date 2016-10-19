@@ -13,8 +13,8 @@ import { Sway, HasAPI } from './sway';
 })
 export class EditProfileCmp extends HasAPI {
 	public selImageButtons = [
-		{name: 'Cancel', class: 'btn-blue ghost'},
-		{name: 'Save & crop image »', class: 'btn-info', click: evt => this.setImage(evt)},
+		{name: 'Cancel', class: 'btn-default ghost'},
+		{name: 'Save & crop image »', class: 'btn-primary', click: evt => this.setImage(evt)},
 	];
 	public data: any;
 	public loading = false;

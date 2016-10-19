@@ -16,10 +16,10 @@
 			<img src="{{ data.imageUrl || '/infApp/static/images/influencer-profile.png' }}" *ngIf="!cropData.image">
 			<img [src]="cropData.image" *ngIf="cropData.image">
 			<modal title="Select Your Profile Picture" #selImage [buttons]=selImageButtons>
-				<div style="width: 750px;" class="nosel">
+				<div class="nosel">
 					<div>
 						<input id="custom-input" type="file" (change)="loadImage($event)">
-						<label for="custom-input" class="btn btn-xs btn-green1"><strong>Choose file &#187;</strong></label>
+						<label for="custom-input" class="btn btn-primary"><strong>Choose file &#187;</strong></label>
 					</div>
 					<br>
 					<img-cropper #cropper [image]="cropData" [settings]="cropperSettings"></img-cropper>

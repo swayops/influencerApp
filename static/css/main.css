@@ -1558,3 +1558,7 @@ input[type="file"] {
 	z-index: -1;
 }
 
+.edit-profile-page .avatar .user-thumb img {
+    border-radius:100%;
+}
+
