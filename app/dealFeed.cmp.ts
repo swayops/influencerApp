@@ -32,6 +32,6 @@ export class DealFeedCmp extends HasAPI {
 	}
 
 	toggleMenu() {
-		$('menu').toggleClass('hidden');
+		$('menu').slideToggle(500);
 	}
 }
