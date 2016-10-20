@@ -225,6 +225,7 @@ const pageMapping = {
 	'postStats': 'post-stats-page',
 	'editProfile': 'edit-profile-page',
 	'acceptedDealAlert': 'deal-page',
+	'cashoutEarnings': 'deal-page',
 };
 
 function getClassName(p: string): string {

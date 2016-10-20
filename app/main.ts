@@ -26,6 +26,7 @@ import { EarningStatsCmp } from './earningStats.cmp';
 import { DealFeedCmp } from './dealFeed.cmp';
 import { DealDetailCmp } from './dealDetail.cmp';
 import { AcceptedDealAlertCmp } from './acceptedDealAlert.cmp';
+import { CashoutEarningsCmp } from './cashoutEarnings.cmp';
 
 import { FilterArrayPipe, FormatNumberPipe } from './utils';
 
@@ -131,6 +132,10 @@ export const ALL_ROUTES = [
 	{
 		path: 'acceptedDealAlert/:ts',
 		component: AcceptedDealAlertCmp,
+		canActivate: [AuthGuard],
+	},
+		path: 'cashoutEarnings/:ts',
+		component: CashoutEarningsCmp,
 		canActivate: [AuthGuard],
 	},
 	{
