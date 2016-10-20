@@ -146,10 +146,23 @@ export class AppCmp extends HasAPI {
 			return false;
 		});
 		$('select.auto').select2();
+
+		// hack because bootstrap's isn't working
+		$('.tabs a').click(function (e) {
+			e.preventDefault();
+			const $this = $(this),
+				$tabs = $('.tabs'),
+				$contents = $('.tab-content');
+			$('a', $tabs).removeClass('active');
+			$('ul', $contents).hide();
+			$this.addClass('active');
+			$($this.attr('href')).show();
+		});
+		$('.tabs a.active').click();
 	}
 
 	initIncrGroup() {
-		$('.increment-group').append('<div class="btn-action"><div class="inc button">+</div><div class="dec button">-</div></div>');
+		$('.increment-group').append(incGroupHTML);
 
 		$('.increment-group .button').on('click', function (this: {}) {
 			let $button = $(this);
@@ -195,6 +208,9 @@ export class AppCmp extends HasAPI {
 		this.reinitUI();
 	}
 }
+
+
+const incGroupHTML = '<div class="btn-action"><div class="inc button">+</div><div class="dec button">-</div></div>';
 
 const pageMapping = {
 	'signup': 'signup user',
