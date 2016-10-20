@@ -3,7 +3,7 @@ import { Component, ViewChild } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 
 import { ImageCropperComponent, CropperSettings } from 'ng2-img-cropper';
-import { ModalEvent } from './modal';
+import {  Modal, ModalEvent } from './modal';
 
 import { Sway, HasAPI } from './sway';
 
@@ -41,6 +41,7 @@ export class EditProfileCmp extends HasAPI {
 		this.data = {
 			name: u.name,
 			imageUrl: u.imageUrl,
+			coverImageUrl: u.coverImageUrl,
 			email: u.email,
 			influencer: {
 				gender: inf.male ? 'm' : inf.female ? 'f' : '',
@@ -61,7 +62,12 @@ export class EditProfileCmp extends HasAPI {
 			},
 		};
 		this.api.Get('ip', data => this.data.influencer.ip = data.ip);
-		this.cropperSettings.rounded = true;
+	}
+
+	ngAfterViewInit() {
+		const url = this.data.coverImageUrl;
+		// fuck you angular and your bs xss overprotection
+		if (url) $('.overlay').attr('style', 'background-image: url(' + url + '); background-size: cover;');
 	}
 
 	loadImage(e: any) {
@@ -84,7 +90,24 @@ export class EditProfileCmp extends HasAPI {
 	setImage(evt: ModalEvent) {
 		evt.Cancel();
 		evt.dlg.hide();
-		this.data.imageUrl = this.cropData.image;
+		if (evt.data === 'profile') {
+			this.data.imageUrl = this.cropData.image;
+		} else if (evt.data === 'cover') {
+			this.data.coverImageUrl = this.cropData.image;
+		}
+		this.ngAfterViewInit();
+		this.cropData.image = '';
+	}
+
+	showModal(m: Modal, typ: string) {
+		if (typ === 'profile') {
+			m.title = 'Select Your Profile Picture';
+			this.cropperSettings.rounded = true;
+		} else if (typ === 'cover') {
+			m.title = 'Select Your Cover Picture';
+			this.cropperSettings.rounded = false;
+		}
+		m.show(typ);
 	}
 
 	Save() {
