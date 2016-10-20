@@ -40,16 +40,11 @@ if (PRODUCTION) {
 	enableProdMode();
 }
 
-
 @Component({
 	selector: 'home',
 	template: '<div></div>',
 })
-export class HomeCmp {
-	constructor(api: Sway) {
-		api.GoHome();
-	}
-}
+export class HomeCmp { constructor(api: Sway) { api.GoHome(); } }
 
 export const ALL_ROUTES = [
 	{
@@ -134,6 +129,7 @@ export const ALL_ROUTES = [
 		component: AcceptedDealAlertCmp,
 		canActivate: [AuthGuard],
 	},
+	{
 		path: 'cashoutEarnings/:ts',
 		component: CashoutEarningsCmp,
 		canActivate: [AuthGuard],
