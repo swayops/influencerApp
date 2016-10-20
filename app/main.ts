@@ -183,6 +183,7 @@ export const ALL_ROUTES = [
 		FormatNumberPipe,
 
 		Modal,
+		MenuCmp,
 
 		ImageCropperComponent,
 	].concat(ALL_ROUTES.map(v => (<any> v).component).filter(v => !!v)),
