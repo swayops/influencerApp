@@ -11,6 +11,6 @@ import { Sway, HasAPI } from './sway';
 export class MenuCmp extends HasAPI {
 	constructor(title: Title, public api: Sway) {
 		super(api);
-		title.setTitle('Menu');
+		//title.setTitle('Menu');
 	}
 }

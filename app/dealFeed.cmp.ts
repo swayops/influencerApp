@@ -30,4 +30,8 @@ export class DealFeedCmp extends HasAPI {
 
 		}, err => this.AddNotification('error', err.msg));
 	}
+
+	toggleMenu() {
+		$('menu').toggleClass('hidden');
+	}
 }

@@ -2,10 +2,10 @@
 <div class="alert alert-warning" role="alert" *ngIf="!HasAddress">
 	To get free products and more deals please enter a shipping address: <a [routerLink]="['/editProfile']" >Lets do it</a>
 </div>
-
 <div class="endorsement-banner">
 	<div class="banner-top">
-		<div class="menu"><a [routerLink]="['/menu']"><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span></a></div>
+		<menu class="hidden"></menu>
+		<div class="menu"><a (click)="toggleMenu()"><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span></a></div>
 		<div class="page-title">
 			<h1>SWAY</h1>
 		</div>

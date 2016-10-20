@@ -130,15 +130,15 @@ export const ALL_ROUTES = [
 		canActivate: [AuthGuard],
 	},
 	{
-		path: 'cashoutEarnings/:ts',
+		path: 'cashoutEarnings',
 		component: CashoutEarningsCmp,
 		canActivate: [AuthGuard],
 	},
-	{
-		path: 'menu',
-		component: MenuCmp,
-		canActivate: [AuthGuard],
-	},
+	// {
+	// 	path: 'menu',
+	// 	component: MenuCmp,
+	// 	canActivate: [AuthGuard],
+	// },
 	{
 		path: 'brandPage',
 		component: BrandPageCmp,

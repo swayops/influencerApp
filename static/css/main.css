@@ -9,13 +9,17 @@ body *{outline:none;}
 .sway>.row>.col-md-12{
 	height:inherit;
 	margin: 0px 0px 0px;
-    padding: 0px 0px;
+	padding: 0px 0px;
 }
 body{
 	font-family:"Lato", Calibri, Trebuchet, sans-serif !important;
 	font-size:16px;
 	font-weight:400;
 
+}
+
+a {
+	cursor: pointer;
 }
 
 a:focus, a:hover{
@@ -33,19 +37,19 @@ a:focus, a:hover{
 }
 
 .top-title {
-    background: #171616;
-    color: #fff;
-    text-align: center;
-    padding: 28px 0px 28px;
-    font-size: 22px;
-    line-height: 1;
+	background: #171616;
+	color: #fff;
+	text-align: center;
+	padding: 28px 0px 28px;
+	font-size: 22px;
+	line-height: 1;
 }
 
 .banner{
 	position: relative;
-    min-height: 295px;
-    overflow: hidden;
-    padding: 0px 20px;
+	min-height: 295px;
+	overflow: hidden;
+	padding: 0px 20px;
 }
 .banner.welcome-banner{
 	background:#171616 url(../images/welcome-banner-image.jpg) no-repeat 0px 0px;
@@ -53,92 +57,92 @@ a:focus, a:hover{
 }
 .banner h2 strong{    font-size: 32px;    font-style: italic;    font-weight: 400;}
 .banner h2{
-    color: #fff;
-    z-index: 9;
-    position: relative;
-    text-align: center;
-    font-size: 32px;
-    margin: 75px 0px 24px;
+	color: #fff;
+	z-index: 9;
+	position: relative;
+	text-align: center;
+	font-size: 32px;
+	margin: 75px 0px 24px;
 	font-weight: 300;
 }
 .banner p{
-    position: relative;
-    z-index: 10;
-    color: #fff;
-    max-width: 295px;
-    margin: 0px auto;
-    font-size: 22px;
-    text-align: center;
-    opacity: 0.6;
+	position: relative;
+	z-index: 10;
+	color: #fff;
+	max-width: 295px;
+	margin: 0px auto;
+	font-size: 22px;
+	text-align: center;
+	opacity: 0.6;
 	font-weight: 300;
 	padding-bottom: 20px;
 }
 
 .front .content ul{
-    padding: 0px;
-    margin: 0px 0px;
-    box-sizing: border-box;
-    list-style: none;
+	padding: 0px;
+	margin: 0px 0px;
+	box-sizing: border-box;
+	list-style: none;
 }
 .front .content ul li{
-    margin: 25px 0px;
-    padding: 0px 20px 0px;
-    position: relative;
-    font-size: 18px;
-    border-bottom: 1px solid #ebebeb;
-    clear: both;
-    overflow: hidden;
+	margin: 25px 0px;
+	padding: 0px 20px 0px;
+	position: relative;
+	font-size: 18px;
+	border-bottom: 1px solid #ebebeb;
+	clear: both;
+	overflow: hidden;
 }
 .front .content ul li span{
-    content: "0";
-    display: block;
-    border: 1px solid #009fe8;
-    padding: 10px 0px;
-    border-radius: 20px;
-    height: 40px;
-    width: 40px;
-    text-align: center;
-    line-height: 100%;
-    color: #009fe8;
-    font-weight: 400;
-    float: left;
-    margin-right: 30px;
-    margin-top: 0px;
-    margin-bottom: 30px;
+	content: "0";
+	display: block;
+	border: 1px solid #009fe8;
+	padding: 10px 0px;
+	border-radius: 20px;
+	height: 40px;
+	width: 40px;
+	text-align: center;
+	line-height: 100%;
+	color: #009fe8;
+	font-weight: 400;
+	float: left;
+	margin-right: 30px;
+	margin-top: 0px;
+	margin-bottom: 30px;
 }
 .front .content ul li p {
-    margin-bottom: 25px;
+	margin-bottom: 25px;
 }
 
 .walkthrough4 .content .btn,
 .front .content .btn{
 	margin: 0px auto;
-    display: block;
-    max-width: 150px;
-    color: #fff;
-    background: #009fe8;
-    border: none;
-    padding: 10px 0px;
-    border-radius: 30px;
-    font-size: 18px;
-    font-weight: 400;
+	display: block;
+	max-width: 150px;
+	color: #fff;
+	background: #009fe8;
+	border: none;
+	padding: 10px 0px;
+	border-radius: 30px;
+	font-size: 18px;
+	font-weight: 400;
 }
 .front .content .btn{margin-bottom:40px;}
 
 .walkthrough{}
 .walkthrough .top-title{
 	font-size: 28px;
-    font-style: italic;
-    font-weight: 700;
+	font-style: italic;
+	font-weight: 700;
 }
 .content.walk-through{background:#171616;}
 
 .content.walk-through p{
-    font-size: 18px;
-    color: #fff;
-    opacity: 0.6;
-    padding: 0px 0px;
-    text-align: center;
+	font-size: 18px;
+	color: #fff;
+	opacity: 0.6;
+	padding: 0px 0px;
+	text-align: center;
 }
 
 .walkthrough4 .walk-through{padding:0px 20px;}
@@ -163,49 +167,49 @@ body.walkthrough-template .sway{
 body.walkthrough-template .sway .content{padding:0px 20px;}
 body.walkthrough-template .sway .content p{
 	font-size: 18px;
-    color: #fff;
-    opacity: 0.6;
-    padding: 0px 0px;
-    text-align: center;
+	color: #fff;
+	opacity: 0.6;
+	padding: 0px 0px;
+	text-align: center;
 }
 body.walkthrough-template .sway .content .walkthrough-pager{
-    padding: 0px 0px;
-    margin: 30px 0px 20px;
-    text-align: center;
+	padding: 0px 0px;
+	margin: 30px 0px 20px;
+	text-align: center;
 }
 body.walkthrough-template .sway .content .walkthrough-pager li{    display: inline-block;}
 body.walkthrough-template .sway .content .walkthrough-pager li a{
 	height: 11px;
-    width: 20px;
-    text-align: center;
+	width: 20px;
+	text-align: center;
 	line-height: 0.5;
 }
 body.walkthrough-template .sway .content .walkthrough-pager li.bullet a{
 	background: #454545;
-    text-indent: -9999px;
-    display: block;
-    width: 10px;
-    height: 10px;
-    margin: 0 5px;
-    outline: 0;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
+	text-indent: -9999px;
+	display: block;
+	width: 10px;
+	height: 10px;
+	margin: 0 5px;
+	outline: 0;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
 }
 body.walkthrough-template .sway .content .walkthrough-pager li.active a{
 	background: #fff;
-    width: 11px;
-    height: 11px;
+	width: 11px;
+	height: 11px;
 }
 body.walkthrough-template .sway .content .walkthrough-pager li.next a{
 	line-height: 0;
-    font-size: 14px;
-    display: inline;
-    text-decoration: underline;
-    color: #454545;
+	font-size: 14px;
+	display: inline;
+	text-decoration: underline;
+	color: #454545;
 	margin-left: 15px;
-    cursor: pointer;
-    cursor: hand;
+	cursor: pointer;
+	cursor: hand;
 }
 body.walkthrough-template .sway .content .thumbnail-small{max-width:100%;}
 body.walkthrough-template .sway .content .thumbnail-small img{width:100%;}
@@ -232,10 +236,10 @@ body.walkthrough1{}
 }
 
 .signup a#logo {
-    display: block;
-    margin: 60px auto 100px;
-    width: initial;
-    text-align: center;
+	display: block;
+	margin: 60px auto 100px;
+	width: initial;
+	text-align: center;
 }
 
 .signup a#logo img{
@@ -254,33 +258,33 @@ body.walkthrough1{}
 }
 .user #sigup .text-field input{
 background: transparent;
-    border: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.24);
-    width: 100%;
-    text-align: center;
-    padding: 20px 15px 16px;
-    color: #fff;
-    font-size: 20px;
+	border: none;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.24);
+	width: 100%;
+	text-align: center;
+	padding: 20px 15px 16px;
+	color: #fff;
+	font-size: 20px;
 }
 .user #sigup .checkbox-field{
 	padding: 19px 0px;
 }
 .user #sigup .checkbox-field>label{
 	color: #a7a7a7;
-    font-size: 16px;
+	font-size: 16px;
 	margin: 7px 0px 0px;
 	width: 75%;
 }
 .user #sigup .checkbox-field label a{
 	color: #a7a7a7;
-    font-size: 16px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.24);
-    padding-bottom: 2px;
-    font-weight: 300;
+	font-size: 16px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.24);
+	padding-bottom: 2px;
+	font-weight: 300;
 }
 .user #sigup .checkbox-field .switch{
 	display: inline-block;
-    float: right;
+	float: right;
 }
 .user #sigup .checkbox-field .cmn-toggle {
   position: absolute;
@@ -348,16 +352,16 @@ background: transparent;
 
 #sigup .submit-field{
 	text-align: center;
-    margin: 5px 0px 15px;
+	margin: 5px 0px 15px;
 }
 #sigup .submit-field button{
 	background: #009fe8;
-    font-size: 20px;
-    border: none;
-    padding: 17px 20px 19px;
-    width: 218px;
-    border-radius: 30px;
-    line-height: 1;
+	font-size: 20px;
+	border: none;
+	padding: 17px 20px 19px;
+	width: 218px;
+	border-radius: 30px;
+	line-height: 1;
 }
 
 #sigup .link-field{text-align:center;}
@@ -365,23 +369,23 @@ background: transparent;
 
 #sigup .link-field-default{
 	text-align: center;
-    padding: 25px 0px 0px;
+	padding: 25px 0px 0px;
 }
 #sigup .link-field-default a{
 	color: #a7a7a7;
-    font-size: 16px;
+	font-size: 16px;
 	border-bottom: none;
-    padding-bottom: 0px;
-    font-weight: 300;
+	padding-bottom: 0px;
+	font-weight: 300;
 }
 
 .user .fix-to-bot{
-    *position: absolute;
-    bottom: 0px;
-    width: 100%;
-    text-align: center;
-    left: 0;
-    padding-bottom: 20px;
+	*position: absolute;
+	bottom: 0px;
+	width: 100%;
+	text-align: center;
+	left: 0;
+	padding-bottom: 20px;
 }
 
 .connect ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
@@ -400,50 +404,50 @@ background: transparent;
 .user-form{    padding: 0px 20px 140px;    position: relative;}
 .user-form .two-cols{
 	padding: 5px 0px 10px;
-    border-bottom: 1px solid #ebebeb;
+	border-bottom: 1px solid #ebebeb;
 }
 .user-form .two-cols:after{content:" ";display:block;clear:both;}
 .user-form .two-cols label{
-    float: left;
-    width: 40%;
-    margin-top: 15px;
+	float: left;
+	width: 40%;
+	margin-top: 15px;
 }
 .user-form .two-cols input{
-    float: left;
-    width: 60%;
-    padding: 10px 0px;
-    font-size: 16px;
-    text-align: right;
-    border: none;
+	float: left;
+	width: 60%;
+	padding: 10px 0px;
+	font-size: 16px;
+	text-align: right;
+	border: none;
 }
 
 .user-form .instruction {
-    margin: 50px 0px 10px;
+	margin: 50px 0px 10px;
 }
 .user-form .instruction h4{
 	color: #777777;
-    font-size: 14px;
-    margin: 0px 0px;
-    font-weight: 600;
+	font-size: 14px;
+	margin: 0px 0px;
+	font-weight: 600;
 }
 .user-form .instruction span{font-size:14px;color:#000;}
 
 .user-form .submit-field .btn{
 	background: #009fe8;
-    font-size: 20px;
-    border: none;
-    padding: 17px 20px 19px;
-    width: 218px;
-    border-radius: 30px;
-    line-height: 1;
+	font-size: 20px;
+	border: none;
+	padding: 17px 20px 19px;
+	width: 218px;
+	border-radius: 30px;
+	line-height: 1;
 }
 
 .connect .fix-to-bot{
 	position: absolute;
-    bottom: 20px;
-    width: 100%;
-    text-align: center;
-    left: 0;
+	bottom: 20px;
+	width: 100%;
+	text-align: center;
+	left: 0;
 }
 
 
@@ -452,10 +456,10 @@ background: transparent;
 
 .head-transparent .status-bar{
 	background: transparent url(../images/status-bar.png) no-repeat 0 0;
-    height: 25px;
-    background-size: 100% auto;
+	height: 25px;
+	background-size: 100% auto;
 	position: absolute;
-    top: 0;
+	top: 0;
 	z-index:99;
 }
 
@@ -465,23 +469,23 @@ background: transparent;
 
 .brand-page-banner{
 	background: #171616 url(../images/brand-page-banner.jpg) no-repeat center top;
-    background-size: cover;
+	background-size: cover;
 	padding-top: 30px;
 	overflow:hidden;
 }
 
 .brand-page-banner .title{
 	font-size: 28px;
-    font-style: italic;
-    font-weight: 700;
-    color: #fff;
-    text-align: center;
-    padding: 28px 0px 28px;
-    line-height: 1;
+	font-style: italic;
+	font-weight: 700;
+	color: #fff;
+	text-align: center;
+	padding: 28px 0px 28px;
+	line-height: 1;
 }
 .brand-page-banner .brand-logo{
-    margin: 0px auto 40px;
-    width: 170px;
+	margin: 0px auto 40px;
+	width: 170px;
 }
 .brand-page-banner .brand-logo img{width:100%;    height: auto;}
 .brand-page-banner .action{
@@ -490,27 +494,27 @@ background: transparent;
 .brand-page-banner .action a.btn-request span{
 	background: transparent url(../images/plus-ico.png) no-repeat 0px 0px;
 	background-size:contain;
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    margin-bottom: -4px;
-    margin-right: 15px;
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	margin-bottom: -4px;
+	margin-right: 15px;
 }
 .brand-page-banner .action a.btn-request{
-    background: #171616;
-    color: #fff;
-    border: 1px solid #646a6e;
-    border-radius: 30px;
-    font-size: 16px;
-    padding: 10px 30px 10px 20px;
-    max-width: initial;
-    display: inline-block;
+	background: #171616;
+	color: #fff;
+	border: 1px solid #646a6e;
+	border-radius: 30px;
+	font-size: 16px;
+	padding: 10px 30px 10px 20px;
+	max-width: initial;
+	display: inline-block;
 }
 .brand-page-banner .action label{
 	display: block;
-    color: #fff;
-    font-weight: 300;
-    margin-top: 10px;
+	color: #fff;
+	font-weight: 300;
+	margin-top: 10px;
 }
 
 .brand-page .tabs{
@@ -518,21 +522,21 @@ background: transparent;
 }
 .brand-page .tabs ul{
 	margin: 0px;
-    padding: 0px 20px;
-    list-style: none;
+	padding: 0px 20px;
+	list-style: none;
 }
 .brand-page .tabs ul:after{display:block;clear:both;content:" ";}
 .brand-page .tabs ul li{
-    float: left;
-    margin-right: 20px;
+	float: left;
+	margin-right: 20px;
 }
 .brand-page .tabs ul li:last-child{margin-right:none;}
 .brand-page .tabs ul li a{
 	padding: 20px 15px 15px;
-    display: block;
-    text-transform: uppercase;
-    font-weight: 600;
-    font-size: 14px;
+	display: block;
+	text-transform: uppercase;
+	font-weight: 600;
+	font-size: 14px;
 	color:#d9d9d9;
 }
 .brand-page .tabs ul li a:hover,
@@ -542,8 +546,8 @@ background: transparent;
 .brand-page .tabs ul li:hover{    border-bottom: 5px solid #009cea;}
 .brand-page .endorsement-list{
 	margin: 0px;
-    padding: 0px;
-    list-style: none;
+	padding: 0px;
+	list-style: none;
 }
 .brand-page .endorsement-list .endorsement-item{
 	padding: 25px 20px;border-bottom:1px solid #d9d9d9;
@@ -552,30 +556,30 @@ background: transparent;
 .brand-page .endorsement-list .endorsement-item:last-child{border-bottom:none;}
 .brand-page .endorsement-item .thumb{
 	float: left;
-    margin-right: 20px;
+	margin-right: 20px;
 }
 .brand-page .endorsement-item .thumb img{}
 
 .brand-page .endorsement-item .details{}
 .brand-page .endorsement-item h4{
 	font-weight: 600;
-    font-size: 18px;
+	font-size: 18px;
 }
 .brand-page .endorsement-item p{
 	margin: 0px;
-    font-size: 14px;
-    color: #656b6e;
-    line-height: 125%;
+	font-size: 14px;
+	color: #656b6e;
+	line-height: 125%;
 }
 .brand-page .endorsement-item p span{color:#303030;    font-weight: 600;}
 .brand-page .endorsement-item a.btn{
 	margin-top: 15px;
-    border: 1px solid #6b7175;
-    border-radius: 30px;
-    background: #009fe8;
-    padding: 8px 30px;
-    font-weight: 400;
-    font-size: 16px;
+	border: 1px solid #6b7175;
+	border-radius: 30px;
+	background: #009fe8;
+	padding: 8px 30px;
+	font-weight: 400;
+	font-size: 16px;
 }
 
 
@@ -585,35 +589,35 @@ background: transparent;
 
 
 .influencer-page .header-section{
-    min-height:50px;
-    background: #171616;
-    overflow: hidden;
-    color: #fff;
-    text-align: center;
-    padding: 0px 20px;
-    position: relative;
+	min-height:50px;
+	background: #171616;
+	overflow: hidden;
+	color: #fff;
+	text-align: center;
+	padding: 0px 20px;
+	position: relative;
 }
 .influencer-page .header-section h1{
-    font-size: 28px;
-    font-style: italic;
-    font-weight: 700;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0px 15px;
-    line-height: 1;
-    margin:0;
+	font-size: 28px;
+	font-style: italic;
+	font-weight: 700;
+	color: #fff;
+	text-align: center;
+	padding: 10px 0px 15px;
+	line-height: 1;
+	margin:0;
 }
 .influencer-page .header-section .back {
-    position: absolute;
-    top: 10px;
-    left: 20px;
+	position: absolute;
+	top: 10px;
+	left: 20px;
 }
 .influencer-page .header-section .back a {
-    background: transparent url(../images/back.png) no-repeat 0 0;
-    background-size: contain;
-    width: 15px;
-    height: 25px;
-    display: block;
+	background: transparent url(../images/back.png) no-repeat 0 0;
+	background-size: contain;
+	width: 15px;
+	height: 25px;
+	display: block;
 }
 
 
@@ -622,9 +626,9 @@ background: transparent;
 }
 
 .influencer-page .influencer-page-banner .influencer-logo{
-    position: relative;
-    bottom: -103px;
-    text-align: center;
+	position: relative;
+	bottom: -103px;
+	text-align: center;
 }
 .influencer-page .influencer-page-banner .influencer-logo img{    width: 45%;}
 
@@ -635,38 +639,38 @@ background: transparent;
 
 .influencer-page .counter{
 	border-bottom: 1px solid #d8d8d8;
-    border-top: 1px solid #d8d8d8;
-    margin-top: 50px;
+	border-top: 1px solid #d8d8d8;
+	margin-top: 50px;
 }
 .influencer-page .counter:after{content:" ";clear:both;display:block;}
 .influencer-page .counter .deals,
 .influencer-page .counter .followers,
 .influencer-page .counter .engagements{
 	width: 33.33%;
-    float: left;
-    text-align: center;
-    padding: 25px 0px;
+	float: left;
+	text-align: center;
+	padding: 25px 0px;
 }
 .influencer-page .counter .deals span,
 .influencer-page .counter .followers span,
 .influencer-page .counter .engagements span{
 	display: block;
-    font-weight: 600;
+	font-weight: 600;
 }
 
 .influencer-page .counter .deals label,
 .influencer-page .counter .followers label,
 .influencer-page .counter .engagements label{
 	font-weight: 400;
-    color: #777777;
-    margin-top: 10px;    font-size: 14px;
+	color: #777777;
+	margin-top: 10px;    font-size: 14px;
 }
 
 .influencer-page .recent h5{
 	margin: 30px 0px 30px;
-    text-align: center;
-    font-size: 16px;
-    font-weight: 600;
+	text-align: center;
+	font-size: 16px;
+	font-weight: 600;
 }
 
 
@@ -675,7 +679,7 @@ background: transparent;
 .recent-endorsement:after{content:" ";clear:both;display:block;}
 .recent-endorsement .endor-item{
 	width: 50%;
-    float: left;position:relative;
+	float: left;position:relative;
 	border-top:1px solid #d8d8d8;
 }
 .recent-endorsement .endor-item:before{
@@ -691,26 +695,26 @@ background: transparent;
 }
 .recent-endorsement .endor-item img{width:100%;position:relative;z-index:10;}
 .recent-endorsement .endor-item h4{
-    z-index: 12;
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    font-weight: 600;
-    font-size: 22px;
-    line-height: 140%;
+	z-index: 12;
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	font-weight: 600;
+	font-size: 22px;
+	line-height: 140%;
 	margin:0px;
 }
 .recent-endorsement .endor-item span{
 	z-index: 13;
-    position: absolute;
-    left: 0px;
-    bottom: 30px;
-    display: block;
-    width: 100%;
-    padding: 10px 20px;
-    background: rgba(255, 255, 255, 0.75);
-    color: #009fe8;
-    font-weight: 600;
+	position: absolute;
+	left: 0px;
+	bottom: 30px;
+	display: block;
+	width: 100%;
+	padding: 10px 20px;
+	background: rgba(255, 255, 255, 0.75);
+	color: #009fe8;
+	font-weight: 600;
 }
 .recent-endorsement .endor-item:nth-child(odd){
 	border-right:1px solid #d8d8d8;
@@ -721,101 +725,101 @@ background: transparent;
 
 .profile-actions{
 	padding: 35px 20px 0px;
-    position: relative;
-    z-index: 34;
+	position: relative;
+	z-index: 34;
 }
 .profile-actions:after{content:" ";clear:both;display:block;}
 .profile-actions .back{float:left;width:10%;color: #fff;margin-top:3px;}
 .profile-actions .back a{
 	background: transparent url(../images/back.png) no-repeat 0 0;
 	background-size: contain;
-    width: 15px;
-    height: 25px;
-    display: block;
+	width: 15px;
+	height: 25px;
+	display: block;
 }
 .profile-actions .page-title{float:left;width:80%;}
 .profile-actions .page-title h1{
 	margin: 0px;
-    line-height: 1;
-    text-align: center;
-    color: #fff;
-    font-size: 24px;
+	line-height: 1;
+	text-align: center;
+	color: #fff;
+	font-size: 24px;
 }
 .profile-actions .save{
 	float:left;width:10%;
 	text-align: right;
-    color: #fff;
+	color: #fff;
 }
 .profile-actions .save a{font-weight:600;color:#009fe8;font-size:18px;}
 
 .edit-profile-page .avatar{    text-align: center;position:relative;overflow: hidden;}
 .edit-profile-page .avatar .overlay{
 	background: rgba(0, 0, 0, 0.8);
-    position: absolute;
-    width: 100%;
-    top: 0px;
-    left: 0;
-    height: 55%;
+	position: absolute;
+	width: 100%;
+	top: 0px;
+	left: 0;
+	height: 55%;
 }
 .edit-profile-page .avatar .overlay .holder{
 	position: relative;
-    height: 100%;
+	height: 100%;
 }
 .edit-profile-page .avatar .overlay .holder .camera{
 	background: transparent url(../images/camera.png) no-repeat 0 0;
-    position: absolute;
-    bottom: -6px;
-    left: 47%;
-    background-size: contain;
-    width: 37px;
-    height: 34px;
-    text-indent: -9999px;
-    cursor: pointer;
-    cursor: hand;
+	position: absolute;
+	bottom: -6px;
+	left: 47%;
+	background-size: contain;
+	width: 37px;
+	height: 34px;
+	text-indent: -9999px;
+	cursor: pointer;
+	cursor: hand;
 }
 .edit-profile-page .avatar .overlay .holder .camera-mini{
 	background: transparent url(../images/camera.png) no-repeat 0 0;
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    background-size: contain;
-    width: 22px;
-    height: 20px;
-    text-indent: -9999px;
-    cursor: pointer;
-    cursor: hand;
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+	background-size: contain;
+	width: 22px;
+	height: 20px;
+	text-indent: -9999px;
+	cursor: pointer;
+	cursor: hand;
 }
 .edit-profile-page .avatar .user-thumb{
 	width: 55%;
-    margin: 45px auto 45px;    border-radius: 50%;
+	margin: 45px auto 45px;    border-radius: 50%;
 }
 .edit-profile-page .avatar .user-thumb img{width:100%;height:auto;}
 
 
 #profile{padding: 0px 0px 50px;}
 #profile .field-group{
-    border-top: 1px solid #d9d9d9;
+	border-top: 1px solid #d9d9d9;
 }
 #profile .field-group .field-group-hdr{
-    padding: 20px 20px;
-    margin: 0px 0px;
-    border-bottom: 1px solid #d9d9d9;
-    font-size: 16px;
-    color: #777777;
-    font-weight: 600;
+	padding: 20px 20px;
+	margin: 0px 0px;
+	border-bottom: 1px solid #d9d9d9;
+	font-size: 16px;
+	color: #777777;
+	font-weight: 600;
 }
 #profile .field-group .field{
-    padding: 5px 0px;
-    border-bottom: 1px solid #eeeeee;
-    margin: 0px 20px;
+	padding: 5px 0px;
+	border-bottom: 1px solid #eeeeee;
+	margin: 0px 20px;
 }
 #profile .field-group .field:last-child{border-bottom:none;}
 #profile .field-group .field label{
 	font-size: 14px;
-    text-transform: uppercase;
-    line-height: 135%;
-    color: #777777;
-    margin: 10px 0px 10px;
+	text-transform: uppercase;
+	line-height: 135%;
+	color: #777777;
+	margin: 10px 0px 10px;
 }
 #profile .field-group .field label span{    text-transform: initial;}
 #profile .field-group .submit-field{text-align: center;    margin-top: 20px;}
@@ -827,7 +831,7 @@ background: transparent;
 
 #profile .checkbox-field .switch{
 	display: inline-block;
-    float: right;
+	float: right;
 }
 #profile .checkbox-field .cmn-toggle {
   position: absolute;
@@ -900,76 +904,76 @@ background: transparent;
 
 .deal-page .header-section{
 	background: #171616;
-    overflow: hidden;
-    color: #fff;
-    text-align: center;
-    padding: 0px 20px;
+	overflow: hidden;
+	color: #fff;
+	text-align: center;
+	padding: 0px 20px;
 	position:relative;
 }
 .deal-page .header-section h1{
 	font-size: 28px;
-    font-style: italic;
-    font-weight: 700;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0px 15px;
-    line-height: 1;
+	font-style: italic;
+	font-weight: 700;
+	color: #fff;
+	text-align: center;
+	padding: 10px 0px 15px;
+	line-height: 1;
 	margin:0;
 }
 .deal-page .header-section .back{
-    position: absolute;
-    top: 10px;
-    left: 20px;
+	position: absolute;
+	top: 10px;
+	left: 20px;
 }
 .deal-page .header-section .back a{
 	background: transparent url(../images/back.png) no-repeat 0 0;
-    background-size: contain;
-    width: 15px;
-    height: 25px;
-    display: block;
+	background-size: contain;
+	width: 15px;
+	height: 25px;
+	display: block;
 
 }
 
 .deal-page .content h2{
-    padding: 0px 20px;
-    text-align: center;
-    font-weight: 600;
-    font-size: 25px;
-    color: #000;
-    line-height: 135%;
+	padding: 0px 20px;
+	text-align: center;
+	font-weight: 600;
+	font-size: 25px;
+	color: #000;
+	line-height: 135%;
 }
 .deal-page .content h2 span{font-weight:900;}
 .deal-page .content .deal-list{
 	padding: 0px;
-    margin: 0px 0px;
-    box-sizing: border-box;
-    list-style: none;
+	margin: 0px 0px;
+	box-sizing: border-box;
+	list-style: none;
 }
 .deal-page .content .deal-list li{
-    margin: 35px 0px;
-    padding: 0px 35px 32px 90px;
-    position: relative;
-    font-size: 17px;
-    clear: both;
-    overflow: hidden;
-    line-height: 160%;
+	margin: 35px 0px;
+	padding: 0px 35px 32px 90px;
+	position: relative;
+	font-size: 17px;
+	clear: both;
+	overflow: hidden;
+	line-height: 160%;
 	border-bottom:1px solid #eeeeee;
 }
 .deal-page .content .deal-list li:last-child{margin-bottom:25px;}
 .deal-page .content .deal-list li:nth-child(n+0):before{
-    content: "0";
-    display: block;
-    border: 1px solid #009fe8;
-    padding: 10px 0px;
-    border-radius: 20px;
-    height: 40px;
-    width: 40px;
-    text-align: center;
-    line-height: 100%;
-    color: #009fe8;
-    font-weight: 400;
-    float: left;
-    margin: 0px 0px 0px -65px;
+	content: "0";
+	display: block;
+	border: 1px solid #009fe8;
+	padding: 10px 0px;
+	border-radius: 20px;
+	height: 40px;
+	width: 40px;
+	text-align: center;
+	line-height: 100%;
+	color: #009fe8;
+	font-weight: 400;
+	float: left;
+	margin: 0px 0px 0px -65px;
 }
 .deal-page .content .deal-list li:nth-child(1):before{content: "1";}
 .deal-page .content .deal-list li:nth-child(2):before{content: "2";}
@@ -984,30 +988,30 @@ background: transparent;
 .deal-page .content .action{text-align:center;}
 .deal-page .content .btn-deal{
 	margin: 0px auto;
-    display: block;
-    max-width: 210px;
-    color: #fff;
-    background: #009fe8;
-    border: none;
-    padding: 10px 0px;
-    border-radius: 30px;
-    font-size: 18px;
-    font-weight: 400;
+	display: block;
+	max-width: 210px;
+	color: #fff;
+	background: #009fe8;
+	border: none;
+	padding: 10px 0px;
+	border-radius: 30px;
+	font-size: 18px;
+	font-weight: 400;
 }
 .deal-page .content .share-this{
-    text-align: center;
-    padding: 20px 0px 25px;
-    border-top: 1px solid #dddddd;
-    margin-top: 20px;
+	text-align: center;
+	padding: 20px 0px 25px;
+	border-top: 1px solid #dddddd;
+	margin-top: 20px;
 }
 .deal-page .content .share-this a{
-    background: transparent url(../images/share-it.png) no-repeat 0px -1px;
-    text-transform: uppercase;
-    font-size: 14px;
-    font-weight: 600;
-    padding: 10px 0px 10px 50px;
-    background-size: 40px;
-    color: #d8d8d8;
+	background: transparent url(../images/share-it.png) no-repeat 0px -1px;
+	text-transform: uppercase;
+	font-size: 14px;
+	font-weight: 600;
+	padding: 10px 0px 10px 50px;
+	background-size: 40px;
+	color: #d8d8d8;
 }
 
 
@@ -1017,22 +1021,22 @@ background: transparent;
 
 .details .deal-info{
 	padding: 0px 20px 25px;
-    border-bottom: 1px solid #d9d9d9;
-    margin-bottom: 25px;
+	border-bottom: 1px solid #d9d9d9;
+	margin-bottom: 25px;
 }
 .details .deal-info h2{
 	font-size: 42px;
-    font-weight: 300;
-    text-align: left;
-    margin: 25px 0px 20px;
+	font-weight: 300;
+	text-align: left;
+	margin: 25px 0px 20px;
 	padding: 0px;
 }
 
 .details .deal-content ul,
 .details .deal-info ul{
 	padding: 0;
-    margin: 0;
-    list-style: none;
+	margin: 0;
+	list-style: none;
 }
 
 .details .deal-content ul li,
@@ -1043,51 +1047,49 @@ background: transparent;
 
 .details .deal-content{
 	padding: 0px 20px 25px;
-    border-bottom: 1px solid #d9d9d9;
-    margin-bottom: 25px;
+	border-bottom: 1px solid #d9d9d9;
+	margin-bottom: 25px;
 }
 .details .deal-content p{    color: #000;    font-size: 18px;}
 .details .deal-content p .intro{color:#009cea;}
 .details .deal-content h4{    color: #e74c3c;    margin: 25px 0px 0px;}
 
 .deal-detailed-page .content .action .btn-deal{
-    background: #171616;
-    color: #fff;
-    border: 1px solid #646a6e;
-    border-radius: 30px;
-    font-size: 16px;
-    padding: 10px 30px 10px 20px;
-    max-width: initial;
-    display: inline-block;
+	background: #171616;
+	color: #fff;
+	border: 1px solid #646a6e;
+	border-radius: 30px;
+	font-size: 16px;
+	padding: 10px 30px 10px 20px;
+	max-width: initial;
+	display: inline-block;
 }
 .deal-detailed-page .content .action .btn-deal span{
 	background:transparent url(../images/plus-ico.png) no-repeat 0px 0px;
 	background-size:contain;
 	display: inline-block;
-    width: 20px;
-    height: 20px;
-    margin-bottom: -4px;
-    margin-right: 15px;
+	width: 20px;
+	height: 20px;
+	margin-bottom: -4px;
+	margin-right: 15px;
 }
 
 
 /*	DEAL FEED / endorsement */
 
-.endorsement{}
-
 .endorsement .endorsement-banner{
 	background: #171616 url(../images/dealfeed-banner-img.jpg) no-repeat 0px 0px;
-    background-size: cover;
+	background-size: cover;
 	padding-top: 30px;
 }
 
 .endorsement .status-bar{
 	background: transparent url(../images/status-bar.png) no-repeat 0 0;
-    height: 25px;
-    background-size: 100% auto;
+	height: 25px;
+	background-size: 100% auto;
 	margin-bottom: -25px;
-    z-index: 200;
-    position: relative;
+	z-index: 200;
+	position: relative;
 }
 
 .endorsement .banner-top{	padding:0px 20px;}
@@ -1097,95 +1099,95 @@ background: transparent;
 .endorsement .banner-top .menu{float:left;width:10%;color: #fff;margin-top:3px;}
 .endorsement .banner-top .page-title{float:left;width:80%;}
 .endorsement .banner-top .page-title h1{
-    margin: 0px;
-    line-height: 1;
-    text-align: center;
-    color: #fff;
-    font-size: 30px;
-    font-weight: 900;
-    font-style: italic;
+	margin: 0px;
+	line-height: 1;
+	text-align: center;
+	color: #fff;
+	font-size: 30px;
+	font-weight: 900;
+	font-style: italic;
 }
 .endorsement .banner-top .search{
 	float:left;width:10%;
 	text-align: right;
-    color: #fff;
+	color: #fff;
 	margin-top:3px;
 }
 
 .endorsement .banner-content{
 	padding: 0px 20px;
-    margin-top: 170px;
+	margin-top: 170px;
 	overflow: hidden;
 }
 .endorsement .banner-content h3{
 	color: #fff;
-    margin: 0px 0px;
-    font-weight: 300;
-    font-size: 30px;
+	margin: 0px 0px;
+	font-weight: 300;
+	font-size: 30px;
 }
 .endorsement .banner-content h2{
 	margin: 5px 0px 10px;
-    color: #fff;
-    font-weight: 300;
-    font-size: 40px;
+	color: #fff;
+	font-weight: 300;
+	font-size: 40px;
 }
 .endorsement .banner-content p{
 	color: #d3d3d3;
-    margin: 0px;
-    line-height: 1.2;
+	margin: 0px;
+	line-height: 1.2;
 }
 .endorsement .banner-content p span{color:#fff;font-weight:600;}
 
 .endorsement .banner-content .banner-links{    margin: 35px 0px 25px;color: #049fe9;}
 .endorsement .banner-content .banner-links span{
 	width: 25px;
-    height: 25px;
-    background: #fff;
-    border-radius: 25px;
-    display: inline-block;
-    text-indent: -9999px;
-    margin-right: 5px;
+	height: 25px;
+	background: #fff;
+	border-radius: 25px;
+	display: inline-block;
+	text-indent: -9999px;
+	margin-right: 5px;
 }
 .endorsement .banner-content .banner-links a{
 	display: inline-block;
-    margin: 0px 10px;
-    color: #049fe9;
+	margin: 0px 10px;
+	color: #049fe9;
 }
 .endorsement .banner-content .banner-links a:hover{text-decoration:none;}
 
 
 .endorsement .endorsement-list{
-    padding: 0 20px;
-    margin: 0px 0px;
-    list-style: none;
+	padding: 0 20px;
+	margin: 0px 0px;
+	list-style: none;
 }
 .endorsement .endorsement-list>li{
-    border-bottom: 1px solid #d9d9d9;
-    padding: 20px 0px;
+	border-bottom: 1px solid #d9d9d9;
+	padding: 20px 0px;
 }
 .endorsement .endorsement-list>li:after{content:" ";clear:both;display:block;}
 .endorsement .endorsement-list li .thumb{
-    float: left;
-    margin-right: 20px;
-    width: 33%;
+	float: left;
+	margin-right: 20px;
+	width: 33%;
 }
 .endorsement .endorsement-list li .thumb img{width: 100%;}
 
 .endorsement .endorsement-list li .details{}
 .endorsement .endorsement-list li .details h4{
 	margin: 0px 0px 6px;
-    font-size: 26px;
-    font-weight: 600;
+	font-size: 26px;
+	font-weight: 600;
 }
 .endorsement .endorsement-list li .details span{}
 .endorsement .endorsement-list li .details .cat{
 	padding: 0px;
-    margin: 0px;
-    list-style: none;
+	margin: 0px;
+	list-style: none;
 }
 .endorsement .endorsement-list li .details .cat li{
 	font-size: 14px;
-    line-height: 1.3;
+	line-height: 1.3;
 	color:#656b6e;
 }
 .endorsement .endorsement-list li .details .cat li span{color:#303030;font-weight:600;}
@@ -1193,11 +1195,11 @@ background: transparent;
 
 .endorsement .endorsement-list li .details .btn-view{
 	background: #009fe8;
-    color: #fff;
-    border-radius: 25px;
-    padding: 5px 35px;
-    margin-top: 15px;
-    border: 1px solid #6b7175;
+	color: #fff;
+	border-radius: 25px;
+	padding: 5px 35px;
+	margin-top: 15px;
+	border: 1px solid #6b7175;
 	font-size: 16px;
 }
 
@@ -1210,57 +1212,57 @@ background: transparent;
 }
 .deal-pending-page .tabs{
 	width: 100%;
-    border-bottom: 1px solid #d9d9d9;
+	border-bottom: 1px solid #d9d9d9;
 }
 .deal-pending-page .tabs:after{content:" ";clear:both;display:block;}
 .deal-pending-page .tabs .tab{
 	width: 50%;
-    float: left;
-    text-align: center;
+	float: left;
+	text-align: center;
 }
 .deal-pending-page .tabs .tab a{
 	padding: 20px 0px;
-    display: inline-block;
-    text-transform: uppercase;
-    font-weight: 600;
-    color: #d9d9d9;
+	display: inline-block;
+	text-transform: uppercase;
+	font-weight: 600;
+	color: #d9d9d9;
 	margin-bottom: -1px;
 }
 .deal-pending-page .tabs .tab a:hover,
 .deal-pending-page .tabs .tab a.active{color:#171616;border-bottom: 4px solid #009fe8;}
 
 .deal-pending-page .endorsement-list{
-    padding: 0px;
-    margin: 0px;
-    list-style: none;
+	padding: 0px;
+	margin: 0px;
+	list-style: none;
 }
 .deal-pending-page .endorsement-list>li{
-    padding: 20px 20px;
-    border-bottom: 1px solid #d9d9d9;
+	padding: 20px 20px;
+	border-bottom: 1px solid #d9d9d9;
 }
 .deal-pending-page .endorsement-list>li:after{content:" ";clear:both;display:block;}
 .deal-pending-page .endorsement-list li .thumb{
-    float: left;
-    margin-right: 20px;
-    width: 33%;
+	float: left;
+	margin-right: 20px;
+	width: 33%;
 }
 .deal-pending-page .endorsement-list li .thumb img{width: 100%;}
 
 .deal-pending-page .endorsement-list li .details{}
 .deal-pending-page .endorsement-list li .details h4{
 	margin: 0px 0px 6px;
-    font-size: 26px;
-    font-weight: 600;
+	font-size: 26px;
+	font-weight: 600;
 }
 .deal-pending-page .endorsement-list li .details span{}
 .deal-pending-page .endorsement-list li .details .cat{
 	padding: 0px;
-    margin: 0px;
-    list-style: none;
+	margin: 0px;
+	list-style: none;
 }
 .deal-pending-page .endorsement-list li .details .cat li{
 	font-size: 14px;
-    line-height: 1.3;
+	line-height: 1.3;
 	color:#656b6e;
 }
 .deal-pending-page .endorsement-list li .details .cat li span{color:#303030;font-weight:600;}
@@ -1268,11 +1270,11 @@ background: transparent;
 
 .deal-pending-page .endorsement-list li .details .btn-view{
 	background: #009fe8;
-    color: #fff;
-    border-radius: 25px;
-    padding: 5px 35px;
-    margin-top: 15px;
-    border: 1px solid #6b7175;
+	color: #fff;
+	border-radius: 25px;
+	padding: 5px 35px;
+	margin-top: 15px;
+	border: 1px solid #6b7175;
 	font-size: 16px;
 }
 
@@ -1281,40 +1283,40 @@ background: transparent;
 .post-stats-page .header-section{
 	min-height:50px;
 	background: #171616;
-    overflow: hidden;
-    color: #fff;
-    text-align: center;
-    padding: 0px 20px;
-    position: relative;
+	overflow: hidden;
+	color: #fff;
+	text-align: center;
+	padding: 0px 20px;
+	position: relative;
 }
 .post-stats-page .header-section .back {
-    position: absolute;
-    top: 10px;
-    left: 20px;
+	position: absolute;
+	top: 10px;
+	left: 20px;
 }
 .post-stats-page .header-section .back a {
-    background: transparent url(../images/back.png) no-repeat 0 0;
-    background-size: contain;
-    width: 15px;
-    height: 25px;
-    display: block;
+	background: transparent url(../images/back.png) no-repeat 0 0;
+	background-size: contain;
+	width: 15px;
+	height: 25px;
+	display: block;
 }
 .post-stats-page .tabs{
 	width: 100%;
-    border-bottom: 1px solid #d9d9d9;
+	border-bottom: 1px solid #d9d9d9;
 }
 .post-stats-page .tabs:after{content:" ";clear:both;display:block;}
 .post-stats-page .tabs .tab{
 	width: 50%;
-    float: left;
-    text-align: center;
+	float: left;
+	text-align: center;
 }
 .post-stats-page .tabs .tab a{
 	padding: 20px 0px;
-    display: inline-block;
-    text-transform: uppercase;
-    font-weight: 600;
-    color: #d9d9d9;
+	display: inline-block;
+	text-transform: uppercase;
+	font-weight: 600;
+	color: #d9d9d9;
 	margin-bottom: -1px;
 }
 .post-stats-page .tabs .tab a:hover,
@@ -1322,16 +1324,16 @@ background: transparent;
 
 .stats-list{
 	padding: 0;
-    margin: 0;
-    list-style: none;
-    width: 100%;
+	margin: 0;
+	list-style: none;
+	width: 100%;
 }
 .stats-list:after{content:" ";clear:both;display:block;}
 .stats-list .stat-item{
 	width: 50%;
-    float: left;
-    text-align: center;
-    min-height: 100px;
+	float: left;
+	text-align: center;
+	min-height: 100px;
 	padding: 15% 0px;
 	border-bottom:1px solid #eeeeee;
 }
@@ -1339,21 +1341,21 @@ background: transparent;
 .stats-list li:last-child{border-bottom:none;}
 .stats-list .stat-item .ico{text-align:center;}
 .stats-list .stat-item .ico i{
-    background: transparent url(../images/post-stats-sprite.png) no-repeat 0 0;
-    width: 32px;
-    height: 35px;
-    display: inline-block;
+	background: transparent url(../images/post-stats-sprite.png) no-repeat 0 0;
+	width: 32px;
+	height: 35px;
+	display: inline-block;
 }
 .stats-list .stat-item .ctr span{
 	font-weight: 600;
-    color: #171515;
-    font-size: 22px;
+	color: #171515;
+	font-size: 22px;
 }
 .stats-list .stat-item .desc span{
 	text-transform: uppercase;
-    margin-top: 10px;
-    display: block;
-    color: #777777;
+	margin-top: 10px;
+	display: block;
+	color: #777777;
 }
 
 .stats-list .stat-item .view i{background-position: 0px 0px;}
@@ -1366,89 +1368,89 @@ background: transparent;
 /*	EARNING STATS	*/
 .earning-stats-page .status-bar {    background: #1c1c1c url(../images/status-bar.png) no-repeat 0 0;    height: 25px;    background-size: 100%;}
 .earning-stats-page .header-section {
-    min-height: 50px;
-    background: #1c1c1c;
-    overflow: hidden;
-    color: #fff;
-    text-align: center;
-    padding: 0px 20px;
-    position: relative;
+	min-height: 50px;
+	background: #1c1c1c;
+	overflow: hidden;
+	color: #fff;
+	text-align: center;
+	padding: 0px 20px;
+	position: relative;
 }
 .earning-stats-page .header-section .back {
-    position: absolute;
-    top: 10px;
-    left: 20px;
+	position: absolute;
+	top: 10px;
+	left: 20px;
 }
 .earning-stats-page .header-section .back a {
-    background: transparent url(../images/back.png) no-repeat 0 0;
-    background-size: contain;
-    width: 15px;
-    height: 25px;
-    display: block;
+	background: transparent url(../images/back.png) no-repeat 0 0;
+	background-size: contain;
+	width: 15px;
+	height: 25px;
+	display: block;
 }
 .earning-stats-page .header-section h1 {
-    font-size: 22px;
-    font-weight: 700;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0px 15px;
-    line-height: 1;
-    margin: 0;
+	font-size: 22px;
+	font-weight: 700;
+	color: #fff;
+	text-align: center;
+	padding: 10px 0px 15px;
+	line-height: 1;
+	margin: 0;
 }
 .earning-stats-page .content{background: #1c1c1c;text-align:center;overflow: hidden;}
 
 .earning-stats-page .filter{    margin: 50px 0px 20px;}
 .earning-stats-page .filter p{    font-size: 14px;    color: #777777;}
 .earning-stats-page .filter .range{
-    border: none;
-    background: #1c1c1c url(../images/dd-ico.png) no-repeat right 25px;
-    color: #fff;
-    font-size: 38px;
-    font-weight: 300;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    padding-right: 35px;
-    background-size: 12px auto;
+	border: none;
+	background: #1c1c1c url(../images/dd-ico.png) no-repeat right 25px;
+	color: #fff;
+	font-size: 38px;
+	font-weight: 300;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	padding-right: 35px;
+	background-size: 12px auto;
 }
 .earning-stats-page .filter .range option{}
 .earning-stats-page .legends{
 	padding: 0;
-    margin: 0px auto;
-    list-style: none;
-    text-align: left;
-    width: 160px;
+	margin: 0px auto;
+	list-style: none;
+	text-align: left;
+	width: 160px;
 }
 .earning-stats-page .legends li{
 	color: #fff;
-    font-size: 13px;
+	font-size: 13px;
 	line-height:1;
 	margin-bottom: 30px;
 }
 .earning-stats-page .legends li.earning{}
 .earning-stats-page .legends li.earning:before{
 	content: " ";
-    display: block;
-    width: 12px;
-    height: 12px;
-    background: #3fc299;
-    float: left;
-    margin-right: 10px;
-    margin-top: 0px;
-    border-radius: 10px;
+	display: block;
+	width: 12px;
+	height: 12px;
+	background: #3fc299;
+	float: left;
+	margin-right: 10px;
+	margin-top: 0px;
+	border-radius: 10px;
 }
 
 .earning-stats-page .legends li.sway-rep{}
 .earning-stats-page .legends li.sway-rep:before{
 	content: " ";
-    display: block;
-    width: 12px;
-    height: 12px;
-    background: #009fe8;
-    float: left;
-    margin-right: 10px;
-    margin-top: 0px;
-    border-radius: 10px;
+	display: block;
+	width: 12px;
+	height: 12px;
+	background: #009fe8;
+	float: left;
+	margin-right: 10px;
+	margin-top: 0px;
+	border-radius: 10px;
 }
 
 /*	Menu	*/
@@ -1456,75 +1458,75 @@ body.menu-active .status-bar{background-color: #171616;}
 
 body.menu-active #container{
 	z-index: 105;
-    background: #fff;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    left: 85%;
+	background: #fff;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	left: 85%;
 }
 
 body.menu-active .sway{background-color: #171616;overflow:hidden;}
 
 #menu-sidebar{
 	background: #171616;
-    overflow: hidden;
-    height: 100%;
-    min-height: 505px;
-    position: relative;
-    width: 100%;
-    z-index: 101;
-    padding-right: 15%;
+	overflow: hidden;
+	height: 100%;
+	min-height: 505px;
+	position: relative;
+	width: 100%;
+	z-index: 101;
+	padding-right: 15%;
 	padding-top: 25px;
 }
 #menu-sidebar h2{
 	text-align: center;
-    color: #fff;
-    font-weight: 900;
-    font-style: italic;
+	color: #fff;
+	font-weight: 900;
+	font-style: italic;
 }
 #menu-sidebar .menu{
 	padding: 0px;
-    margin: 50px 0px 0px;
-    list-style: none;
+	margin: 50px 0px 0px;
+	list-style: none;
 }
 #menu-sidebar .menu li{    border-bottom: 1px solid #222523;}
 #menu-sidebar .menu li a{
-    color: #fff;
-    font-size: 18px;
-    padding: 15px 35px;
-    display: block;
+	color: #fff;
+	font-size: 18px;
+	padding: 15px 35px;
+	display: block;
 }
 
 
 #menu-sidebar .account-actions{
 	position: absolute;
-    bottom: 0;
-    padding: 0px;
-    margin: 50px 0px 0px;
-    list-style: none;
-    width: 100%;
+	bottom: 0;
+	padding: 0px;
+	margin: 50px 0px 0px;
+	list-style: none;
+	width: 100%;
 }
 #menu-sidebar .account-actions li{ border-top: 1px solid #222523;}
 #menu-sidebar .account-actions li a{
-    color: #f8df64;
-    font-size: 18px;
-    padding: 15px 35px;
-    display: block;
+	color: #f8df64;
+	font-size: 18px;
+	padding: 15px 35px;
+	display: block;
 }
 
 
 #container{
 	z-index: 105;
-    background: #fff;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    left: 85%;
+	background: #fff;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	left: 85%;
 }
 
 .alert {
-    margin-top: 10px;
-    margin-bottom: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
 
@@ -1594,6 +1596,6 @@ input[type="file"] {
 }
 
 .edit-profile-page .avatar .user-thumb img {
-    border-radius:100%;
+	border-radius:100%;
 }
 
