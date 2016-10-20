@@ -228,6 +228,7 @@ interface User {
 	parentId: string;
 	name: string;
 	imageUrl: string;
+	coverImageUrl: string;
 	email: string;
 	phone: string;
 	address: string;
