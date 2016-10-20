@@ -7,36 +7,92 @@
 
 <div class="content">
 	<div class="tabs">
-		<div class="tab"><a href="#">Today</a></div>
-		<div class="tab"><a href="#" class="active">All time</a></div>
+		<div class="tab"><a href="#today" class="active">Today</a></div>
+		<div class="tab"><a href="#allTime">All time</a></div>
 	</div>
-	<ul class="stats-list">
-		<li class="stat-item">
-			<div class="ico views"><i></i></div>
-			<div class="ctr"><span>31 235</span></div>
-			<div class="desc"><span>estimated views</span></div>
-		</li>
-		<li class="stat-item">
-			<div class="ico received"><i></i></div>
-			<div class="ctr"><span>2 486</span></div>
-			<div class="desc"><span>likes received</span></div>
-		</li>
-		<li class="stat-item">
-			<div class="ico clicks"><i></i></div>
-			<div class="ctr"><span>115</span></div>
-			<div class="desc"><span>link clicks</span></div>
-		</li>
-		<li class="stat-item">
-			<div class="ico comments"><i></i></div>
-			<div class="ctr"><span>325</span></div>
-			<div class="desc"><span>comments</span></div>
-		</li>
-		<li class="stat-item">
-			<div class="ico earnings"><i></i></div>
-			<div class="ctr"><span>${{ data.spendable }}</span></div>
-			<div class="desc"><span>earnings</span></div>
-		</li>
-		<li class="stat-item">
-		</li>
-	</ul>
+	<!--
+			Likes    int32 `json:"likes,omitempty"`
+	Dislikes int32 `json:"dislikes,omitempty"`
+	Comments int32 `json:"comments,omitempty"`
+	Shares   int32 `json:"shares,omitempty"`
+	Views    int32 `json:"views,omitempty"`
+	Clicks   int32 `json:"clicks,omitempty"`
+	Perks    int32 `json:"perks,omitempty"`
+	!-->
+	<div class="tab-content">
+		<ul class="stats-list" id="today">
+			<li class="stat-item">
+				<div class="ico views"><i></i></div>
+				<div class="ctr"><span>{{ today.views | fmtNum }}</span></div>
+				<div class="desc"><span>estimated views</span></div>
+			</li>
+			<li class="stat-item">
+				<div class="ico received"><i></i></div>
+				<div class="ctr"><span>{{ today.likes | fmtNum }}</span></div>
+				<div class="desc"><span>likes received</span></div>
+			</li>
+			<li class="stat-item">
+				<div class="ico clicks"><i></i></div>
+				<div class="ctr"><span>{{ today.clicks | fmtNum }}</span></div>
+				<div class="desc"><span>link clicks</span></div>
+			</li>
+			<li class="stat-item">
+				<div class="ico comments"><i></i></div>
+				<div class="ctr"><span>{{ today.shares | fmtNum }}</span></div>
+				<div class="desc"><span>shares</span></div>
+			</li>
+			<li class="stat-item">
+				<div class="ico comments"><i></i></div>
+				<div class="ctr"><span>{{ today.comments | fmtNum }}</span></div>
+				<div class="desc"><span>comments</span></div>
+			</li>
+			<li class="stat-item">
+				<div class="ico comments"><i></i></div>
+				<div class="ctr"><span>{{ today.perks | fmtNum }}</span></div>
+				<div class="desc"><span>perks</span></div>
+			</li>
+			<li class="stat-item">
+				<div class="ico earnings"><i></i></div>
+				<div class="ctr"><span>${{ today.infStats }}</span></div>
+				<div class="desc"><span>earnings</span></div>
+			</li>
+		</ul>
+		<ul class="stats-list" id="allTime">
+			<li class="stat-item">
+				<div class="ico views"><i></i></div>
+				<div class="ctr"><span>{{ allTime.views | fmtNum }}</span></div>
+				<div class="desc"><span>estimated views</span></div>
+			</li>
+			<li class="stat-item">
+				<div class="ico received"><i></i></div>
+				<div class="ctr"><span>{{ allTime.likes | fmtNum }}</span></div>
+				<div class="desc"><span>likes received</span></div>
+			</li>
+			<li class="stat-item">
+				<div class="ico clicks"><i></i></div>
+				<div class="ctr"><span>{{ allTime.clicks | fmtNum }}</span></div>
+				<div class="desc"><span>link clicks</span></div>
+			</li>
+			<li class="stat-item">
+				<div class="ico comments"><i></i></div>
+				<div class="ctr"><span>{{ allTime.shares | fmtNum }}</span></div>
+				<div class="desc"><span>shares</span></div>
+			</li>
+			<li class="stat-item">
+				<div class="ico comments"><i></i></div>
+				<div class="ctr"><span>{{ allTime.comments | fmtNum }}</span></div>
+				<div class="desc"><span>comments</span></div>
+			</li>
+			<li class="stat-item">
+				<div class="ico comments"><i></i></div>
+				<div class="ctr"><span>{{ allTime.perks | fmtNum }}</span></div>
+				<div class="desc"><span>perks</span></div>
+			</li>
+			<li class="stat-item">
+				<div class="ico earnings"><i></i></div>
+				<div class="ctr"><span>${{ allTime.infStats }}</span></div>
+				<div class="desc"><span>earnings</span></div>
+			</li>
+		</ul>
+	</div>
 </div>

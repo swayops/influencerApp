@@ -151,10 +151,9 @@ export class AppCmp extends HasAPI {
 		$('.tabs a').click(function (e) {
 			e.preventDefault();
 			const $this = $(this),
-				$tabs = $('.tabs'),
-				$contents = $('.tab-content');
+				$tabs = $('.tabs');
 			$('a', $tabs).removeClass('active');
-			$('ul', $contents).hide();
+			$('.tab-content > ul').hide();
 			$this.addClass('active');
 			$($this.attr('href')).show();
 		});
