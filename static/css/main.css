@@ -582,6 +582,41 @@ background: transparent;
 /* INFLUENCER PAGE */
 
 .influencer-page{}
+
+
+.influencer-page .header-section{
+    min-height:50px;
+    background: #171616;
+    overflow: hidden;
+    color: #fff;
+    text-align: center;
+    padding: 0px 20px;
+    position: relative;
+}
+.influencer-page .header-section h1{
+    font-size: 28px;
+    font-style: italic;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0px 15px;
+    line-height: 1;
+    margin:0;
+}
+.influencer-page .header-section .back {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+}
+.influencer-page .header-section .back a {
+    background: transparent url(../images/back.png) no-repeat 0 0;
+    background-size: contain;
+    width: 15px;
+    height: 25px;
+    display: block;
+}
+
+
 .influencer-page .influencer-page-banner{
 	background: #fff url(../images/influencer-page-banner.jpg) no-repeat center top;    margin-bottom: 25%;background-size: cover;    min-height: 190px;
 }
