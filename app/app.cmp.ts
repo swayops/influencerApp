@@ -208,7 +208,6 @@ export class AppCmp extends HasAPI {
 	}
 }
 
-
 const incGroupHTML = '<div class="btn-action"><div class="inc button">+</div><div class="dec button">-</div></div>';
 
 const pageMapping = {
@@ -216,7 +215,7 @@ const pageMapping = {
 	'login': 'signup user',
 	'welcome': 'front',
 	'walkthrough': 'walkthrough-template',
-	'walkthrough4':'walkthrough4',
+	'walkthrough4': 'walkthrough4',
 	'dealFeed': 'endorsement',
 	'dealDetail': 'deal-detailed-page deal-page',
 	'deals': 'deal-pending-page deal-page',

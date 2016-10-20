@@ -24,7 +24,6 @@ export class FilterArrayPipe implements PipeTransform {
 	}
 }
 
-
 @Pipe({ name: 'fmtNum' })
 export class FormatNumberPipe implements PipeTransform {
 	transform(n, fn): string {
