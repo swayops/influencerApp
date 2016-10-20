@@ -8,7 +8,7 @@
 </div>
 
 <div class="content">
-	<h2>You have $25 available <br>to <span class="italic">CASHOUT!</span></h2>
+	<h2>You have ${{ amount }} available <br>to <span class="italic">CASHOUT!</span></h2>
 	<ul class="deal-list">
 		<li>
 			In order to receive a check for this amount, Sway must first verify your identity and collect required USA tax information via electronic signature.
@@ -21,6 +21,7 @@
 		</li>
 	</ul>
 	<div class="action">
-		<a [routerLink]="['/earningStats']" class="btn btn-deal">Sounds good!</a>
+		<a class="btn btn-deal" [routerLink]="['/dealFeed']" *ngIf="amount === 0">Go Back</a>
+		<a class="btn btn-deal" (click)="Cashout()" *ngIf="amount > 0">Sounds good!</a>
 	</div>
 </div>
