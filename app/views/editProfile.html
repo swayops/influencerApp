@@ -10,7 +10,7 @@
 			<div class="save"><button type="submit" class="btn btn-primary" [disabled]="!f.valid || loading">save</button></div>
 		</div>
 		<div class="overlay">
-			<div class="holder"><a class="camera" (click)="selImage.show()">save</a><a href="#" class="camera-mini">save</a></div>
+			<div class="holder"><a class="camera" (click)="selImage.show()">save</a><a class="camera-mini" (click)="selImage.show()">save</a></div>
 		</div>
 		<div class="user-thumb">
 			<img src="{{ data.imageUrl || '/infApp/static/images/influencer-profile.png' }}" *ngIf="!cropData.image">
