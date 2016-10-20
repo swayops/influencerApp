@@ -1476,7 +1476,6 @@ body.menu-active .sway{background-color: #171616;overflow:hidden;}
 	position: absolute;
 	width: 100%;
 	z-index: 101;
-	padding-right: 15%;
 	padding-top: 25px;
 	left: 0px;
 	top: 0px;

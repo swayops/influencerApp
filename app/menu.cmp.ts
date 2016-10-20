@@ -14,6 +14,6 @@ export class MenuCmp extends HasAPI {
 	}
 
 	toggleMenu() {
-		$('menu').slideToggle(500);
+		$('menu').slideToggle(100);
 	}
 }
