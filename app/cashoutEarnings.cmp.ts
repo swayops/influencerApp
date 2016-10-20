@@ -26,7 +26,7 @@ export class CashoutEarningsCmp extends HasAPI {
 		}
 
 		this.api.Get('requestCheck/' + this.user.id, resp => {
-			this.AddNotification('info', 'Check your email for the documents!');
+			this.AddNotification('info', 'Please check your email for your documents!');
 			this.api.GoTo('earningStats');
 		}, err => {
 			this.AddNotification('error', err.msg);
