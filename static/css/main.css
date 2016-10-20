@@ -1096,7 +1096,8 @@ background: transparent;
 .endorsement .banner-top:after{content:" ";clear:both;display:block;}
 .endorsement .banner-top a,
 .endorsement .banner-top a:hover{color:#fff;font-size:18px;}
-.endorsement .banner-top .menu{float:left;width:10%;color: #fff;margin-top:3px;}
+.endorsement .banner-top .menu{float:left;color: #fff;margin-top:3px;}
+
 .endorsement .banner-top .page-title{float:left;width:80%;}
 .endorsement .banner-top .page-title h1{
 	margin: 0px;
@@ -1472,11 +1473,13 @@ body.menu-active .sway{background-color: #171616;overflow:hidden;}
 	overflow: hidden;
 	height: 100%;
 	min-height: 505px;
-	position: relative;
+	position: absolute;
 	width: 100%;
 	z-index: 101;
 	padding-right: 15%;
 	padding-top: 25px;
+	left: 0px;
+	top: 0px;
 }
 #menu-sidebar h2{
 	text-align: center;
