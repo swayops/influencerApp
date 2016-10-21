@@ -17,20 +17,19 @@ export class EarningStatsCmp extends HasAPI {
 		month: {},
 		year: {},
 	};
-	private loaded = false;
 
 	constructor(title: Title, public api: Sway) {
 		super(api);
 		title.setTitle('Earning Stats');
 
 
-		this.api.Get('getAgencyInfluencerStats/' + this.user.parentId + '/' + this.user.id + '/7',
+		this.api.Get('getInfluencerStats/' + this.user.id + '/7',
 			resp => this.data.week = resp);
 
-		this.api.Get('getAgencyInfluencerStats/' + this.user.parentId + '/' + this.user.id + '/30',
+		this.api.Get('getInfluencerStats/' +  this.user.id + '/30',
 			resp => this.data.month = resp);
 
-		this.api.Get('getAgencyInfluencerStats/' + this.user.parentId + '/' + this.user.id + '/365',
+		this.api.Get('getInfluencerStats/' +  this.user.id + '/365',
 			resp => this.data.year = resp);
 	}
 
@@ -108,7 +107,7 @@ export class EarningStatsCmp extends HasAPI {
 				},
 				'dataProvider': dataToChart(data),
 			});
-
+		console.log(dataToChart(data));
 		function zoomChart() {
 			chart.zoomToIndexes(chart.dataProvider.length - 40, chart.dataProvider.length - 1);
 		}
@@ -123,7 +122,7 @@ export class EarningStatsCmp extends HasAPI {
 function dataToChart(data: any): any[] {
 	return Object.keys(data).filter(k => k !== 'total').map(k => {
 		const v = data[k];
-		return { date: k, value: '$' + (v.spent || 0).toFixed(2) };
+		return { date: k, value: (v.spent || 0).toFixed(2) };
 	});
 }
 
