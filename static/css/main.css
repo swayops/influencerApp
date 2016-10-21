@@ -630,7 +630,10 @@ background: transparent;
 	bottom: -103px;
 	text-align: center;
 }
-.influencer-page .influencer-page-banner .influencer-logo img{    width: 45%;}
+.influencer-page .influencer-page-banner .influencer-logo img{ 
+	width: 45%;
+	border-radius: 100%;
+}
 
 .influencer-page .content{overflow: hidden;}
 .influencer-page .content h2{text-align:center;    margin: 35px 0px 10px;}
