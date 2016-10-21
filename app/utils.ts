@@ -97,8 +97,41 @@ export function CancelEvent(evt: Event) {
 	evt.stopPropagation();
 	evt.preventDefault();
 }
-// used https://github.com/substack/provinces/blob/master/provinces.json for state names
 
+const loadedScripts = {};
+export function LoadScripts(srcs: string[], doneCB?: () => void): void {
+	if (srcs.length === 0) return doneCB();
+	const cb = function() {
+		if (srcs.length === 0) {
+			if (doneCB) doneCB();
+			console.log(doneCB);
+			return;
+		}
+		LoadScript(srcs.shift(), cb);
+	};
+	cb();
+}
+
+export function LoadScript(src: string, doneCB?: () => void) {
+	if (loadedScripts[src]) {
+		if (doneCB) doneCB();
+		return;
+	}
+	let node = document.createElement('script');
+	node.type = 'text/javascript';
+	node.defer = true;
+	node.async = true;
+	node.charset = 'utf-8';
+	document.body.appendChild(node);
+
+	node.onload = function() {
+		loadedScripts[src] = true;
+		if (doneCB) doneCB();
+	};
+	node.src = src;
+}
+
+// used https://github.com/substack/provinces/blob/master/provinces.json for state names
 export const CountriesAndStates = [
 	{ id: 'ad', text: 'Andorra' },
 	{ id: 'ae', text: 'United Arab Emirates' },
