@@ -14,7 +14,7 @@ export class LoginCmp extends HasAPI {
 	constructor(title: Title, public api: Sway) {
 		super(api);
 		title.setTitle('Login');
-		this.api.Reset();
+		this.api.Logout(false);
 	}
 
 	Login() {

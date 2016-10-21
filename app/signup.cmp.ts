@@ -21,7 +21,7 @@ export class SignupCmp extends HasAPI {
 		title.setTitle('Sign Up');
 		this.data.influencer.inviteCode = route.snapshot.params['inviteCode'];
 		this.api.Get('ip', data => this.data.influencer.ip = data.ip);
-		this.api.Reset();
+		this.api.Logout(false);
 	}
 
 	SignUp() {

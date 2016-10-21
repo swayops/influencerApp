@@ -79,10 +79,10 @@ export class Sway {
 		});
 	}
 
-	Logout() {
+	Logout(redir = true) {
 		return this.Get('signOut', _ => {
 			this.Reset();
-			this.router.navigate(['/login']); // should say something maybe?
+			if (redir) this.router.navigate(['/login']); // should say something maybe?
 		});
 	}
 
@@ -102,6 +102,7 @@ export class Sway {
 	Reset() {
 		this.mainUser = this.curUser = null;
 		this.loginStatus = 0;
+
 	}
 
 	public req(method: string, ep: string, body?: any): Observable<any> {
