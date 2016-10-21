@@ -100,11 +100,9 @@ export function CancelEvent(evt: Event) {
 
 const loadedScripts = {};
 export function LoadScripts(srcs: string[], doneCB?: () => void): void {
-	if (srcs.length === 0) return doneCB();
-	const cb = function() {
+	const cb = function () {
 		if (srcs.length === 0) {
 			if (doneCB) doneCB();
-			console.log(doneCB);
 			return;
 		}
 		LoadScript(srcs.shift(), cb);
@@ -117,17 +115,19 @@ export function LoadScript(src: string, doneCB?: () => void) {
 		if (doneCB) doneCB();
 		return;
 	}
-	let node = document.createElement('script');
+
+	const node = document.createElement('script');
 	node.type = 'text/javascript';
+	node.charset = 'utf-8';
 	node.defer = true;
 	node.async = true;
-	node.charset = 'utf-8';
 	document.body.appendChild(node);
 
-	node.onload = function() {
+	node.onload = function () {
 		loadedScripts[src] = true;
 		if (doneCB) doneCB();
 	};
+
 	node.src = src;
 }
 
