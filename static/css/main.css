@@ -1398,14 +1398,14 @@ background: transparent;
 	line-height: 1;
 	margin: 0;
 }
-.earning-stats-page .content{background: #1c1c1c;text-align:center;overflow: hidden;}
+.earning-stats-page .content{background: #fff;text-align:center;overflow: hidden;}
 
 .earning-stats-page .filter{    margin: 50px 0px 20px;}
-.earning-stats-page .filter p{    font-size: 14px;    color: #777777;}
+.earning-stats-page .filter p{    font-size: 14px;    color: #000;}
 .earning-stats-page .filter .range{
 	border: none;
-	background: #1c1c1c url(../images/dd-ico.png) no-repeat right 25px;
-	color: #fff;
+	background: url(../images/dd-ico.png) no-repeat right 25px;
+	color: #000;
 	font-size: 38px;
 	font-weight: 300;
 	-webkit-appearance: none;
@@ -1423,7 +1423,7 @@ background: transparent;
 	width: 160px;
 }
 .earning-stats-page .legends li{
-	color: #fff;
+	color: #777777;
 	font-size: 13px;
 	line-height:1;
 	margin-bottom: 30px;
@@ -1434,7 +1434,7 @@ background: transparent;
 	display: block;
 	width: 12px;
 	height: 12px;
-	background: #3fc299;
+	background: #009fe8;
 	float: left;
 	margin-right: 10px;
 	margin-top: 0px;
@@ -1447,7 +1447,7 @@ background: transparent;
 	display: block;
 	width: 12px;
 	height: 12px;
-	background: #009fe8;
+	background: #009FE7;
 	float: left;
 	margin-right: 10px;
 	margin-top: 0px;
@@ -1600,4 +1600,3 @@ input[type="file"] {
 .edit-profile-page .avatar .user-thumb img {
 	border-radius:100%;
 }
-

@@ -48,17 +48,12 @@ export class EarningStatsCmp extends HasAPI {
 			chart = AmCharts.makeChart('chartdiv', {
 				'type': 'serial',
 				'theme': 'light',
-				'marginRight': 40,
-				'marginLeft': 40,
+				"synchronizeGrid":true,
+				'marginRight': 5,
+				'marginLeft': 5,
 				'autoMarginOffset': 20,
 				'mouseWheelZoomEnabled': true,
 				'dataDateFormat': 'YYYY-MM-DD',
-				'valueAxes': [{
-					'id': 'v1',
-					'axisAlpha': 0,
-					'position': 'left',
-					'ignoreAxisWidth': true,
-				}],
 				'balloon': {
 					'borderThickness': 1,
 					'shadowAlpha': 0,
@@ -70,16 +65,19 @@ export class EarningStatsCmp extends HasAPI {
 						'adjustBorderColor': false,
 						'color': '#ffffff',
 					},
-					'bullet': 'round',
+					'bullet': 'circle',
 					'bulletBorderAlpha': 1,
 					'bulletColor': '#FFFFFF',
+					"fillAlphas": 0.3,
+        			"fillColorsField": '#FFFFFF',
 					'bulletSize': 5,
 					'hideBulletsCount': 50,
 					'lineThickness': 2,
+					'lineColor':'#009fe8',
 					'title': 'red line',
 					'useLineColorForBulletBorder': true,
 					'valueField': 'value',
-					'balloonText': '<span style="font-size:18px;">[[value]]</span>',
+					'balloonText': '<span style="font-size:18px;">$[[value]]</span>',
 				}],
 				'chartCursor': {
 					'pan': true,
@@ -90,20 +88,17 @@ export class EarningStatsCmp extends HasAPI {
 					'limitToGraph': 'g1',
 					'valueLineAlpha': 0.2,
 					'valueZoomable': true,
-				},
-				'valueScrollbar': {
-					'oppositeAxis': false,
-					'offset': 50,
-					'scrollbarHeight': 10,
+					"fullWidth": true
 				},
 				'categoryField': 'date',
 				'categoryAxis': {
 					'parseDates': true,
 					'dashLength': 1,
 					'minorGridEnabled': true,
+					"axisColor": "#fff"
 				},
 				'export': {
-					'enabled': true,
+					'enabled': false,
 				},
 				'dataProvider': dataToChart(data),
 			});
