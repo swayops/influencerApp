@@ -1,5 +1,5 @@
-<div id="menu-sidebar">
-	<h2><a (click)="toggleMenu()" style="color: #fff;"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></a>&nbsp;&nbsp;&nbsp; MENU</h2>
+<div id="menu-sidebar" (click)="toggleMenu()">
+	<h2><astyle="color: #fff;"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></a>&nbsp;&nbsp;&nbsp; MENU</h2>
 
 	<ul class="menu">
 		<li><a [routerLink]="['/dealFeed']">Home Feed</a></li>
@@ -11,5 +11,6 @@
 	<ul class="account-actions">
 		<li><a [routerLink]="['/editProfile']">Edit Profile</a></li>
 		<li><a [routerLink]="['/cashoutEarnings']">Cashout Earnings</a></li>
+		<li><a (click)="api.Logout()">Logout</a></li>
 	</ul>
 </div>
