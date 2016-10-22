@@ -40,8 +40,8 @@
 			</div>
 			<div class="field two-cols">
 				<label>Gender</label>
-				<select class="form-control" name="gender" [(ngModel)]="data.influencer.gender">
-					<option value="">Not applicable</option>
+				<select class="form-control" name="gender" [(ngModel)]="data.gender">
+					<option value="fm">Not applicable</option>
 					<option value="f">Female</option>
 					<option value="m">Male</option>
 				</select>
@@ -53,31 +53,31 @@
 			<div class="field checkbox-field two-cols">
 				<label>Send Deal Alerts</label>
 				<div class="switch">
-					<input id="cmn-toggle" class="cmn-toggle cmn-toggle-round-flat" type="checkbox" name="sda" [(ngModel)]="data.influencer.dealPing">
+					<input id="cmn-toggle" class="cmn-toggle cmn-toggle-round-flat" type="checkbox" name="sda" [(ngModel)]="data=.dealPing">
 					<label for="cmn-toggle"></label>
 				</div>
 			</div>
 		</div>
 		<div class="field-group">
 			<div class="field two-cols">
-				<label>Address</label><input type="text" name="address1" [(ngModel)]="data.influencer.address.address_line1" placeholder="90 Bedford St, New York">
+				<label>Address</label><input type="text" name="address1" [(ngModel)]="data=.address.address_line1" placeholder="90 Bedford St, New York">
 			</div>
 			<div class="field two-cols">
-				<label>Address 2</label><input type="text" name="address2" [(ngModel)]="data.influencer.address.address_line2" placeholder="Apt. 6">
+				<label>Address 2</label><input type="text" name="address2" [(ngModel)]="data=.address.address_line2" placeholder="Apt. 6">
 			</div>
 			<div class="field two-cols">
-				<label>City</label><input type="text" name="city" [(ngModel)]="data.influencer.address.address_city" placeholder="New York">
+				<label>City</label><input type="text" name="city" [(ngModel)]="data=.address.address_city" placeholder="New York">
 			</div>
 			<div class="field two-cols">
-				<label>State</label><input type="text" name="state" [(ngModel)]="data.influencer.address.address_state"
+				<label>State</label><input type="text" name="state" [(ngModel)]="data=.address.address_state"
 					placeholder="NY" minlength="2" maxlength="2">
 			</div>
 			<div class="field two-cols">
-				<label>ZIP</label><input type="text" name="zip" [(ngModel)]="data.influencer.address.address_zip"
+				<label>ZIP</label><input type="text" name="zip" [(ngModel)]="data=.address.address_zip"
 					placeholder="10014">
 			</div>
 			<div class="field two-cols">
-				<label>Country</label><input type="text" [(ngModel)]="data.influencer.address.address_country"
+				<label>Country</label><input type="text" [(ngModel)]="data=.address.address_country"
 					name="country" placeholder="US" minlength="2" maxlength="2">
 			</div>
 		</div>
@@ -104,16 +104,16 @@
 				<span>*Accounts must be publicly viewable.</span>
 			</div>
 			<div class="field two-cols">
-				<label>Instagram:</label><input type="text" name="instagram" [(ngModel)]="data.influencer.instagram" placeholder="Enter your username">
+				<label>Instagram:</label><input type="text" name="instagram" [(ngModel)]="data=.instagram" placeholder="Enter your username">
 			</div>
 			<div class="field two-cols">
-				<label>Youtube:</label><input type="text" name="youtube" [(ngModel)]="data.influencer.youtube" placeholder="Enter your username">
+				<label>Youtube:</label><input type="text" name="youtube" [(ngModel)]="data=.youtube" placeholder="Enter your username">
 			</div>
 			<div class="field two-cols">
-				<label>Twitter:</label><input type="text" name="twitter" [(ngModel)]="data.influencer.twitter" placeholder="Enter your username">
+				<label>Twitter:</label><input type="text" name="twitter" [(ngModel)]="data=.twitter" placeholder="Enter your username">
 			</div>
 			<div class="field two-cols">
-				<label>Facebook:</label><input type="text" name="facebook" [(ngModel)]="data.influencer.facebook" placeholder="Enter your username">
+				<label>Facebook:</label><input type="text" name="facebook" [(ngModel)]="data=.facebook" placeholder="Enter your username">
 			</div>
 			<div class="fix-to-bot">
 				<div class="field submit-field"><button type="submit" class="btn btn-primary" [disabled]="!f.valid || loading">Save Changes</button></div>

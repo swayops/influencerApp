@@ -23,10 +23,6 @@ export class EditProfileCmp extends HasAPI {
 	public cropperSettings = Object.assign(new CropperSettings(), {
 		keepAspect: true,
 		responsive: true,
-		canvasWidth: 300,
-		canvasHeight: 300,
-		croppedWidth: 300,
-		croppedHeight: 300,
 		noFileInput: true,
 		minHeight: 300,
 	});
@@ -43,22 +39,20 @@ export class EditProfileCmp extends HasAPI {
 			imageUrl: u.imageUrl,
 			coverImageUrl: u.coverImageUrl,
 			email: u.email,
-			influencer: {
-				gender: inf.male ? 'm' : inf.female ? 'f' : '',
-				dealPing: inf.dealPing,
-				instagram: inf.instagram && inf.instagram.userName,
-				youtube: inf.youtube && inf.youtube.userName,
-				twitter: inf.twitter && inf.twitter.id,
-				facebook: inf.facebook && inf.facebook.id,
-				categories: [],
-				address: {
-					address_line1: inf.address.address_line1,
-					address_line2: inf.address.address_line2,
-					address_city: inf.address.address_city,
-					address_state: inf.address.address_state,
-					address_zip: inf.address.address_zip,
-					address_country: inf.address.address_country,
-				},
+			gender: inf.male ? 'm' : inf.female ? 'f' : '',
+			dealPing: inf.dealPing,
+			instagram: inf.instagram && inf.instagram.userName,
+			youtube: inf.youtube && inf.youtube.userName,
+			twitter: inf.twitter && inf.twitter.id,
+			facebook: inf.facebook && inf.facebook.id,
+			// categories: inf.categories,
+			address: {
+				address_line1: inf.address.address_line1,
+				address_line2: inf.address.address_line2,
+				address_city: inf.address.address_city,
+				address_state: inf.address.address_state,
+				address_zip: inf.address.address_zip,
+				address_country: inf.address.address_country,
 			},
 		};
 		this.api.Get('ip', data => this.data.influencer.ip = data.ip);
@@ -103,22 +97,27 @@ export class EditProfileCmp extends HasAPI {
 		if (typ === 'profile') {
 			m.title = 'Select Your Profile Picture';
 			this.cropperSettings.rounded = true;
+			Object.assign(this.cropperSettings, {
+				canvasWidth: 300,
+				canvasHeight: 300,
+				croppedWidth: 300,
+				croppedHeight: 300,
+			});
 		} else if (typ === 'cover') {
 			m.title = 'Select Your Cover Picture';
 			this.cropperSettings.rounded = false;
+			Object.assign(this.cropperSettings, {
+				canvasWidth: 750,
+				canvasHeight: 375,
+				croppedWidth: 750,
+				croppedHeight: 375,
+			});
 		}
 		m.show(typ);
 	}
 
 	Save() {
 		this.loading = true;
-
-		const gender = this.data.influencer.gender;
-		Object.assign(this.data.influencer, {
-			male: gender === 'm',
-			female: gender === 'f',
-		});
-
 		this.api.Put('influencer/' + this.user.id, this.data, resp => {
 			this.api.ReloadUser();
 			this.api.GoHome();
