@@ -19,14 +19,29 @@ export class EditProfileCmp extends HasAPI {
 	public data: any;
 	public loading = false;
 
-	@ViewChild('cropper') public cropper: ImageCropperComponent;
 	public cropperSettings = Object.assign(new CropperSettings(), {
 		keepAspect: true,
 		responsive: true,
 		noFileInput: true,
+		canvasWidth: 300,
+		canvasHeight: 300,
+		croppedWidth: 300,
+		croppedHeight: 300,
 		minHeight: 300,
 	});
+	public coverCropperSettings = Object.assign(new CropperSettings(), {
+		keepAspect: true,
+		responsive: true,
+		noFileInput: true,
+		canvasWidth: 750,
+		canvasHeight: 375,
+		croppedWidth: 750,
+		croppedHeight: 375,
+		minHeight: 375,
+	});
+
 	public cropData: any = {};
+	public coverData: any = {};
 
 	constructor(title: Title, public api: Sway) {
 		super(api);
@@ -55,7 +70,8 @@ export class EditProfileCmp extends HasAPI {
 				address_country: inf.address.address_country,
 			},
 		};
-		this.api.Get('ip', data => this.data.influencer.ip = data.ip);
+		this.api.Get('ip', data => this.data.ip = data.ip);
+		this.cropperSettings.rounded = true;
 	}
 
 	ngAfterViewInit() {
@@ -64,14 +80,13 @@ export class EditProfileCmp extends HasAPI {
 		if (url) $('.overlay').attr('style', 'background-image: url(' + url + '); background-size: cover;');
 	}
 
-	loadImage(e: any) {
+	loadImage(cropper: ImageCropperComponent, e: any) {
 		e.stopPropagation();
 		e.preventDefault();
 
 		const image = new Image(),
 			file = (e.target.files || e.dataTransfer.files)[0],
-			rd = new FileReader(),
-			cropper = this.cropper;
+			rd = new FileReader();
 
 		rd.onloadend = (evt: any) => {
 			image.src = evt.target.result;
@@ -87,33 +102,11 @@ export class EditProfileCmp extends HasAPI {
 		if (evt.data === 'profile') {
 			this.data.imageUrl = this.cropData.image;
 		} else if (evt.data === 'cover') {
-			this.data.coverImageUrl = this.cropData.image;
+			this.data.coverImageUrl = this.coverData.image;
 		}
 		this.ngAfterViewInit();
 		this.cropData.image = '';
-	}
-
-	showModal(m: Modal, typ: string) {
-		if (typ === 'profile') {
-			m.title = 'Select Your Profile Picture';
-			this.cropperSettings.rounded = true;
-			Object.assign(this.cropperSettings, {
-				canvasWidth: 300,
-				canvasHeight: 300,
-				croppedWidth: 300,
-				croppedHeight: 300,
-			});
-		} else if (typ === 'cover') {
-			m.title = 'Select Your Cover Picture';
-			this.cropperSettings.rounded = false;
-			Object.assign(this.cropperSettings, {
-				canvasWidth: 750,
-				canvasHeight: 375,
-				croppedWidth: 750,
-				croppedHeight: 375,
-			});
-		}
-		m.show(typ);
+		this.coverData.image = '';
 	}
 
 	Save() {
