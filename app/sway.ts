@@ -93,7 +93,8 @@ export class Sway {
 
 	GoHome() {
 		const inf = this.CurrentUser.inf || {};
-		if (inf.dealPing) {
+		const hasSocial = inf.twitter || inf.facebook || inf.instagram || inf.youtube;
+		if (hasSocial) {
 			this.GoTo('/dealFeed');
 		} else {
 			this.GoTo('/welcome');
