@@ -49,12 +49,21 @@ export class EditProfileCmp extends HasAPI {
 		const u = this.user,
 			inf = u.inf || {};
 		inf.address = inf.address || {};
+
+		let gender = '';
+		if (inf.male && inf.female) {
+			gender = 'unicorn';
+		} else if (inf.male) {
+			gender = 'm';
+		} else if (inf.female) {
+			gender = 'f';
+		}
 		this.data = {
 			name: u.name,
 			imageUrl: u.imageUrl,
 			coverImageUrl: u.coverImageUrl,
 			email: u.email,
-			gender: inf.male ? 'm' : inf.female ? 'f' : '',
+			gender: gender,
 			dealPing: inf.dealPing,
 			instagram: inf.instagram && inf.instagram.userName,
 			youtube: inf.youtube && inf.youtube.userName,
