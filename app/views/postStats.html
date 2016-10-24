@@ -10,15 +10,6 @@
 		<div class="tab"><a href="#today">Today</a></div>
 		<div class="tab"><a href="#allTime" class="active">All time</a></div>
 	</div>
-	<!--
-			Likes    int32 `json:"likes,omitempty"`
-	Dislikes int32 `json:"dislikes,omitempty"`
-	Comments int32 `json:"comments,omitempty"`
-	Shares   int32 `json:"shares,omitempty"`
-	Views    int32 `json:"views,omitempty"`
-	Clicks   int32 `json:"clicks,omitempty"`
-	Perks    int32 `json:"perks,omitempty"`
-	!-->
 	<div class="tab-content">
 		<ul class="stats-list" id="today">
 			<li class="stat-item">
@@ -53,7 +44,7 @@
 			</li>
 			<li class="stat-item">
 				<div class="ico earnings"><i></i></div>
-				<div class="ctr"><span>${{ today.infStats }}</span></div>
+				<div class="ctr"><span>${{ today.infStats | fmtNum }}</span></div>
 				<div class="desc"><span>earnings</span></div>
 			</li>
 		</ul>
@@ -90,7 +81,7 @@
 			</li>
 			<li class="stat-item">
 				<div class="ico earnings"><i></i></div>
-				<div class="ctr"><span>${{ allTime.infStats }}</span></div>
+				<div class="ctr"><span>${{ allTime.infStats | fmtNum }}</span></div>
 				<div class="desc"><span>earnings</span></div>
 			</li>
 		</ul>

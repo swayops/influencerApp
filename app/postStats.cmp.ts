@@ -24,8 +24,9 @@ export class PostStatsCmp extends HasAPI {
 
 	private setStats(data: any) {
 		const stats = data.stats,
-			today = DateString(1); // yesterday for now, should change to 0 for production
+			today = DateString(0);
 		if (!stats) return;
+
 		for (let [day, stat] of Object.entries(stats)) {
 			if (day === today) this.today = stat;
 			for (let [k, v] of Object.entries(stat)) {
@@ -33,6 +34,5 @@ export class PostStatsCmp extends HasAPI {
 				this.allTime[k] = (this.allTime[k] || 0) + v;
 			}
 		}
-		console.log(this.today);
 	}
 }
