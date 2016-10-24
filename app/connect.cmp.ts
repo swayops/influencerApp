@@ -16,23 +16,23 @@ export class ConnectCmp extends HasAPI {
 		title.setTitle('Connect Your Social Accounts');
 		const inf = this.user.inf || {};
 		this.data = {
-			instagram: inf.instagram && inf.instagram.userName,
-			youtube: inf.youtube && inf.youtube.userName,
-			twitter: inf.twitter && inf.twitter.id,
-			facebook: inf.facebook && inf.facebook.id,
+			instagram: inf.instagram ? inf.instagram.userName : '',
+			youtube: inf.youtube ? inf.youtube.userName : '',
+			twitter: inf.twitter ? inf.twitter.id : '',
+			facebook: inf.facebook ? inf.facebook.id : '',
 		};
 	}
 
 	LinkAccounts() {
 		this.loading = true;
-		for (let [k, v] of Object.entries(this.data)) {
-			if (!!v) {
-				this.api.Get('setPlatform/' + this.user.id + '/' + k + '/' + v,
-					data => { /* */ },
-					err => this.AddNotification('error', err.msg)
-				);
-			}
-		}
-		this.api.GoTo('/dealFeed');
+		this.api.Put('influencer/' + this.user.id, this.data, resp => {
+			this.api.ReloadUser();
+			this.api.GoTo('/dealFeed');
+			this.AddNotification('success', 'Successfully linked your social accounts!');
+		}, err => {
+			this.loading = false;
+			this.AddNotification('error', err.msg);
+			this.ScrollToTop(100);
+		});
 	}
 }
