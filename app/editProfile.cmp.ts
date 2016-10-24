@@ -111,6 +111,10 @@ export class EditProfileCmp extends HasAPI {
 
 	Save() {
 		this.loading = true;
+		if (this.data.inviteCode) {
+			const m = this.data.inviteCode.match(inviteCodeUrlRe);
+			if (m) this.data.inviteCode = m[1];
+		}
 		this.api.Put('influencer/' + this.user.id, this.data, resp => {
 			this.api.ReloadUser();
 			this.api.GoHome();
@@ -122,3 +126,5 @@ export class EditProfileCmp extends HasAPI {
 		});
 	}
 }
+
+const inviteCodeUrlRe = /\/invite\/([A-Za-z0-9+\/]+)$/;
