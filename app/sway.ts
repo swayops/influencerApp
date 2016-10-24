@@ -8,6 +8,11 @@ import { Observable } from 'rxjs/Observable';
 
 export const apiURL = '/api/v1/';
 
+const errInfOnly = {
+	msg: 'Oops! This login is for influencers only. Please visit SwayOps.com for all business solutions.',
+	code: 401, status: 'error',
+};
+
 @Injectable()
 export class Sway {
 	public mainUser: User;
@@ -30,7 +35,7 @@ export class Sway {
 	ReloadUser(redir = false, onError?: (err: any) => void) {
 		return this.Get('user', user => {
 			if (!user.inf) {
-				if (onError) onError({msg: 'Oops! This login is for influencers only. Please visit SwayOps.com for all business solutions.'});
+				if (onError) onError(errInfOnly);
 				return;
 			}
 			this.mainUser = user;
@@ -80,10 +85,10 @@ export class Sway {
 	}
 
 	Logout(redir = true) {
-		return this.Get('signOut', _ => {
+		return this.Get('signOut', () => {
 			this.Reset();
 			if (redir) this.router.navigate(['/login']); // should say something maybe?
-		});
+		}, () => { /* ignored */ });
 	}
 
 	GoHome() {
