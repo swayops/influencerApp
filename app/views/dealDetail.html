@@ -13,13 +13,13 @@
 		<div class="deal-info">
 			<h2>{{ deal.cmpName }}</h2>
 			<ul>
-				<li>PAYOUT REMAINING: <span class="value">${{ deal.spendable }}</span></li>
+				<li>PAYOUT REMAINING: <span class="value">${{ deal.spendable | fmtNum }}</span></li>
 				<li *ngIf="deal.perks">Perks: <span class="value">{{ deal.perks.name || 'N/A' }}</span></li>
 				<li>Accepted: <span class="value">{{ deal.platforms?.join(', ') }}</span></li>
 			</ul>
 		</div>
 		<div class="deal-content">
-			<p><span class="intro">TASK: </span>{{ deal.task }}</p>
+			<p *ngIf="deal.task"><span class="intro">TASK: </span>{{ deal.task }}</p>
 			<h4>YOUR POST MUST CONTAIN:</h4>
 			<ul>
 				<!--<li>Caption: <span class="value">I love skinny bunny tea because it helps me feel good.</span></li>-->
