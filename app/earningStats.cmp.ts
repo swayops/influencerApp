@@ -13,9 +13,9 @@ declare var AmCharts: any;
 })
 export class EarningStatsCmp extends HasAPI {
 	public data = {
-		week: {},
-		month: {},
-		year: {},
+		week: null,
+		month: null,
+		year: null,
 	};
 
 	constructor(title: Title, public api: Sway) {
@@ -24,22 +24,21 @@ export class EarningStatsCmp extends HasAPI {
 
 
 		this.api.Get('getInfluencerStats/' + this.user.id + '/7',
-			resp => this.data.week = resp);
+			resp => this.data.week = resp || {});
 
-		this.api.Get('getInfluencerStats/' +  this.user.id + '/30',
-			resp => this.data.month = resp);
+		this.api.Get('getInfluencerStats/' + this.user.id + '/30',
+			resp => this.data.month = resp || {});
 
-		this.api.Get('getInfluencerStats/' +  this.user.id + '/365',
-			resp => this.data.year = resp);
+		this.api.Get('getInfluencerStats/' + this.user.id + '/365',
+			resp => this.data.year = resp || {});
 	}
 
 	ngAfterViewInit() {
-		LoadScripts(amChartLibs, () => this.setupChart('week'));
+		this.setupChart('week');
 	}
 
-
 	setupChart(key: string) {
-		if (typeof AmCharts.makeChart !== 'function') {
+		if (typeof AmCharts.makeChart !== 'function' || !this.data[key]) {
 			setTimeout(() => this.setupChart(key), 250);
 			return;
 		}
@@ -48,7 +47,7 @@ export class EarningStatsCmp extends HasAPI {
 			chart = AmCharts.makeChart('chartdiv', {
 				'type': 'serial',
 				'theme': 'light',
-				"synchronizeGrid":true,
+				'synchronizeGrid': true,
 				'marginRight': 5,
 				'marginLeft': 5,
 				'autoMarginOffset': 20,
@@ -68,12 +67,12 @@ export class EarningStatsCmp extends HasAPI {
 					'bullet': 'circle',
 					'bulletBorderAlpha': 1,
 					'bulletColor': '#FFFFFF',
-					"fillAlphas": 0.3,
-        			"fillColorsField": '#FFFFFF',
+					'fillAlphas': 0.3,
+					'fillColorsField': '#FFFFFF',
 					'bulletSize': 5,
 					'hideBulletsCount': 50,
 					'lineThickness': 2,
-					'lineColor':'#009fe8',
+					'lineColor': '#009fe8',
 					'title': 'red line',
 					'useLineColorForBulletBorder': true,
 					'valueField': 'value',
@@ -88,21 +87,21 @@ export class EarningStatsCmp extends HasAPI {
 					'limitToGraph': 'g1',
 					'valueLineAlpha': 0.2,
 					'valueZoomable': true,
-					"fullWidth": true
+					'fullWidth': true,
 				},
 				'categoryField': 'date',
 				'categoryAxis': {
 					'parseDates': true,
 					'dashLength': 1,
 					'minorGridEnabled': true,
-					"axisColor": "#fff"
+					'axisColor': '#fff',
 				},
 				'export': {
 					'enabled': false,
 				},
 				'dataProvider': dataToChart(data),
 			});
-		console.log(dataToChart(data));
+
 		function zoomChart() {
 			chart.zoomToIndexes(chart.dataProvider.length - 40, chart.dataProvider.length - 1);
 		}
@@ -120,10 +119,3 @@ function dataToChart(data: any): any[] {
 		return { date: k, value: (v.spent || 0).toFixed(2) };
 	});
 }
-
-const amChartLibs = [
-	'https://www.amcharts.com/lib/3/amcharts.js',
-	'https://www.amcharts.com/lib/3/serial.js',
-	'https://www.amcharts.com/lib/3/plugins/export/export.min.js',
-	'https://www.amcharts.com/lib/3/themes/light.js',
-];
