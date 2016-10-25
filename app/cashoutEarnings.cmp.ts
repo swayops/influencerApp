@@ -24,12 +24,23 @@ export class CashoutEarningsCmp extends HasAPI {
 			this.api.GoTo('earningStats');
 			return;
 		}
-
-		this.api.Get('requestCheck/' + this.user.id, resp => {
-			this.AddNotification('info', 'Please check your email for your documents!');
-			this.api.GoTo('earningStats');
-		}, err => {
-			this.AddNotification('error', err.msg);
-		});
+		if (this.user.inf.hasSigned) {
+			this.api.Get('requestCheck/' + this.user.id, resp => {
+				this.AddNotification('info', 'Please check your email for your documents!');
+				this.api.GoTo('earningStats');
+			}, err => {
+				this.AddNotification('error', err.msg);
+			});
+		} else {
+			this.api.Get('emailTaxForm/' + this.user.id, resp => {
+				this.AddNotification('success', `
+Tax forms have been emailed to you. Please check your spam folder as well.
+Once these have been completed you will be eligible for payment.
+`);
+				this.api.GoTo('earningStats');
+			}, err => {
+				this.AddNotification('error', err.msg);
+			});
+		}
 	}
 }
