@@ -1019,7 +1019,10 @@ background: transparent;
 
 
 /*deal detailed page*/
-.deal-detailed-page .feature-thumbnail{}
+.deal-detailed-page .feature-thumbnail{
+	height: 269px;
+	overflow: hidden;
+}
 .deal-detailed-page .feature-thumbnail img{width:100%;}
 
 .details .deal-info{
@@ -1119,7 +1122,8 @@ background: transparent;
 }
 
 .endorsement .banner-content{
-	padding: 0px 20px;
+	background-color:rgba(0, 0, 0, 0.7);
+	padding: 15px 20px;
 	margin-top: 170px;
 	overflow: hidden;
 }
