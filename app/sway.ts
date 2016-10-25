@@ -146,7 +146,13 @@ export class Sway {
 	}
 
 	get User(): User { return this.mainUser; }
-	get CurrentUser(): User { return this.curUser || this.mainUser; }
+	get CurrentUser(): User {
+		const u = this.curUser || this.mainUser;
+		if (u && !u.inf) {
+			this.Logout(true);
+		}
+		return u;
+	}
 
 	IsAsUser(): boolean {
 		return this.User.admin && !!this.curUser && this.User.id !== this.curUser.id;
