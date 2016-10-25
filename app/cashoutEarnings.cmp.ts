@@ -26,7 +26,11 @@ export class CashoutEarningsCmp extends HasAPI {
 		}
 		if (this.user.inf.hasSigned) {
 			this.api.Get('requestCheck/' + this.user.id, resp => {
-				this.AddNotification('info', 'Please check your email for your documents!');
+				this.AddNotification('info', `
+You've successfully requested a check be sent to your address.
+Please wait up to 48 hours for an admin to approve your payment and a check will be on it's way.
+You will receive an email once the admin has approved.
+`);
 				this.api.GoTo('earningStats');
 			}, err => {
 				this.AddNotification('error', err.msg);
