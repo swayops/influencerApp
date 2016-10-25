@@ -11,6 +11,12 @@
 		<div class="search"><a [routerLink]="['/influencer']"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a></div>
 	</div>
 
+	<!-- show this if NO deals exist-->
+	<div class="banner-content">
+		<h3 style="color:#ffea00;">Sway Deals will appear on this page as you qualify for them. To ensure you aren’t missing out on opportunities, please make sure your profile is fully completed.</h3>
+	</div>
+
+    <!-- show this if deals exist... if not show the alert above-->
 	<div class="banner-content" *ngIf="featured">
 		<h3>Featured:</h3>
 		<h2>{{ featured.cmpName }}</h2>
@@ -22,6 +28,9 @@
 			<a [routerLink]="['/dealDetail', featured.campaignId, featured.id]">VIEW ENDORSEMENT</a>
 		</div>
 	</div>
+	
+
+
 </div>
 
 <div class="content">
