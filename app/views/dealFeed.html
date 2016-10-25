@@ -2,7 +2,7 @@
 <div class="alert alert-warning" role="alert" *ngIf="!HasAddress">
 	To get free products and more deals please enter a shipping address: <a [routerLink]="['/editProfile']" >Lets do it</a>
 </div>
-<div class="endorsement-banner">
+<div class="endorsement-banner" [style.background-image]="featuredImage">
 	<div class="banner-top">
 		<div class="menu"><a (click)="toggleMenu()"><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span></a></div>
 		<div class="page-title">
@@ -11,12 +11,11 @@
 		<div class="search"><a [routerLink]="['/influencer']"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a></div>
 	</div>
 
-	<!-- show this if NO deals exist-->
-	<div class="banner-content">
+	<div class="banner-content" *ngIf="!featured">
 		<h3 style="color:#ffea00;">Sway Deals will appear on this page as you qualify for them. To ensure you aren’t missing out on opportunities, please make sure your profile is fully completed.</h3>
+		<br>
 	</div>
 
-    <!-- show this if deals exist... if not show the alert above-->
 	<div class="banner-content" *ngIf="featured">
 		<h3>Featured:</h3>
 		<h2>{{ featured.cmpName }}</h2>
@@ -28,9 +27,6 @@
 			<a [routerLink]="['/dealDetail', featured.campaignId, featured.id]">VIEW ENDORSEMENT</a>
 		</div>
 	</div>
-	
-
-
 </div>
 
 <div class="content">

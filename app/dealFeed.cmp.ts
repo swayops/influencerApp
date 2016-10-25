@@ -1,6 +1,6 @@
 // DealFeed
 import { Component } from '@angular/core';
-import { Title } from '@angular/platform-browser';
+import { Title, DomSanitizer, SafeStyle } from '@angular/platform-browser';
 
 import { Sway, HasAPI } from './sway';
 
@@ -11,7 +11,9 @@ import { Sway, HasAPI } from './sway';
 export class DealFeedCmp extends HasAPI {
 	public deals: any[];
 	public featured: any;
-	constructor(title: Title, public api: Sway) {
+	public featuredImage: SafeStyle;
+
+	constructor(title: Title, public api: Sway, sanitizer: DomSanitizer) {
 		super(api);
 		title.setTitle('Deal Feed');
 
@@ -27,6 +29,9 @@ export class DealFeedCmp extends HasAPI {
 				}
 			}
 			this.featured = featured;
+			if (featured && featured.cmpImg) {
+				this.featuredImage = sanitizer.bypassSecurityTrustStyle('url(' + featured.cmpImg + ')');
+			}
 
 		}, err => this.AddNotification('error', err.msg));
 	}

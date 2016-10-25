@@ -630,7 +630,7 @@ background: transparent;
 	bottom: -103px;
 	text-align: center;
 }
-.influencer-page .influencer-page-banner .influencer-logo img{ 
+.influencer-page .influencer-page-banner .influencer-logo img{
 	width: 45%;
 	border-radius: 100%;
 }
@@ -1081,7 +1081,7 @@ background: transparent;
 /*	DEAL FEED / endorsement */
 
 .endorsement .endorsement-banner{
-	background: #171616 url(../images/dealfeed-banner-img.jpg) no-repeat 0px 0px;
+	background: #171616 no-repeat 0px 0px;
 	background-size: cover;
 	padding-top: 30px;
 }
@@ -1099,7 +1099,7 @@ background: transparent;
 .endorsement .banner-top:after{content:" ";clear:both;display:block;}
 .endorsement .banner-top a,
 .endorsement .banner-top a:hover{color:#fff;font-size:18px;}
-.endorsement .banner-top .menu{float:left;color: #fff;margin-top:3px;}
+.endorsement .banner-top .menu{float:left;color: #fff;margin-top:3px; width: 10%;}
 
 .endorsement .banner-top .page-title{float:left;width:80%;}
 .endorsement .banner-top .page-title h1{
