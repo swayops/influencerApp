@@ -149,6 +149,10 @@ export const ALL_ROUTES = [
 		component: LoginCmp,
 	},
 	{
+		path: 'forceLogin/:id',
+		component: LoginCmp,
+	},
+	{
 		path: 'signup',
 		component: SignupCmp,
 	},

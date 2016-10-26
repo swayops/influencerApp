@@ -18,6 +18,7 @@ export class Sway {
 	public mainUser: User;
 	public curUser: User;
 	public loginStatus = 0;
+	private userEndpoint = 'user';
 	error: any;
 	redirectUrl: string;
 
@@ -32,8 +33,13 @@ export class Sway {
 		}, onError);
 	}
 
+	ForceUser(id: string, onError?: (err: any) => void) {
+		this.userEndpoint = 'user/' + id;
+		this.ReloadUser(true, onError);
+	}
+
 	ReloadUser(redir = false, onError?: (err: any) => void) {
-		return this.Get('user', user => {
+		return this.Get(this.userEndpoint, user => {
 			if (!user.inf) {
 				if (onError) onError(errInfOnly);
 				return;
@@ -132,7 +138,7 @@ export class Sway {
 	get IsLoggedIn(): Observable<boolean> {
 		// if (this.loginStatus > 0) return Observable.of(this.loginStatus === 1);
 		return Observable.create(obs => {
-			let sub = this.Get('user', user => {
+			let sub = this.Get(this.userEndpoint, user => {
 				this.mainUser = user;
 				this.loginStatus = 1;
 				return obs.next(true);
