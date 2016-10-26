@@ -7,7 +7,16 @@
 	</div>
 </div>
 
-<div class="content">
+<div class="content" *ngIf="!!user.inf.requestedCheck">
+	<h2>
+		You currently have a check pending admin approval. Please wait up to 48 hours for an admin to approve your
+		payment and a check will be on it's way. You will receive an email once the admin has approved.
+	</h2>
+	<div class="action">
+		<a class="btn btn-deal" [routerLink]="['/dealFeed']">Go Back</a>
+	</div>
+</div>
+<div class="content" *ngIf="!user.inf.requestedCheck">
 	<h2>You have ${{ amount.toFixed(2) }} available <br>to <span class="italic">CASHOUT!</span></h2>
 	<ul class="deal-list">
 		<li *ngIf="user.inf.hasSigned">
