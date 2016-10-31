@@ -1,9 +1,9 @@
 // EditProfile
-import { Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 
 import { ImageCropperComponent, CropperSettings } from 'ng2-img-cropper';
-import {  Modal, ModalEvent } from './modal';
+import {  ModalEvent } from './modal';
 
 import { Sway, HasAPI } from './sway';
 
@@ -81,6 +81,7 @@ export class EditProfileCmp extends HasAPI {
 			},
 		};
 		this.api.Get('ip', data => this.data.ip = data.ip);
+		console.log(this.data);
 		this.cropperSettings.rounded = true;
 	}
 
