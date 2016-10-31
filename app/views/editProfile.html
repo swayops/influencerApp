@@ -27,7 +27,7 @@
 			</modal>
 		</div>
 		<div class="user-thumb">
-			<img src="{{ data.imageUrl || '/infApp/static/images/influencer-profile.png' }}" *ngIf="!cropData.image">
+			<img src="{{ data.imageUrl || '/static/images/influencer-profile.png' }}" *ngIf="!cropData.image">
 			<img [src]="cropData.image" *ngIf="cropData.image">
 			<modal #selProfile [buttons]=selImageButtons title="Select Your Profile Picture">
 				<div class="nosel">
