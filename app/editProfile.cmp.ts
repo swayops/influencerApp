@@ -60,6 +60,7 @@ export class EditProfileCmp extends HasAPI {
 		}
 		this.data = {
 			name: u.name,
+			phone: u.phone,
 			imageUrl: u.imageUrl,
 			coverImageUrl: u.coverImageUrl,
 			email: u.email,
