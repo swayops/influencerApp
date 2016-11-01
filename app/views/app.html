@@ -1,0 +1,15 @@
+<menu style="display: none"></menu>
+<div class="sway">
+	<div class="row">
+		<div class="col-md-12">
+			<div>
+				<div *ngFor="let n of notifications" class="alert alert-{{n.type}}" role="alert">
+					<p>{{n.msg}}</p>
+					<span class="fui-cross" onclick="this.parentNode.parentNode.removeChild(this.parentNode);" title="Close"></span>
+				</div>
+			</div>
+			<router-outlet></router-outlet>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+</div>

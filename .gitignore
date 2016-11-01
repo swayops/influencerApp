@@ -1,0 +1,13 @@
+node_modules/
+typings/
+static/app.js*
+static/vendor.js*
+.DS_Store
+
+app/views/basicCreateAndEdit.html
+
+tmp/
+app/*.ngfactory.*
+app/*.js*
+app/*.metadata.json
+

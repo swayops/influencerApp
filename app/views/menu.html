@@ -1,0 +1,17 @@
+<div id="menu-sidebar" (click)="toggleMenu()">
+	<h2><a style="color: #fff;"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></a>&nbsp;&nbsp;&nbsp; MENU</h2>
+
+	<ul class="menu">
+		<li><a [routerLink]="['/dealFeed']">Home Feed</a></li>
+		<li><a [routerLink]="['/influencer']">My Profile</a></li>
+		<li><a [routerLink]="['/deals']">My Endorsements</a></li>
+		<li><a [routerLink]="['/earningStats']">Sway Stats</a></li>
+		<li><a target="_blank" href="http://swayops.com/wiki/influencerTraining.php">Get Support</a></li>
+	</ul>
+
+	<ul class="account-actions">
+		<li><a [routerLink]="['/editProfile']">Edit Profile</a></li>
+		<li><a [routerLink]="['/cashoutEarnings']">Cashout Earnings</a></li>
+		<li><a (click)="api.Logout()">Logout</a></li>
+	</ul>
+</div>

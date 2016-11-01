@@ -1,0 +1,89 @@
+<div class="header-section">
+	<div class="back">
+		<a [routerLink]="['/influencer']"></a>
+	</div>
+	<div class="title"></div>
+</div>
+
+<div class="content">
+	<div class="tabs">
+		<div class="tab"><a href="#today">Today</a></div>
+		<div class="tab"><a href="#allTime" class="active">All time</a></div>
+	</div>
+	<div class="tab-content">
+		<ul class="stats-list" id="today">
+			<li class="stat-item">
+				<div class="ico views"><i></i></div>
+				<div class="ctr"><span>{{ today.views | fmtNum }}</span></div>
+				<div class="desc"><span>estimated views</span></div>
+			</li>
+			<li class="stat-item">
+				<div class="ico received"><i></i></div>
+				<div class="ctr"><span>{{ today.likes | fmtNum }}</span></div>
+				<div class="desc"><span>likes received</span></div>
+			</li>
+			<li class="stat-item">
+				<div class="ico clicks"><i></i></div>
+				<div class="ctr"><span>{{ today.clicks | fmtNum }}</span></div>
+				<div class="desc"><span>link clicks</span></div>
+			</li>
+			<li class="stat-item">
+				<div class="ico comments"><i></i></div>
+				<div class="ctr"><span>{{ today.shares | fmtNum }}</span></div>
+				<div class="desc"><span>shares</span></div>
+			</li>
+			<li class="stat-item">
+				<div class="ico comments"><i></i></div>
+				<div class="ctr"><span>{{ today.comments | fmtNum }}</span></div>
+				<div class="desc"><span>comments</span></div>
+			</li>
+			<li class="stat-item">
+				<div class="ico comments"><i></i></div>
+				<div class="ctr"><span>{{ today.perks | fmtNum }}</span></div>
+				<div class="desc"><span>perks</span></div>
+			</li>
+			<li class="stat-item">
+				<div class="ico earnings"><i></i></div>
+				<div class="ctr"><span>${{ today.infStats | fmtNum }}</span></div>
+				<div class="desc"><span>earnings</span></div>
+			</li>
+		</ul>
+		<ul class="stats-list" id="allTime">
+			<li class="stat-item">
+				<div class="ico views"><i></i></div>
+				<div class="ctr"><span>{{ allTime.views | fmtNum }}</span></div>
+				<div class="desc"><span>estimated views</span></div>
+			</li>
+			<li class="stat-item">
+				<div class="ico received"><i></i></div>
+				<div class="ctr"><span>{{ allTime.likes | fmtNum }}</span></div>
+				<div class="desc"><span>likes received</span></div>
+			</li>
+			<li class="stat-item">
+				<div class="ico clicks"><i></i></div>
+				<div class="ctr"><span>{{ allTime.clicks | fmtNum }}</span></div>
+				<div class="desc"><span>link clicks</span></div>
+			</li>
+			<li class="stat-item">
+				<div class="ico comments"><i></i></div>
+				<div class="ctr"><span>{{ allTime.shares | fmtNum }}</span></div>
+				<div class="desc"><span>shares</span></div>
+			</li>
+			<li class="stat-item">
+				<div class="ico comments"><i></i></div>
+				<div class="ctr"><span>{{ allTime.comments | fmtNum }}</span></div>
+				<div class="desc"><span>comments</span></div>
+			</li>
+			<li class="stat-item">
+				<div class="ico comments"><i></i></div>
+				<div class="ctr"><span>{{ allTime.perks | fmtNum }}</span></div>
+				<div class="desc"><span>perks</span></div>
+			</li>
+			<li class="stat-item">
+				<div class="ico earnings"><i></i></div>
+				<div class="ctr"><span>${{ allTime.infStats | fmtNum }}</span></div>
+				<div class="desc"><span>earnings</span></div>
+			</li>
+		</ul>
+	</div>
+</div>
