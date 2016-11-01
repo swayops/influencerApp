@@ -80,8 +80,6 @@ export class EditProfileCmp extends HasAPI {
 				address_country: inf.address.address_country,
 			},
 		};
-		this.api.Get('ip', data => this.data.ip = data.ip);
-		console.log(this.data);
 		this.cropperSettings.rounded = true;
 	}
 
