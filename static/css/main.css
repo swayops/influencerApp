@@ -1482,7 +1482,7 @@ body.menu-active .sway{background-color: #171616;overflow:hidden;}
 
 #menu-sidebar{
 	background: #171616;
-	overflow: hidden;
+	overflow: scroll;
 	height: 100%;
 	min-height: 505px;
 	position: absolute;
