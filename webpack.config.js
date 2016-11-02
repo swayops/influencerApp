@@ -12,7 +12,16 @@ function CleanPlugin(base, files) {
 }
 
 CleanPlugin.prototype = {
-	allFiles: function() { return this.files.concat(this.files.map(fp => this.exts.map(ext => fp + ext))); },
+	allFiles: function() {
+		const out = [];
+		for (let fp of this.files) {
+			out.push(fp);
+			for (let ext of this.exts) {
+				out.push(fp + ext);
+			}
+		}
+		return out;
+	},
 
 	apply: function(compiler) {
 		compiler.plugin('done', () => this.clean());
@@ -23,7 +32,7 @@ CleanPlugin.prototype = {
 			try {
 				const fn = path.join(this.base, fp);
 				fs.unlinkSync(fn);
-				console.log('removed ', fp);
+				console.log('removed:', fp);
 			} catch (e) { /***/ };
 		});
 	}
