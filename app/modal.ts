@@ -23,7 +23,7 @@ import { CancelEvent } from './utils';
 
 export class Modal {
 	private body = document.body;
-	@Input() defaultButtonClasses: string = 'btn btn-block btn-xs';
+	@Input() defaultButtonClasses: string = 'btn';
 	@Input() title: string;
 	@Input() width: string;
 	@Input() buttons: Button[];

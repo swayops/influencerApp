@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 
 import { ImageCropperComponent, CropperSettings } from 'ng2-img-cropper';
-import {  ModalEvent } from './modal';
+import { ModalEvent } from './modal';
 
 import { Sway, HasAPI } from './sway';
 
@@ -36,8 +36,8 @@ export class EditProfileCmp extends HasAPI {
 		canvasHeight: 200,
 		croppedWidth: 750,
 		croppedHeight: 375,
-		width:300,
-		height:150,
+		width: 300,
+		height: 150,
 	});
 
 	public cropData: any = {};
