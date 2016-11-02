@@ -229,6 +229,7 @@ const pageMapping = {
 };
 
 function getClassName(p: string): string {
+	p = p.replace(/\?.+$/, '');
 	const idx = p.indexOf('/', 1),
 		page = idx > -1 ? p.substr(1, idx - 1) : p.substr(1),
 		parts = p.split('/').filter(v => !!v);
