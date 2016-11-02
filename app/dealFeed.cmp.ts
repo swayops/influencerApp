@@ -19,7 +19,7 @@ export class DealFeedCmp extends HasAPI {
 
 		// discuss the EP with Shahzil
 		this.api.Get('getDeals/' + this.user.id + '/0/0', data => {
-			// data.forEach(v => console.log(v)); // uncomment to see how the data looks like
+			//data.forEach(v => console.log(v)); // uncomment to see how the data looks like
 			this.deals = data || [];
 
 			let featured: any;
@@ -31,6 +31,8 @@ export class DealFeedCmp extends HasAPI {
 			this.featured = featured;
 			if (featured && featured.cmpImg) {
 				this.featuredImage = sanitizer.bypassSecurityTrustStyle('url(' + featured.cmpImg + ')');
+			} else {
+				this.featuredImage = sanitizer.bypassSecurityTrustStyle('url("./static/images/defaultFeatured.jpg")');
 			}
 
 		}, err => this.AddNotification('error', err.msg));

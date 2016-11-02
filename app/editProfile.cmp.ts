@@ -27,17 +27,17 @@ export class EditProfileCmp extends HasAPI {
 		canvasHeight: 300,
 		croppedWidth: 300,
 		croppedHeight: 300,
-		minHeight: 300,
 	});
 	public coverCropperSettings = Object.assign(new CropperSettings(), {
 		keepAspect: true,
 		responsive: true,
 		noFileInput: true,
-		canvasWidth: 750,
-		canvasHeight: 375,
+		canvasWidth: 300,
+		canvasHeight: 200,
 		croppedWidth: 750,
 		croppedHeight: 375,
-		minHeight: 375,
+		width:300,
+		height:150,
 	});
 
 	public cropData: any = {};

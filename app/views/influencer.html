@@ -3,12 +3,12 @@
 		<a [routerLink]="['/dealFeed']"></a>
 	</div>
 	<div class="title">
-		<h1>My Profile <small>- <a [routerLink]="['/editProfile']">Edit Profile?</a></small></h1>
+		<h1>My Profile</h1>
 	</div>
 </div>
 
 <div class="influencer-page-banner">
-	<div class="influencer-logo"><img src="{{ user.imageUrl || '/static/images/influencer-profile.png' }}"></div>
+	<div class="influencer-logo"><a [routerLink]="['/editProfile']"><img src="{{ user.imageUrl || '/static/images/influencer-profile.png' }}"></a></div>
 </div>
 
 <div class="content">
