@@ -17,7 +17,7 @@
 			<modal #selCover [buttons]=selImageButtons title="Select Your Cover Picture" width="790px">
 				<div class="nosel">
 					<div>
-						<input id="cover-input" type="file" (change)="loadImage(coverCropper, $event)">
+						<input id="cover-input" type="file" (change)="loadImage(coverCropper, $event)" accept="image/*">
 						<label for="cover-input" class="btn btn-primary"><strong>Choose file &#187;</strong></label>
 					</div>
 					<br>
@@ -32,7 +32,7 @@
 			<modal #selProfile [buttons]=selImageButtons title="Select Your Profile Picture">
 				<div class="nosel">
 					<div>
-						<input id="profile-input" type="file" (change)="loadImage(cropper, $event)">
+						<input id="profile-input" type="file" (change)="loadImage(cropper, $event)" accept="image/*">
 						<label for="profile-input" class="btn btn-primary"><strong>Choose file &#187;</strong></label>
 					</div>
 					<br>
