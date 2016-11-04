@@ -22,7 +22,7 @@ const isProd = process.env.NODE_ENV === 'production',
 if (isProd) plugins.push(uglify());
 //paths are relative to the execution path
 export default {
-	entry: 'app/main-aot.ts',
+	entry: 'app/main.ts',
 	dest: 'static/app.js', // output a single application bundle
 	sourceMap: true,
 	sourceMapFile: 'static/app.js.map',

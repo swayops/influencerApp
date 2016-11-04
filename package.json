@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "start": "npm run build:w",
-    "build": " rollup -c rollup-config.js",
-    "build:w": "rollup -c rollup-config.js --watch",
-    "build:p": "ngc && NODE_ENV=production rollup -c rollup-config.js && gzip -9v static/app.js*",
+    "build": "ngc && rm static/app.js*; rollup -c rollup-config.js",
+    "build:w": "ngc && rm static/app.js*; rollup -c rollup-config.js --watch",
+    "build:p": "ngc && rm static/app.js*; NODE_ENV=production rollup -c rollup-config.js && gzip -9v static/app.js*",
     "postinstall": "echo running npm run build && npm run build",
     "tsc": "tsc",
     "typings": "typings",
