@@ -35,7 +35,7 @@
     "core-js": "~2.4.1",
     "jquery": "~2.2.4",
     "jqueryui": "~1.11.1",
-    "ng2-img-cropper": "../angular2-img-cropper",
+    "ng2-img-cropper": "swayops/angular2-img-cropper",
     "rollup": "^0.36.3",
     "rollup-plugin-commonjs": "^5.0.5",
     "rollup-plugin-node-resolve": "^2.0.0",
