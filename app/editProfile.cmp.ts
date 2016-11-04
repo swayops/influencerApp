@@ -7,6 +7,8 @@ import { ModalEvent } from './modal';
 
 import { Sway, HasAPI } from './sway';
 
+import $ from 'jquery';
+
 @Component({
 	selector: 'editProfile',
 	templateUrl: './views/editProfile.html',

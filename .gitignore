@@ -1,5 +1,6 @@
 node_modules/
 typings/
+static/bundle.js*
 static/app.js*
 static/vendor.js*
 .DS_Store
@@ -11,3 +12,4 @@ app/*.ngfactory.*
 app/*.js*
 app/*.metadata.json
 
+aot/

@@ -2,10 +2,12 @@ import { Component, Input, ElementRef } from '@angular/core';
 
 import { CancelEvent } from './utils';
 
+import $ from 'jquery';
+
 @Component({
 	selector: 'modal',
 	template: `
-<div [style.max-width]="width" class="{{ class }} nosel" (keydown.escape)="hide()">
+<div [style.max-width]="width" class="nosel" (keydown.escape)="hide()">
 	<h2 class="heading" *ngIf="title">{{ title }}
 		<a href="javascript:close()" class="fui-cross" (click)="hide()" title="Close" style="float: right"></a>
 		<br>
