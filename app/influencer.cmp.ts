@@ -4,6 +4,8 @@ import { Title, DomSanitizer } from '@angular/platform-browser';
 
 import { Sway, HasAPI } from './sway';
 
+import $ from 'jquery';
+
 @Component({
 	selector: 'influencer',
 	templateUrl: './views/influencer.html',

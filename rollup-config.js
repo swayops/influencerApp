@@ -4,14 +4,8 @@ import commonjs from 'rollup-plugin-commonjs';
 import uglify from 'rollup-plugin-uglify'
 import typescript from 'rollup-plugin-typescript';
 
-//paths are relative to the execution path
-export default {
-	entry: 'app/main.js',
-	dest: 'static/app.js', // output a single application bundle
-	sourceMap: true,
-	sourceMapFile: 'static/app.js.map',
-	format: 'iife',
-	plugins: [
+const isProd = process.env.NODE_ENV === 'production',
+	plugins = [
 		typescript({
 			typescript: require("typescript"),
 		}),
@@ -23,7 +17,17 @@ export default {
 		commonjs({
 			include: ['node_modules/**']
 		}),
-		uglify()
-	],
+	];
+
+if (isProd) plugins.push(uglify());
+//paths are relative to the execution path
+export default {
+	entry: 'app/main-aot.ts',
+	dest: 'static/app.js', // output a single application bundle
+	sourceMap: true,
+	sourceMapFile: 'static/app.js.map',
+	format: 'iife',
+	intro: 'var PRODUCTION = ' + isProd + ';',
+	plugins: plugins,
 	context: 'window'
 }

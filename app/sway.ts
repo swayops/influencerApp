@@ -6,6 +6,8 @@ import { Http, Response, Headers, RequestOptions } from '@angular/http';
 
 import { Observable } from 'rxjs/Observable';
 
+import $ from 'jquery';
+
 export const apiURL = '/api/v1/';
 
 const errInfOnly = {

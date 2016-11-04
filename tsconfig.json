@@ -20,13 +20,9 @@
 			"select2"
 		]
 	},
-	"awesomeTypescriptLoaderOptions": {
-		"skipDeclarationFilesCheck": true,
-		"useWebpackText": true //Allows loaders to be chained to awesome-typescript-loader.
-	},
 	"files": [
 		"app/app.module.ts",
-		"app/main.ts"
+		"app/main-aot.ts"
 	],
 
 	"angularCompilerOptions": {

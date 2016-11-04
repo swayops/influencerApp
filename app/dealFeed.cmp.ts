@@ -4,6 +4,8 @@ import { Title, DomSanitizer, SafeStyle } from '@angular/platform-browser';
 
 import { Sway, HasAPI } from './sway';
 
+import $ from 'jquery';
+
 @Component({
 	selector: 'endorsement',
 	templateUrl: './views/dealFeed.html',
@@ -19,7 +21,7 @@ export class DealFeedCmp extends HasAPI {
 
 		// discuss the EP with Shahzil
 		this.api.Get('getDeals/' + this.user.id + '/0/0', data => {
-			//data.forEach(v => console.log(v)); // uncomment to see how the data looks like
+			// data.forEach(v => console.log(v)); // uncomment to see how the data looks like
 			this.deals = data || [];
 
 			let featured: any;
