@@ -10,7 +10,8 @@
     "postinstall": "echo running npm run build && npm run build",
     "tsc": "tsc",
     "typings": "typings",
-    "webpack": "webpack"
+    "ngc": "ngc",
+    "rollup": "rollup -c rollup-config.js"
   },
   "license": "private",
   "dependencies": {
@@ -31,7 +32,6 @@
     "@types/node": "~6.0.46",
     "@types/select2": "~4.0.30",
     "bootstrap": "~3.3.7",
-    "compression-webpack-plugin": "~0.3.2",
     "core-js": "~2.4.1",
     "jquery": "~2.2.4",
     "jqueryui": "~1.11.1",
