@@ -12,8 +12,8 @@ import { DateString } from './utils';
 	templateUrl: './views/postStats.html',
 })
 export class PostStatsCmp extends HasAPI {
-	public today = {};
-	public allTime = {};
+	public today: any = {};
+	public allTime: any = {};
 	constructor(title: Title, public api: Sway, route: ActivatedRoute) {
 		super(api);
 		title.setTitle('Post Stats');

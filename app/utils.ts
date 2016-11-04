@@ -26,7 +26,7 @@ export class FilterArrayPipe implements PipeTransform {
 
 @Pipe({ name: 'fmtNum' })
 export class FormatNumberPipe implements PipeTransform {
-	transform(n, fn): string {
+	transform(n): string {
 		n = parseFloat(n);
 		if (n === 0 || isNaN(n)) return 'N/A';
 		if (n >= 1e6) {
@@ -41,7 +41,7 @@ export class FormatNumberPipe implements PipeTransform {
 
 function trimNumber(n: number): string { return n.toFixed(2).replace(/\.0\d?$/, ''); }
 
-export function FilterByProps(kw: string | null, it: Object, ...props: string[]): boolean {
+export function FilterByProps(kw: string, it: any, ...props: string[]): boolean {
 	if (!kw || !it) return true;
 	kw = kw.toLowerCase();
 	return props.some(k => {

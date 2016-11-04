@@ -5,7 +5,7 @@ import { Router, ActivatedRoute, NavigationStart, NavigationEnd } from '@angular
 
 import { Sway, HasAPI } from './sway';
 
-import * as $ from 'jquery';
+import 'jquery';
 
 @Component({
 	selector: 'not-found',
@@ -93,7 +93,7 @@ export class AppCmp extends HasAPI {
 			$('#shareCodeSection').show('slow');
 		});
 
-		$('.onoffswitch').click(function (this: {}) {
+		$('.onoffswitch').click(function () {
 			let cls = $(this).attr('data-for');
 			if ($(this).find('input').is(':checked')) {
 				$('.' + cls).slideToggle();
@@ -110,7 +110,7 @@ export class AppCmp extends HasAPI {
 			}
 		});
 
-		$('#slct_perks').click(function (this: {}) {
+		$('#slct_perks').click(function () {
 			let cls = $(this).attr('data-for');
 			$('.' + cls).slideToggle();
 			if ($('#perks').prop('checked')) {
@@ -123,7 +123,7 @@ export class AppCmp extends HasAPI {
 
 		});
 
-		$('.onoffswitch').each(function (this: {}) {
+		$('.onoffswitch').each(function () {
 			const cls = $(this).attr('data-for'),
 				checked = $(this).find('input').is(':checked');
 			if (!checked) {
@@ -131,7 +131,7 @@ export class AppCmp extends HasAPI {
 			}
 		});
 
-		$('.prog-bar div').each(function (this: {}, index: number) {
+		$('.prog-bar div').each(function (index: number) {
 			$(this).slider({
 				orientation: 'horizontal',
 				range: 'min',
@@ -163,7 +163,7 @@ export class AppCmp extends HasAPI {
 	initIncrGroup() {
 		$('.increment-group').append(incGroupHTML);
 
-		$('.increment-group .button').on('click', function (this: {}) {
+		$('.increment-group .button').on('click', function () {
 			let $button = $(this);
 			let oldValue = $button.parent().parent().find('input').val(), newVal = 0;
 
@@ -194,7 +194,7 @@ export class AppCmp extends HasAPI {
 			});
 		});
 
-		$('.notification .fui-cross').click(function (this: {}) {
+		$('.notification .fui-cross').click(function () {
 			$(this).parent().fadeOut(450);
 		});
 	}
