@@ -25,7 +25,7 @@
 				<!--<li>Caption: <span class="value">I love skinny bunny tea because it helps me feel good.</span></li>-->
 				<li *ngIf="deal.link">Link in caption: <span class="value">{{ deal.shortenedLink || deal.link }}</span></li>
 				<!--<li>Perks: <span class="value">The physical good or coupon must appear within the post</span></li>-->
-				<li *ngIf="deal.tags">Hashtags: <span class="value">{{ deal.tags?.join(', ') }}</span></li>
+				<li *ngIf="deal.tags">Hashtags: <span class="value">{{ deal.tags.join(', ') + ', #ad' }}</span></li>
 				<li *ngIf="deal.mention">Mentions: <span class="value">{{ deal.mention }}</span></li>
 			</ul>
 		</div>
