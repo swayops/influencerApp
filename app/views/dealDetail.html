@@ -25,12 +25,12 @@
 				<!--<li>Caption: <span class="value">I love skinny bunny tea because it helps me feel good.</span></li>-->
 				<li *ngIf="deal.shortenedLink">Link in caption: <span class="value">{{ deal.shortenedLink }}</span></li>
 				<!--<li>Perks: <span class="value">The physical good or coupon must appear within the post</span></li>-->
-				<li *ngIf="deal.tags">Hashtags: <span class="value">{{ deal.tags.join(', ') + ', #ad' }}</span></li>
+				<li *ngIf="deal.tags">Hashtags: <span class="value">{{ '#' + deal.tags.join(', #') + ', #ad' }}</span></li>
 				<li *ngIf="deal.mention">Mentions: <span class="value">{{ deal.mention }}</span></li>
 			</ul>
 		</div>
 	</div>
-	<div class="action">
+	<div class="action" *ngIf="!deal.assigned">
 		<div class="alert alert-danger" role="alert" *ngIf="!!err">{{ err }}</div>
 		<button class="btn btn-deal" (click)="Accept()" [disabled]="!!err"><span class="plus-ico"></span>Accept Endorsement</button>
 	</div>
