@@ -10,7 +10,7 @@ import { Sway, HasAPI } from './sway';
 	templateUrl: './views/dealDetail.html',
 })
 export class DealDetailCmp extends HasAPI {
-	public deal: any = {};
+	public deal: any;
 	public err: any;
 	constructor(title: Title, public api: Sway, route: ActivatedRoute) {
 		super(api);

@@ -7,6 +7,9 @@
 	</div>
 </div>
 
+<div class="content" *ngIf="!deal && err">
+	<div class="alert alert-danger" role="alert" *ngIf="!!err">{{ err }}</div>
+</div>
 <div class="content" *ngIf="deal">
 	<div class="feature-thumbnail"><img [src]="deal.cmpImg"></div>
 	<div class="details">
