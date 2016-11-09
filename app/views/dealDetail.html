@@ -18,7 +18,7 @@
 			<ul>
 				<li>PAYOUT REMAINING: <span class="value">${{ deal.spendable | fmtNum }}</span></li>
 				<li *ngIf="deal.perks">Perks: <span class="value">{{ deal.perks.name || 'N/A' }}</span></li>
-				<li>Accepted: <span class="value">{{ deal.platforms?.join(', ') }}</span></li>
+				<li>Please post to <em>ONLY</em> one of the following networks: <span class="value">{{ deal.platforms?.join(', ') }}</span></li>
 			</ul>
 		</div>
 		<div class="deal-content">
