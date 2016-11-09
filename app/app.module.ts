@@ -109,6 +109,11 @@ export const ALL_ROUTES = [
 		canActivate: [AuthGuard],
 	},
 	{
+		path: 'pendingDeals',
+		component: DealsCmp,
+		canActivate: [AuthGuard],
+	},
+	{
 		path: 'earningStats',
 		component: EarningStatsCmp,
 		canActivate: [AuthGuard],
