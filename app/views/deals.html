@@ -7,8 +7,8 @@
 
 <div class="content">
 	<div class="tabs">
-		<div class="tab"><a href="#completed" class="active">Completed</a></div>
-		<div class="tab"><a href="#pending">Pending</a></div>
+		<div class="tab"><a href="#completed" [class.active]="!pendingTab">Completed</a></div>
+		<div class="tab"><a href="#pending" [class.active]="pendingTab">Pending</a></div>
 	</div>
 	<div class="tab-content">
 		<ul class="endorsement-list" id="completed">
