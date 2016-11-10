@@ -7,7 +7,7 @@ import { ModalEvent } from './modal';
 
 import { Sway, HasAPI } from './sway';
 
-import $ from 'jquery';
+declare var $: any;
 
 @Component({
 	selector: 'editProfile',
