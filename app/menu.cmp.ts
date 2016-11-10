@@ -4,7 +4,7 @@ import { Title } from '@angular/platform-browser';
 
 import { Sway, HasAPI } from './sway';
 
-import $ from 'jquery';
+declare var $: any;
 
 @Component({
 	selector: 'menu',

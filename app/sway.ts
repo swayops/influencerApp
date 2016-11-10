@@ -6,7 +6,7 @@ import { Http, Response, Headers, RequestOptions } from '@angular/http';
 
 import { Observable } from 'rxjs/Observable';
 
-import $ from 'jquery';
+declare var $: any;
 
 export const apiURL = '/api/v1/';
 

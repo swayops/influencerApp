@@ -10,12 +10,11 @@ const isProd = process.env.NODE_ENV === 'production',
 			typescript: require("typescript"),
 		}),
 		nodeResolve({
+			main: true,
 			jsnext: true,
-			module: true,
-			browser: true,
 		}),
 		commonjs({
-			include: ['node_modules/**']
+			include: ['node_modules/rxjs/**']
 		}),
 	];
 
@@ -25,7 +24,7 @@ export default {
 	entry: 'app/main.ts',
 	dest: 'static/app.js', // output a single application bundle
 	sourceMap: true,
-	sourceMapFile: 'static/app.js.map',
+	//sourceMapFile: 'static/app.js.map',
 	format: 'iife',
 	intro: 'var PRODUCTION = ' + isProd + ';',
 	plugins: plugins,
