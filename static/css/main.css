@@ -242,13 +242,19 @@ body.walkthrough1{}
 
 .signup a#logo {
 	display: block;
-	margin: 60px auto 100px;
+	margin: 60px auto 50px;
 	width: initial;
 	text-align: center;
 }
 
 .signup a#logo img{
-	width:206px;height:56px;
+	width:206px;
+	height:56px;
+}
+
+#signupNote {
+	padding: 0px 30px 0px 25px;
+	color:#fff;
 }
 
 .user #sigup{
