@@ -1,19 +1,22 @@
 <div class="content signup-form">
 	<a href="#" id="logo"><img src="/static/images/logo.png"></a>
+	<p align="center" id="signupNote">
+	A refreshing way to automate and manage social media endorsements. No back and forth emails, no shady contracts or "bookings" emails, just pure automation so you can focus on creating great content.
+	</p>
 	<form id="sigup" #f="ngForm" (ngSubmit)="SignUp()">
 		<div class="field text-field"><input type="text" name="name" placeholder="Name" [(ngModel)]="data.name" required></div>
 		<div class="field text-field"><input type="number" name="age" placeholder="Age" [(ngModel)]="data.age" required></div>
 		<div class="field text-field"><input type="email" name="email" placeholder="Login Email" [(ngModel)]="data.email" required></div>
 		<div class="field text-field"><input type="password" name="password" placeholder="Password" [(ngModel)]="data.pass" required></div>
 		<div class="field checkbox-field">
-			<label>I agree to the <a target="_blank" href="http://swayops.com/terms.html">terms</a> &amp; <a target="_blank" href="http://swayops.com/privacy.html">privacy policy</a></label>
+			<label>I agree to the <a target="_blank" href="https://swayops.com/terms-policy-cookies.html">terms</a> &amp; <a target="_blank" href="https://swayops.com/terms-policy-cookies.html">privacy policy</a></label>
 			<div class="switch">
 				<input id="cmn-toggle" class="cmn-toggle cmn-toggle-round-flat" checked type="checkbox" #chk>
 				<label for="cmn-toggle"></label>
 			</div>
 		</div>
 		<div class="fix-to-bot">
-			<div class="field submit-field"><button type="submit" class="btn btn-primary" [disabled]="!f.valid || loading">Endorse Me!</button></div>
+			<div class="field submit-field"><button type="submit" class="btn btn-primary" [disabled]="!f.valid || loading">Try It Out &#187;</button></div>
 			<div class="field link-field"><a [routerLink]="['/login']" class="have-an-account">Already have an account?</a></div>
 		</div>
 	</form>
