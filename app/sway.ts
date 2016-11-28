@@ -205,6 +205,7 @@ export class HasAPI {
 		if (typeof msg === 'object' && 'msg' in msg) msg = msg.msg;
 		if (type === 'error') type = 'danger'; // workaround for bootstrap notifications
 		allNotifications.push({ type, msg, timeout });
+		if (type === 'error') this.ScrollToTop(100);
 	}
 
 	ResetNotifications() {
