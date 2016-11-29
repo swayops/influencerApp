@@ -13,14 +13,14 @@
 		<li>
 			Follow your endorsement instructions by posting to your favorite social networks. If you are receiving a physical product or coupon for this deal, please wait for any items to arrive before making your post.
 		</li>
-		<li>
-			Your coupon code is: {{Code Here}}<br/>
-			COUPON INSTRUCTIONS: {{How to use}}
+		<li *ngIf="perk.code">
+			<p> Your coupon code is: {{ perk.code }} </p>
+			<p *ngIf="perk.instructions">COUPON INSTRUCTIONS: {{ perk.instructions }}</p>
 		</li>
 		<li>
-		    Include your required items in your post.<br>
-			<!--<span class="highlighted">These have already been copied to your  clipboard. </span>-->
-			Simply paste them into your social network when you are ready.<br>
+			Include your required items in your post.
+			<br> Simply paste them into your social network when you are ready.
+			<br>
 			<span class="txt-note">Don't forget to hastag #ad to comply with FTC guidelines.</span>
 		</li>
 		<li>

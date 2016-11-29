@@ -11,10 +11,13 @@ import { Sway, HasAPI } from './sway';
 })
 export class AcceptedDealAlertCmp extends HasAPI {
 	private ts: number;
+	public perk: any;
 	constructor(title: Title, public api: Sway, route: ActivatedRoute) {
 		super(api);
 		title.setTitle('Accepted Deal Alert');
 		this.ts = parseInt(route.snapshot.params['ts']);
+		this.perk = this.GetData('deal:' + this.ts, {}, true);
+
 	}
 
 	get DaysLeft(): string {

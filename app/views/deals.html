@@ -20,6 +20,8 @@
 					<ul class="cat">
 						<li>PAYOUT REMAINING: <span>${{ d.spendable }}</span></li>
 						<li *ngIf="d.perks">PERKS: <span>{{ d.perks?.name || 'N/A' }}</span></li>
+						<li *ngIf="d.perks && d.perks.code">COUPON: {{ d.perks.code }}</li>
+						<li *ngIf="d.perks && d.perks.instructions">COUPON INSTRUCTIONS: {{ d.perks.instructions }}</li>
 						<li>ACCEPTED: <span>{{ d.platforms?.join(', ') }}</span></li>
 					</ul>
 					<a [routerLink]="['/postStats', d.id]" class="btn btn-view">View Stats</a>
@@ -34,9 +36,7 @@
 					<h4>{{ d.cmpName }}</h4>
 					<ul class="cat">
 						<li>PAYOUT REMAINING: <span>${{ d.spendable }}</span></li>
-						<li *ngIf="d.perks">PERKS: <span>{{ d.perks?.name || 'N/A' }}</span></li>
-						<li>COUPON: {{Code Here}}</li>
-						<li>COUPON INSTRUCTIONS: {{How to use}}</li>
+						<li *ngIf="d.perks">PERKS: <span>{{ d.perks.name || 'N/A' }}</span></li>
 						<li>ACCEPTED: <span>{{ d.platforms?.join(', ') }}</span></li>
 					</ul>
 					<a [routerLink]="['/dealDetail', d.campaignId, d.id]" class="btn btn-view">View Endorsement</a>

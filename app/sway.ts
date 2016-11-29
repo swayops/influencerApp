@@ -184,6 +184,7 @@ export class AuthGuard implements CanActivate {
 }
 
 let allNotifications: Notification[] = [];
+let globalData: { [key: string]: any } = {};
 export class HasAPI {
 	constructor(protected api: Sway) { }
 	get user() { return this.api.CurrentUser; }
@@ -228,6 +229,16 @@ export class HasAPI {
 	get HasAddress(): boolean {
 		const inf = this.user.inf || {};
 		return !!inf.address;
+	}
+
+	SetData(k: string, v: any) {
+		globalData[k] = v;
+	}
+
+	GetData(k: string, defVal?: any, remove?: boolean): any {
+		const v = globalData[k] || defVal;
+		if (remove) delete globalData[k];
+		return v;
 	}
 }
 
