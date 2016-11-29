@@ -203,7 +203,10 @@ export class HasAPI {
 	AddNotification(type: string, msg: any, timeout: number = null) {
 		if (timeout == null) timeout = 10000;
 		if (typeof msg === 'object' && 'msg' in msg) msg = msg.msg;
-		if (type === 'error') type = 'danger'; // workaround for bootstrap notifications
+		if (type === 'error') {
+			type = 'danger'; // workaround for bootstrap notifications
+			this.ScrollToTop(200);
+		}
 		allNotifications.push({ type, msg, timeout });
 	}
 
