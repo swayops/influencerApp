@@ -15,8 +15,8 @@ declare var $: any;
 })
 export class EditProfileCmp extends HasAPI {
 	public selImageButtons = [
-		{name: 'Cancel', class: 'btn-default ghost'},
-		{name: 'Save & crop image »', class: 'btn-primary', click: evt => this.setImage(evt)},
+		{ name: 'Cancel', class: 'btn-default ghost' },
+		{ name: 'Save & crop image »', class: 'btn-primary', click: evt => this.setImage(evt) },
 	];
 	public data: any;
 	public loading = false;
@@ -124,7 +124,6 @@ export class EditProfileCmp extends HasAPI {
 		}, err => {
 			this.loading = false;
 			this.AddNotification('error', err.msg);
-			this.ScrollToTop(100);
 		});
 	}
 }

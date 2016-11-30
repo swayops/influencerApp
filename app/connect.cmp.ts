@@ -32,7 +32,6 @@ export class ConnectCmp extends HasAPI {
 		}, err => {
 			this.loading = false;
 			this.AddNotification('error', err.msg);
-			this.ScrollToTop(100);
 		});
 	}
 }

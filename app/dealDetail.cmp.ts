@@ -28,6 +28,7 @@ export class DealDetailCmp extends HasAPI {
 			uid = this.user.id;
 		// /assignDeal/:influencerId/:campaignId/:dealId/:platform
 		this.api.Get('assignDeal/' + uid + '/' + d.campaignId + '/' + d.id + '/' + d.platforms[0], data => {
+			this.SetData('deal:' + data.assigned, data);
 			this.api.GoTo('acceptedDealAlert', data.assigned);
 		}, err => this.err = err.msg);
 	}

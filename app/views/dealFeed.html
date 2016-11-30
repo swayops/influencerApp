@@ -1,6 +1,6 @@
 <div class="alert alert-info" role="alert" *ngIf="!HasCompleteProfile">Welcome! Deals will appear here. Don't worry, more deals will exist for you after a Sway agent finalizes your account. This usually occurs within 24 hours :)</div>
 <div class="alert alert-warning" role="alert" *ngIf="!HasAddress">
-	To get free products and more deals please enter a shipping address: <a [routerLink]="['/editProfile']" >Lets do it</a>
+	To get free products and more deals please enter a shipping address: <a [routerLink]="['/editProfile']">Lets do it</a>
 </div>
 <div class="endorsement-banner" [style.background-image]="featuredImage">
 	<div class="banner-top">
@@ -20,7 +20,7 @@
 		<h3>Featured:</h3>
 		<h2>{{ featured.cmpName }}</h2>
 		<p>PAYOUT REMAINING: <span>${{ featured.spendable }}</span></p>
-		<p *ngIf="featured.perks">PERKS: <span>{{ featured.perks?.name || 'N/A' }}</span></p>
+		<p *ngIf="featured.perk">PERKS: <span>{{ featured.perk.name || 'N/A' }}</span> (<span class="value">{{ featured.perk.category }}</span>)</p>
 		<p>ACCEPTED: <span>{{ featured.platforms?.join(', ') }}</span></p>
 		<div class="banner-links">
 			<span>dot</span>
@@ -38,7 +38,7 @@
 				<h4>{{ d.cmpName }}</h4>
 				<ul class="cat">
 					<li>PAYOUT REMAINING: <span>${{ d.spendable }}</span></li>
-					<li *ngIf="d.perks">PERKS: <span>{{ d.perks?.name || 'N/A' }}</span></li>
+					<li *ngIf="d.perk">PERKS: <span>{{ d.perk.name || 'N/A' }}</span> (<span class="value">{{ d.perk.category }}</span>)</li>
 					<li>ACCEPTED: <span>{{ d.platforms?.join(', ') }}</span></li>
 				</ul>
 				<a [routerLink]="['/dealDetail', d.campaignId, d.id]" class="btn btn-view">View Endorsement</a>

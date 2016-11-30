@@ -184,6 +184,7 @@ export class AuthGuard implements CanActivate {
 }
 
 let allNotifications: Notification[] = [];
+let globalData: { [key: string]: any } = {};
 export class HasAPI {
 	constructor(protected api: Sway) { }
 	get user() { return this.api.CurrentUser; }
@@ -203,7 +204,10 @@ export class HasAPI {
 	AddNotification(type: string, msg: any, timeout: number = null) {
 		if (timeout == null) timeout = 10000;
 		if (typeof msg === 'object' && 'msg' in msg) msg = msg.msg;
-		if (type === 'error') type = 'danger'; // workaround for bootstrap notifications
+		if (type === 'error') {
+			type = 'danger'; // workaround for bootstrap notifications
+			this.ScrollToTop(200);
+		}
 		allNotifications.push({ type, msg, timeout });
 	}
 
@@ -225,6 +229,16 @@ export class HasAPI {
 	get HasAddress(): boolean {
 		const inf = this.user.inf || {};
 		return !!inf.address;
+	}
+
+	SetData(k: string, v: any) {
+		globalData[k] = v;
+	}
+
+	GetData(k: string, defVal?: any, remove?: boolean): any {
+		const v = globalData[k] || defVal;
+		if (remove) delete globalData[k];
+		return v;
 	}
 }
 
