@@ -24,12 +24,10 @@ export class DealDetailCmp extends HasAPI {
 	}
 
 	get perkName(): string {
-		let p = this.deal.perks,
+		let p = this.deal.perk,
 			name = p.name || 'N/A';
-		if (p.type === 1) {
-			name += ', type: Product';
-		} else if (p.type === 2) {
-			name += ', type: Coupon';
+		if (p.category) {
+			name += ', type: ' + p.category;
 		}
 		return name;
 	}

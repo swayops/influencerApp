@@ -17,10 +17,10 @@
 			<h2>{{ deal.cmpName }}</h2>
 			<ul>
 				<li>PAYOUT REMAINING: <span class="value">${{ deal.spendable | fmtNum }}</span></li>
-				<li *ngIf="deal.perks">Perks: <span class="value">{{ perkName }}</span></li>
-				<li *ngIf="deal.perks && deal.perks.code">
-					<p> Your coupon code is: {{ deal.perks.code }} </p>
-					<p *ngIf="perk.instructions">COUPON INSTRUCTIONS: {{ deal.perks.instructions }}</p>
+				<li *ngIf="deal.perk">Perks: <span class="value">{{ perkName }}</span></li>
+				<li *ngIf="deal.perk && deal.perk.code">
+					<p> Your coupon code is: {{ deal.perk.code }} </p>
+					<p *ngIf="deal.perk.instructions">COUPON INSTRUCTIONS: {{ deal.perk.instructions }}</p>
 				</li>
 				<li>Please post to <em>ONLY</em> one of the following networks: <span class="value">{{ deal.platforms?.join(', ') }}</span></li>
 			</ul>
