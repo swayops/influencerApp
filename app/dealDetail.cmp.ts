@@ -23,14 +23,6 @@ export class DealDetailCmp extends HasAPI {
 		}, err => this.err = err.msg);
 	}
 
-	get perkName(): string {
-		let p = this.deal.perk,
-			name = p.name || 'N/A';
-		if (p.category) {
-			name += ', type: ' + p.category;
-		}
-		return name;
-	}
 	Accept() {
 		const d = this.deal,
 			uid = this.user.id;
