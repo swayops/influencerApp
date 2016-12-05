@@ -34,4 +34,8 @@ export class ConnectCmp extends HasAPI {
 			this.AddNotification('error', err.msg);
 		});
 	}
+
+	get hasAccounts(): boolean {
+		return Object.keys(this.data).some(k => !!this.data[k]);
+	}
 }
