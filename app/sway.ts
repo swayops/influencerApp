@@ -105,7 +105,7 @@ export class Sway {
 		if (hasSocial) {
 			this.GoTo('/dealFeed');
 		} else {
-			this.GoTo('/welcome');
+			this.GoTo('/connect');
 		}
 	}
 

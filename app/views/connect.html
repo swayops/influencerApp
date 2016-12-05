@@ -2,29 +2,37 @@
 
 <div class="banner welcome-banner">
 	<h2>Connect your accounts</h2>
-	<p>Please enter your account<br> usernames below so that we<br> can track when you have<br> performed a deal.</p>
+	<p>Please enter your account
+		<br> usernames below so that we
+		<br> can track when you have
+		<br> performed a deal.</p>
 </div>
 
 <div class="content">
 	<form id="connect" class="user-form" (ngSubmit)="LinkAccounts()">
 		<div class="instruction">
-			<span>*Accounts must be publicly viewable.</span>
+			<span><strong style="color: red">*</strong> Accounts must be publicly viewable, and you must provide at least one account.</span>
 		</div>
 		<div class="field two-cols">
-			<label>Instagram:</label><input type="text" name="instagram" [(ngModel)]="data.instagram" placeholder="Enter your username">
+			<label>Instagram:</label>
+			<input type="text" name="instagram" [(ngModel)]="data.instagram" placeholder="Enter your username">
 		</div>
 		<div class="field two-cols">
-			<label>Youtube:</label><input type="text" name="youtube" [(ngModel)]="data.youtube" placeholder="Enter your username">
+			<label>Youtube:</label>
+			<input type="text" name="youtube" [(ngModel)]="data.youtube" placeholder="Enter your username">
 		</div>
 		<div class="field two-cols">
-			<label>Twitter:</label><input type="text" name="twitter" [(ngModel)]="data.twitter" placeholder="Enter your username">
+			<label>Twitter:</label>
+			<input type="text" name="twitter" [(ngModel)]="data.twitter" placeholder="Enter your username">
 		</div>
 		<div class="field two-cols">
-			<label>FB Page:</label><input type="text" name="facebook" [(ngModel)]="data.facebook" placeholder="Enter your username">
+			<label>FB Page:</label>
+			<input type="text" name="facebook" [(ngModel)]="data.facebook" placeholder="Enter your username">
 		</div>
 		<div class="fix-to-bot">
-			<!--take user to deal feed after this-->
-			<div class="field submit-field"><button type="submit" class="btn btn-primary" [disabled]="loading">Save Accounts</button></div>
+			<div class="field submit-field">
+				<button type="submit" class="btn btn-primary" [disabled]="loading || !hasAccounts">Save Accounts</button>
+			</div>
 		</div>
 	</form>
 </div>
