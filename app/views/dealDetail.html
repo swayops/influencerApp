@@ -30,10 +30,10 @@
 			<h4>YOUR POST MUST CONTAIN:</h4>
 			<ul>
 				<!--<li>Caption: <span class="value">I love skinny bunny tea because it helps me feel good.</span></li>-->
-				<li *ngIf="deal.shortenedLink">Link in caption: <span class="value">{{ deal.shortenedLink }}</span></li>
+				<li *ngIf="deal.shortenedLink">Put this link in your bio/ caption: <span class="value">{{ deal.shortenedLink }}</span></li>
 				<!--<li>Perks: <span class="value">The physical good or coupon must appear within the post</span></li>-->
-				<li *ngIf="deal.tags">Hashtags: <span class="value">{{ '#' + deal.tags.join(', #') + ', #ad' }}</span></li>
-				<li *ngIf="deal.mention">Mentions: <span class="value">{{ deal.mention }}</span></li>
+				<li *ngIf="deal.tags">Hashtags to do: <span class="value">{{ '#' + deal.tags.join(', #') + ', #ad' }}</span></li>
+				<li *ngIf="deal.mention">Mentions to do: <span class="value">{{ deal.mention }}</span></li>
 			</ul>
 		</div>
 	</div>
