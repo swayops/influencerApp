@@ -14,7 +14,7 @@
 			Follow your endorsement instructions by posting to your favorite social networks. If you are receiving a physical product or coupon for this deal, please wait for any items to arrive before making your post.
 		</li>
 		<li *ngIf="perk.code">
-			<p> Your coupon code is: {{ perk.code }} </p>
+			<p>Your coupon code is:<b style="color:red;"> {{ perk.code }} </b></p>
 			<p *ngIf="perk.instructions">COUPON INSTRUCTIONS: {{ perk.instructions }}</p>
 		</li>
 		<li>

@@ -19,8 +19,8 @@
 				<li>PAYOUT REMAINING: <span class="value">${{ deal.spendable | fmtNum }}</span></li>
 				<li *ngIf="deal.perk">Perks: <span class="value">{{ deal.perk.name }}</span> (<span class="value">{{ deal.perk.category }}</span>)</li>
 				<li *ngIf="deal.perk && deal.perk.code">
-					<p> Your coupon code is: {{ deal.perk.code }} </p>
-					<p *ngIf="deal.perk.instructions">COUPON INSTRUCTIONS: {{ deal.perk.instructions }}</p>
+					<p> Your coupon code is: <span class="value">{{ deal.perk.code }}</span></p>
+					<p *ngIf="deal.perk.instructions">COUPON INSTRUCTIONS: <span class="value">{{ deal.perk.instructions }}</span></p>
 				</li>
 				<li>Please post to <em>ONLY</em> one of the following networks: <span class="value">{{ deal.platforms?.join(', ') }}</span></li>
 			</ul>
