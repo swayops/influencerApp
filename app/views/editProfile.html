@@ -9,7 +9,7 @@
 			</div>
 			<div class="save"><button type="submit" class="btn btn-primary" [disabled]="!f.valid || loading">save</button></div>
 		</div>
-		<div class="overlay">
+		<div class="overlay" style="z-index: -1;">
 			<div class="holder">
 				<a class="camera" (click)="selProfile.show('profile')">save</a>
 				<a class="camera-mini" (click)="selCover.show('cover')">save</a>
