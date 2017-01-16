@@ -548,7 +548,7 @@ background: transparent;
 	text-transform: uppercase;
 	font-weight: 600;
 	font-size: 14px;
-	color:#d9d9d9;
+	color:#009fe8;
 }
 .brand-page .tabs ul li a:hover,
 .brand-page .tabs ul li a:focus{text-decoration:none;color:#4a4a4a;}
@@ -1244,7 +1244,7 @@ background: transparent;
 	display: inline-block;
 	text-transform: uppercase;
 	font-weight: 600;
-	color: #d9d9d9;
+	color: #009fe8;
 	margin-bottom: -1px;
 }
 .deal-pending-page .tabs .tab a:hover,
@@ -1335,7 +1335,7 @@ background: transparent;
 	display: inline-block;
 	text-transform: uppercase;
 	font-weight: 600;
-	color: #d9d9d9;
+	color: #009fe8;
 	margin-bottom: -1px;
 }
 .post-stats-page .tabs .tab a:hover,
