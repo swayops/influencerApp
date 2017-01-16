@@ -79,7 +79,7 @@ export class EditProfileCmp extends HasAPI {
 	ngAfterViewInit() {
 		const url = this.data.coverImageUrl;
 		// fuck you angular and your bs xss overprotection
-		if (url) $('.overlay').attr('style', 'background-image: url(' + url + '); background-size: cover;');
+		if (url) $('.overlay').attr('style', 'background-image: url(' + url + '); background-size: cover; z-index: -1;');
 	}
 
 	loadImage(cropper: ImageCropperComponent, e: any) {
