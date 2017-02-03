@@ -16,7 +16,8 @@
 		<div class="deal-info">
 			<h2>{{ deal.cmpName }}</h2>
 			<ul>
-				<li>PAYOUT REMAINING: <span class="value">${{ deal.spendable | fmtNum }}</span></li>
+				<li>YOUR LIKELY EARNINGS: <span class="value">${{ deal.likelyEarnings | fmtNum }}</span></li>
+				<li>TOTAL AVAILABLE FOR INFLUENCERS: <span class="value">${{ deal.spendable | fmtNum }}</span></li>
 				<li *ngIf="deal.perk">Perks: <span class="value">{{ deal.perk.name }}</span> (<span class="value">{{ deal.perk.category }}</span>)</li>
 				<li *ngIf="deal.perk && deal.perk.code">
 					<p> Your coupon code is: <span class="value">{{ deal.perk.code }}</span></p>
