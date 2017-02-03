@@ -32,7 +32,6 @@ export class CashoutEarningsCmp extends HasAPI {
 	}
 
 	Cashout() {
-		if (1 === 1) return;
 		if (this.amount === 0) {
 			this.api.GoTo('earningStats');
 			return;
