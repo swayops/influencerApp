@@ -8,6 +8,7 @@ import { AppCmp, NotFoundCmp } from './app.cmp';
 import { AuthGuard, Sway } from './sway';
 
 import { EditProfileCmp } from './editProfile.cmp';
+import { ForgotPasswordCmp } from './forgotPassword';
 import { LoginCmp } from './login.cmp';
 import { SignupCmp } from './signup.cmp';
 // import { ForgotPasswordCmp } from './forgotPassword';
@@ -159,6 +160,10 @@ export const ALL_ROUTES = [
 		path: 'signup/:inviteCode',
 		component: SignupCmp,
 	},
+	{
+		path: 'forgotPassword',
+		component: ForgotPasswordCmp,
+	},
 	// {
 	// 	path: 'resetPassword/:token',
 	// 	component: ResetPasswordCmp,
@@ -201,7 +206,7 @@ export const ALL_ROUTES = [
 		LoginCmp,
 		SignupCmp,
 		NotFoundCmp,
-
+		ForgotPasswordCmp,
 
 		// pipes and utils
 		FilterArrayPipe,

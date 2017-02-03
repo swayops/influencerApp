@@ -89,11 +89,11 @@ export class AppCmp extends HasAPI {
 		$('div[role=tooltip]').remove(); // workaround logout tooltip bug
 		$('.ttip').tooltip();
 		$('#shareCodeSection').hide();
-		$('#saveGroupBut').click(function () {
+		$('#saveGroupBut').click(function() {
 			$('#shareCodeSection').show('slow');
 		});
 
-		$('.onoffswitch').click(function () {
+		$('.onoffswitch').click(function() {
 			let cls = $(this).attr('data-for');
 			if ($(this).find('input').is(':checked')) {
 				$('.' + cls).slideToggle();
@@ -110,7 +110,7 @@ export class AppCmp extends HasAPI {
 			}
 		});
 
-		$('#slct_perks').click(function () {
+		$('#slct_perks').click(function() {
 			let cls = $(this).attr('data-for');
 			$('.' + cls).slideToggle();
 			if ($('#perks').prop('checked')) {
@@ -123,7 +123,7 @@ export class AppCmp extends HasAPI {
 
 		});
 
-		$('.onoffswitch').each(function () {
+		$('.onoffswitch').each(function() {
 			const cls = $(this).attr('data-for'),
 				checked = $(this).find('input').is(':checked');
 			if (!checked) {
@@ -131,7 +131,7 @@ export class AppCmp extends HasAPI {
 			}
 		});
 
-		$('.prog-bar div').each(function (index: number) {
+		$('.prog-bar div').each(function(index: number) {
 			$(this).slider({
 				orientation: 'horizontal',
 				range: 'min',
@@ -140,7 +140,7 @@ export class AppCmp extends HasAPI {
 			});
 		});
 
-		$('[noscroll]').on('scroll touchmove mousewheel', function (e) {
+		$('[noscroll]').on('scroll touchmove mousewheel', function(e) {
 			e.preventDefault();
 			e.stopPropagation();
 			return false;
@@ -148,7 +148,7 @@ export class AppCmp extends HasAPI {
 		$('select.auto').select2();
 
 		// hack because bootstrap's isn't working
-		$('.tabs a').click(function (e) {
+		$('.tabs a').click(function(e) {
 			e.preventDefault();
 			const $this = $(this),
 				$tabs = $('.tabs');
@@ -163,7 +163,7 @@ export class AppCmp extends HasAPI {
 	initIncrGroup() {
 		$('.increment-group').append(incGroupHTML);
 
-		$('.increment-group .button').on('click', function () {
+		$('.increment-group .button').on('click', function() {
 			let $button = $(this);
 			let oldValue = $button.parent().parent().find('input').val(), newVal = 0;
 
@@ -182,19 +182,19 @@ export class AppCmp extends HasAPI {
 	};
 
 	initSliderRange() {
-		$('.slider-range').each(function (index: number) {
+		$('.slider-range').each(function(index: number) {
 			$(this).slider({
 				range: true,
 				min: parseInt($(this).attr('data-min')) || 0,
 				max: parseInt($(this).attr('data-max')) || 0,
 				values: [$(this).attr('data-start'), $(this).attr('data-end')].map(parseInt),
-				slide: function (event, ui) {
+				slide: function(event, ui) {
 					$(this).siblings().val(ui.values[0] + ' - ' + ui.values[1]);
 				},
 			});
 		});
 
-		$('.notification .fui-cross').click(function () {
+		$('.notification .fui-cross').click(function() {
 			$(this).parent().fadeOut(450);
 		});
 	}
@@ -213,6 +213,7 @@ const incGroupHTML = '<div class="btn-action"><div class="inc button">+</div><di
 const pageMapping = {
 	'signup': 'signup user',
 	'login': 'signup user',
+	'forgotPassword': 'signup user',
 	'welcome': 'front',
 	'walkthrough': 'walkthrough-template',
 	'walkthrough4': 'walkthrough4',
