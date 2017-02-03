@@ -19,8 +19,8 @@
 	<div class="banner-content" *ngIf="featured">
 		<h3>Featured:</h3>
 		<h2>{{ featured.cmpName }}</h2>
-		<p>YOUR LIKELY EARNINGS: <span>${{ featured.likelyEarnings }}</span></p>
-		<p>TOTAL AVAILABLE FOR INFLUENCERS: <span>${{ featured.spendable }}</span></p>
+		<p>YOUR LIKELY EARNINGS: <span>${{ featured.likelyEarnings.toFixed(2) }}</span></p>
+		<p>TOTAL AVAILABLE FOR INFLUENCERS: <span>${{ featured.spendable.toFixed(2) }}</span></p>
 		<p *ngIf="featured.perk">PERKS: <span>{{ featured.perk.name || 'N/A' }}</span> (<span class="value">{{ featured.perk.category }}</span>)</p>
 		<p>ACCEPTED: <span>{{ featured.platforms?.join(', ') }}</span></p>
 		<div class="banner-links">
@@ -38,8 +38,8 @@
 			<div class="details">
 				<h4>{{ d.cmpName }}</h4>
 				<ul class="cat">
-					<li>YOUR LIKELY EARNINGS: <span>${{ d.likelyEarnings }}</span></li>
-					<li>TOTAL AVAILABLE FOR INFLUENCERS: <span>${{ d.spendable }}</span></li>
+					<li>YOUR LIKELY EARNINGS: <span>${{ d.likelyEarnings.toFixed(2) }}</span></li>
+					<li>TOTAL AVAILABLE FOR INFLUENCERS: <span>${{ d.spendable.toFixed(2) }}</span></li>
 					<li *ngIf="d.perk">PERKS: <span>{{ d.perk.name || 'N/A' }}</span> (<span class="value">{{ d.perk.category }}</span>)</li>
 					<li>ACCEPTED: <span>{{ d.platforms?.join(', ') }}</span></li>
 				</ul>
