@@ -1,8 +1,8 @@
 // this a copy from dashboard/app/sway.ts, any updates there should be copied here
 
 import { Injectable, Output } from '@angular/core';
-import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
-import { Http, Response, Headers, RequestOptions } from '@angular/http';
+import { Headers, Http, RequestOptions, Response } from '@angular/http';
+import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
 
 import { Observable } from 'rxjs/Observable';
 
@@ -25,12 +25,12 @@ export class Sway {
 	redirectUrl: string;
 
 	constructor(public router: Router, public http: Http) {
-		this.IsLoggedIn.subscribe(v => this.loginStatus = v ? 1 : 0);
+		this.IsLoggedIn.subscribe((v) => this.loginStatus = v ? 1 : 0);
 	}
 
 	Login(info: { email: string, pass: string }, onError?: (err: any) => void) {
 		this.Reset();
-		return this.Post('signIn', info, data => {
+		return this.Post('signIn', info, (data) => {
 			return this.ReloadUser(true, onError);
 		}, onError);
 	}
@@ -41,7 +41,7 @@ export class Sway {
 	}
 
 	ReloadUser(redir = false, onError?: (err: any) => void) {
-		return this.Get(this.userEndpoint, user => {
+		return this.Get(this.userEndpoint, (user) => {
 			if (!user.inf) {
 				if (onError) onError(errInfOnly);
 				return;
@@ -60,7 +60,7 @@ export class Sway {
 	}
 
 	SignUp(info: SignUpInfo, onError?: (err: any) => void) {
-		return this.Post('signUp?autologin=true', info, data => this.GoTo('welcome'), onError);
+		return this.Post('signUp?autologin=true', info, (data) => this.GoTo('welcome'), onError);
 	}
 
 	ForgotPassword(data: any, onSuccess?: (data: any) => void, onError?: (err: any) => void) {
@@ -68,15 +68,15 @@ export class Sway {
 	}
 
 	Get(ep: string, onResp: (data: any) => void, onErr?: (err: any) => void) {
-		return this.req('get', ep).subscribe(data => onResp(data), onErr);
+		return this.req('get', ep).subscribe((data) => onResp(data), onErr);
 	}
 
 	Post(ep: string, payload: any, onResp: (data: any) => void, onErr?: (err: any) => void) {
-		return this.req('post', ep, payload).subscribe(data => onResp(data), onErr);
+		return this.req('post', ep, payload).subscribe((data) => onResp(data), onErr);
 	}
 
 	Put(ep: string, payload: any, onResp: (data: any) => void, onErr?: (err: any) => void) {
-		return this.req('put', ep, payload).subscribe(data => onResp(data), onErr);
+		return this.req('put', ep, payload).subscribe((data) => onResp(data), onErr);
 	}
 
 	SetCurrentUser(id?: string): Promise<User> {
@@ -88,7 +88,7 @@ export class Sway {
 			return Promise.resolve(this.CurrentUser);
 		}
 		return new Promise((resolve, reject) => {
-			this.Get('user/' + id, user => { this.curUser = user; resolve(user); }, err => reject(err));
+			this.Get('user/' + id, (user) => { this.curUser = user; resolve(user); }, (err) => reject(err));
 		});
 	}
 
@@ -123,8 +123,8 @@ export class Sway {
 		this.error = null;
 		const headers = new Headers({ 'Content-Type': 'application/json' });
 		const options = new RequestOptions({ headers: headers });
-		return this.http[method.toLocaleLowerCase()](apiURL + ep, body, options).map(res => res.json())
-			.catch(err => this.handleError(err));
+		return this.http[method.toLocaleLowerCase()](apiURL + ep, body, options).map((res) => res.json())
+			.catch((err) => this.handleError(err));
 	}
 
 	public handleError(err: Response): Observable<{}> {
@@ -139,12 +139,12 @@ export class Sway {
 
 	get IsLoggedIn(): Observable<boolean> {
 		// if (this.loginStatus > 0) return Observable.of(this.loginStatus === 1);
-		return Observable.create(obs => {
-			let sub = this.Get(this.userEndpoint, user => {
+		return Observable.create((obs) => {
+			const sub = this.Get(this.userEndpoint, (user) => {
 				this.mainUser = user;
 				this.loginStatus = 1;
 				return obs.next(true);
-			}, err => {
+			}, (err) => {
 				if (err.code === 401) this.error = null; // ignore 401 for this func
 				this.loginStatus = 2;
 				obs.next(false);
@@ -173,7 +173,7 @@ export class AuthGuard implements CanActivate {
 
 	// TODO check if a certain user can open a certain page or not
 	canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
-		return this.api.IsLoggedIn.map(logged => {
+		return this.api.IsLoggedIn.map((logged) => {
 			if (logged && (!this.api.error || this.api.error.code !== 401)) return true;
 			this.api.redirectUrl = state.url;
 			this.router.navigate(['/login']);
@@ -184,7 +184,7 @@ export class AuthGuard implements CanActivate {
 }
 
 let allNotifications: Notification[] = [];
-let globalData: { [key: string]: any } = {};
+const globalData: { [key: string]: any } = {};
 export class HasAPI {
 	constructor(protected api: Sway) { }
 	get user() { return this.api.CurrentUser; }
@@ -192,11 +192,11 @@ export class HasAPI {
 	set error(err) { this.api.error = err; }
 	@Output() get error() { return this.api.error; }
 
-	@Output() get notifications() {
-		allNotifications.forEach(v => {
+	get notifications() {
+		allNotifications.forEach((v) => {
 			if (v.timeout > 0) setTimeout(() => v.timeout = -1, v.timeout);
 		});
-		allNotifications = allNotifications.filter(v => v.timeout !== -1);
+		allNotifications = allNotifications.filter((v) => v.timeout !== -1);
 		return allNotifications;
 	}
 
