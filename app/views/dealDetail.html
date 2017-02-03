@@ -39,9 +39,24 @@
 	</div>
 	<div class="action" *ngIf="!deal.assigned">
 		<div class="alert alert-danger" role="alert" *ngIf="!!err">{{ err }}</div>
-		<button class="btn btn-deal" (click)="Accept()" [disabled]="!!err"><span class="plus-ico"></span>Accept Endorsement</button>
+		<button class="btn btn-deal" (click)="confirmAddr.show()" [disabled]="!!err"><span class="plus-ico"></span>Accept Endorsement</button>
 	</div>
 	<!--<div class="share-this">
 		<a href="#">Share this deal</a>
 	</div>-->
 </div>
+
+<modal #confirmAddr [buttons]=confirmButtons title="Confirm Address" width="790px">
+	<div class="nosel">
+		<p>Please confirm your name and address below:</p>
+		<div>
+			<div>Name: {{ info.name }}</div>
+			<div>Address 1: {{ info.addr1 }}</div>
+			<div>Address 2: {{ info.addr2 }}</div>
+			<div>City: {{ info.city }}</div>
+			<div>State: {{ info.state }}</div>
+			<div>Zip: {{ info.zip }}</div>
+			<div>Country: {{ info.country }}</div>
+		</div>
+	</div>
+</modal>
