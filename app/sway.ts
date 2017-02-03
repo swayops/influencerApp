@@ -128,6 +128,7 @@ export class Sway {
 	}
 
 	public handleError(err: Response): Observable<{}> {
+		console.log(err);
 		let errData = err.json();
 		if ('target' in errData) {
 			errData = { status: 'error', msg: 'Connection Error' };

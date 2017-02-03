@@ -9,8 +9,8 @@
 
 <div class="content" *ngIf="!!user.inf.requestedCheck">
 	<h2>
-		You currently have a check pending admin approval. Please wait up to 48 hours for an admin to approve your
-		payment and a check will be on it's way. You will receive an email once the admin has approved.
+		You currently have a check pending admin approval. Please wait up to 48 hours for an admin to approve your payment and a
+		check will be on it's way. You will receive an email once the admin has approved.
 	</h2>
 	<div class="action">
 		<a class="btn btn-deal" [routerLink]="['/dealFeed']">Go Back</a>
@@ -23,7 +23,8 @@
 			Click the button below to request a check. This can take up to 48 hours for an admin to approve.
 		</li>
 		<li *ngIf="!user.inf.hasSigned">
-			In order to receive a check for this amount, Sway must first verify your identity and collect required USA tax information via electronic signature.
+			In order to receive a check for this amount, Sway must first verify your identity and collect required USA tax information
+			via electronic signature.
 		</li>
 		<li *ngIf="!user.inf.hasSigned">
 			This process takes only a few minutes and only needs to be completed once per year.
@@ -34,6 +35,21 @@
 	</ul>
 	<div class="action">
 		<a class="btn btn-deal" [routerLink]="['/dealFeed']" *ngIf="amount === 0">Go Back</a>
-		<a class="btn btn-deal" (click)="Cashout()" *ngIf="amount > 0">Sounds good!</a>
+		<a class="btn btn-deal" (click)="confirmAddr.show()" *ngIf="amount > 0">Sounds good!</a>
 	</div>
 </div>
+
+<modal #confirmAddr [buttons]=confirmButtons title="Confirm Address" width="790px">
+	<div class="nosel">
+		<p>Please confirm your name and address below:</p>
+		<div>
+			<div>Name: {{ info.name }}</div>
+			<div>Address 1: {{ info.addr1 }}</div>
+			<div>Address 2: {{ info.addr2 }}</div>
+			<div>City: {{ info.city }}</div>
+			<div>State: {{ info.state }}</div>
+			<div>Zip: {{ info.zip }}</div>
+			<div>Country: {{ info.country }}</div>
+		</div>
+	</div>
+</modal>

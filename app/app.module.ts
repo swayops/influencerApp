@@ -1,31 +1,31 @@
-import { Title, BrowserModule } from '@angular/platform-browser';
-import { NgModule, enableProdMode, Component } from '@angular/core';
+import { Component, enableProdMode, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
+import { BrowserModule, Title } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 
 import { AppCmp, NotFoundCmp } from './app.cmp';
 import { AuthGuard, Sway } from './sway';
 
+import { EditProfileCmp } from './editProfile.cmp';
 import { LoginCmp } from './login.cmp';
 import { SignupCmp } from './signup.cmp';
-import { EditProfileCmp } from './editProfile.cmp';
 // import { ForgotPasswordCmp } from './forgotPassword';
 
 import * as W from './welcome.cmps';
 
-import { MenuCmp } from './menu.cmp';
-import { InfluencerCmp } from './influencer.cmp';
-import { ConnectCmp } from './connect.cmp';
 import { BrandPageCmp } from './brandPage.cmp';
+import { ConnectCmp } from './connect.cmp';
+import { InfluencerCmp } from './influencer.cmp';
+import { MenuCmp } from './menu.cmp';
 
-import { DealsCmp } from './deals.cmp';
-import { PostStatsCmp } from './postStats.cmp';
-import { EarningStatsCmp } from './earningStats.cmp';
-import { DealFeedCmp } from './dealFeed.cmp';
-import { DealDetailCmp } from './dealDetail.cmp';
 import { AcceptedDealAlertCmp } from './acceptedDealAlert.cmp';
 import { CashoutEarningsCmp } from './cashoutEarnings.cmp';
+import { DealDetailCmp } from './dealDetail.cmp';
+import { DealFeedCmp } from './dealFeed.cmp';
+import { DealsCmp } from './deals.cmp';
+import { EarningStatsCmp } from './earningStats.cmp';
+import { PostStatsCmp } from './postStats.cmp';
 
 import { FilterArrayPipe, FormatNumberPipe } from './utils';
 
