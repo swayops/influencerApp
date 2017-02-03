@@ -1,4 +1,4 @@
-import { Component, Input, ElementRef } from '@angular/core';
+import { Component, ElementRef, Input } from '@angular/core';
 
 import { CancelEvent } from './utils';
 
@@ -16,7 +16,7 @@ declare var $: any;
 	<br>
 	<div style="float: right" class="buttons">
 		<button *ngFor="let btn of buttons" [class]="defaultButtonClasses + ' ' + (btn.class || 'btn-blue')"
-			(click)="emitAction(btn, $event)">{{btn.text || btn.name}}</button>
+			(click)="emitAction(btn, $event)" [disabled]="disabledIf && disabledIf()">{{btn.text || btn.name}}</button>
 	</div>
 	<div class="clearfix br"></div>
 </div>
@@ -45,7 +45,7 @@ export class Modal {
 		btn.click(new ModalEvent(this, evt, btn.name, this.data));
 	}
 
-	show(extraData: any) {
+	show(extraData?: any) {
 		this.data = extraData;
 
 		const ele = this.ele;
@@ -93,7 +93,7 @@ export class Modal {
 
 
 export class ModalEvent {
-	constructor(public dlg: Modal, public event: Event, public name: string, public data: any) {}
+	constructor(public dlg: Modal, public event: Event, public name: string, public data: any) { }
 
 	get value() { return this.dlg.value; }
 	Cancel() { CancelEvent(this.event); }
@@ -103,5 +103,6 @@ export interface Button {
 	name: string;
 	class: string;
 	click: (evt: ModalEvent) => void;
+	disabledIf?: () => boolean;
 	text?: string; // gets set to name if this isn't set
 }

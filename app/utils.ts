@@ -44,7 +44,7 @@ function trimNumber(n: number): string { return n.toFixed(2).replace(/\.0\d?$/, 
 export function FilterByProps(kw: string, it: any, ...props: string[]): boolean {
 	if (!kw || !it) return true;
 	kw = kw.toLowerCase();
-	return props.some(k => {
+	return props.some((k) => {
 		const v = it[k];
 		if (!v) return false;
 		return v.toLowerCase().indexOf(kw) > -1;
@@ -54,7 +54,7 @@ export function FilterByProps(kw: string, it: any, ...props: string[]): boolean 
 export function SortBy(...props: string[]): (a, b) => number {
 	return (a, b): number => {
 		let ret = 0;
-		props.some(k => {
+		props.some((k) => {
 			let sortOrder = 1;
 			if (k[0] === '-') {
 				sortOrder = -1;
@@ -74,7 +74,7 @@ export function SortBy(...props: string[]): (a, b) => number {
 
 export function Throttle(callback: (...args: any[]) => any, thisArg: Object, limit: number = 100) {
 	let wait = false;
-	return function () {
+	return function() {
 		if (wait) return;
 		wait = true;
 		setTimeout(() => wait = false, limit);
@@ -100,7 +100,7 @@ export function CancelEvent(evt: Event) {
 
 const loadedScripts = {};
 export function LoadScripts(srcs: string[], doneCB?: () => void): void {
-	const cb = function () {
+	const cb = function() {
 		if (srcs.length === 0) {
 			if (doneCB) doneCB();
 			return;
@@ -123,7 +123,7 @@ export function LoadScript(src: string, doneCB?: () => void) {
 	node.async = true;
 	document.body.appendChild(node);
 
-	node.onload = function () {
+	node.onload = function() {
 		loadedScripts[src] = true;
 		if (doneCB) doneCB();
 	};
@@ -131,6 +131,23 @@ export function LoadScript(src: string, doneCB?: () => void) {
 	node.src = src;
 }
 
+export function InfInfo(user: any): any {
+	if (!user || !user.inf) return null;
+	const inf = user.inf,
+		addr = inf.address || {};
+
+	return {
+		name: user.name || 'Not Set',
+		addr1: addr.address_line1 || 'Not Set',
+		addr2: addr.address_line2 || 'Not Set',
+		city: addr.address_city || 'Not Set',
+		state: addr.address_state || 'Not Set',
+		zip: addr.address_zip || 'Not Set',
+		country: addr.address_country || 'Not Set',
+
+		missing: !user.name || !inf.address,
+	};
+}
 // used https://github.com/substack/provinces/blob/master/provinces.json for state names
 export const CountriesAndStates = [
 	{ id: 'ad', text: 'Andorra' },
@@ -456,9 +473,9 @@ export const CountriesAndStates = [
 	{ id: 'zw', text: 'Zimbabwe' },
 ];
 
-export const CountriesAndStatesRev = (function () {
+export const CountriesAndStatesRev = (function() {
 	const out = {};
-	for (let v of CountriesAndStates) {
+	for (const v of CountriesAndStates) {
 		out[v.id] = v.text;
 	}
 	return out;
