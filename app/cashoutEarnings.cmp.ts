@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 
+import { ModalEvent } from './modal';
 import { HasAPI, Sway } from './sway';
 import { InfInfo } from './utils';
 
@@ -12,7 +13,7 @@ import { InfInfo } from './utils';
 })
 export class CashoutEarningsCmp extends HasAPI {
 	public confirmButtons = [
-		{ name: 'Confirm', class: 'btn-primary', click: (_) => this.Cashout(), disabledIf: () => this.info.missing },
+		{ name: 'Confirm', class: 'btn-primary', click: (evt) => this.Cashout(evt), disabledIf: () => this.info.missing },
 		{ name: 'Edit Profile', class: 'btn-default ghost', click: (_) => this.api.GoTo('/editProfile') },
 	];
 
@@ -31,7 +32,8 @@ export class CashoutEarningsCmp extends HasAPI {
 		return this.user.inf.pendingPayout || 0;
 	}
 
-	Cashout() {
+	Cashout(evt: ModalEvent) {
+		evt.dlg.hide();
 		if (this.amount === 0) {
 			this.api.GoTo('earningStats');
 			return;

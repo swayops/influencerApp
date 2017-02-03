@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 
+import { ModalEvent } from './modal';
 import { HasAPI, Sway } from './sway';
 import { InfInfo } from './utils';
 
@@ -12,7 +13,7 @@ import { InfInfo } from './utils';
 })
 export class DealDetailCmp extends HasAPI {
 	public confirmButtons = [
-		{ name: 'Confirm', class: 'btn-primary', click: (_) => this.Accept(), disabledIf: () => this.info.missing },
+		{ name: 'Confirm', class: 'btn-primary', click: (evt) => this.Accept(evt), xdisabledIf: () => this.info.missing },
 		{ name: 'Edit Profile', class: 'btn-default ghost', click: (_) => this.api.GoTo('/editProfile') },
 	];
 
@@ -36,7 +37,8 @@ export class DealDetailCmp extends HasAPI {
 		return this.info_ || {};
 	}
 
-	Accept() {
+	Accept(evt: ModalEvent) {
+		evt.dlg.hide();
 		const d = this.deal,
 			uid = this.user.id;
 		// /assignDeal/:influencerId/:campaignId/:dealId/:platform
