@@ -25,7 +25,7 @@ export class AcceptedDealAlertCmp extends HasAPI {
 			now = Date.now(),
 			days = (assigned - now) / oneDay;
 
-		return (14 - days).toFixed(0);
+		return (25 - days).toFixed(0);
 	}
 }
 

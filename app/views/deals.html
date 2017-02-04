@@ -18,11 +18,11 @@
 				<div class="details">
 					<h4>{{ d.cmpName }}</h4>
 					<ul class="cat">
-						<li>PAYOUT REMAINING: <span>${{ d.spendable }}</span></li>
+						<li>ACCEPTED: <span>{{ d.completed * 1000 | date }}</span></li>
 						<li *ngIf="d.perks">PERKS: <span>{{ d.perks?.name || 'N/A' }}</span></li>
 						<li *ngIf="d.perks && d.perks.code">COUPON: {{ d.perks.code }}</li>
 						<li *ngIf="d.perks && d.perks.instructions">COUPON INSTRUCTIONS: {{ d.perks.instructions }}</li>
-						<li>ACCEPTED: <span>{{ d.platforms?.join(', ') }}</span></li>
+						<li>PLATFORM: <span>{{ d.platforms?.join(', ') }}</span></li>
 					</ul>
 					<a [routerLink]="['/postStats', d.id]" class="btn btn-view">View Stats</a>
 				</div>
@@ -35,9 +35,9 @@
 				<div class="details">
 					<h4>{{ d.cmpName }}</h4>
 					<ul class="cat">
-						<li>PAYOUT REMAINING: <span>${{ d.spendable }}</span></li>
+						<li>ASSIGNED: <span>{{ d.assigned * 1000 | date }}</span></li>
 						<li *ngIf="d.perks">PERKS: <span>{{ d.perks.name || 'N/A' }}</span></li>
-						<li>ACCEPTED: <span>{{ d.platforms?.join(', ') }}</span></li>
+						<li>PLATFORM: <span>{{ d.platforms?.join(', ') }}</span></li>
 					</ul>
 					<a [routerLink]="['/dealDetail', d.campaignId, d.id]" class="btn btn-view">View Endorsement</a>
 				</div>
