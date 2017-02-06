@@ -2,10 +2,12 @@
 import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 
-import { ImageCropperComponent, CropperSettings } from 'ng2-img-cropper';
+import { CropperSettings, ImageCropperComponent } from 'ng2-img-cropper';
 import { ModalEvent } from './modal';
 
-import { Sway, HasAPI } from './sway';
+import { HasAPI, Sway } from './sway';
+
+import { CleanNetworkUsername } from './utils';
 
 declare var $: any;
 
@@ -16,7 +18,7 @@ declare var $: any;
 export class EditProfileCmp extends HasAPI {
 	public selImageButtons = [
 		{ name: 'Cancel', class: 'btn-default ghost' },
-		{ name: 'Save & crop image »', class: 'btn-primary', click: evt => this.setImage(evt) },
+		{ name: 'Save & crop image »', class: 'btn-primary', click: (evt) => this.setImage(evt) },
 	];
 	public data: any;
 	public loading = false;
@@ -117,14 +119,18 @@ export class EditProfileCmp extends HasAPI {
 			const m = this.data.inviteCode.match(inviteCodeUrlRe);
 			if (m) this.data.inviteCode = m[1];
 		}
-		this.api.Put('influencer/' + this.user.id, this.data, resp => {
+		this.api.Put('influencer/' + this.user.id, this.data, (resp) => {
 			this.api.ReloadUser();
 			this.api.GoHome();
 			this.AddNotification('success', 'Successfully updated your profile!');
-		}, err => {
+		}, (err) => {
 			this.loading = false;
 			this.AddNotification('error', err.msg);
 		});
+	}
+
+	cleanUsername(network: string, name: string) {
+		this.data[network] = CleanNetworkUsername(name);
 	}
 }
 

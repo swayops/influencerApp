@@ -4,6 +4,8 @@ import { Title } from '@angular/platform-browser';
 
 import { HasAPI, Sway } from './sway';
 
+import { CleanNetworkUsername } from './utils';
+
 @Component({
 	selector: 'connect',
 	templateUrl: './views/connect.html',
@@ -40,15 +42,6 @@ export class ConnectCmp extends HasAPI {
 	}
 
 	cleanUsername(network: string, name: string) {
-		let idx = name.lastIndexOf('/');
-		if (idx !== -1) name = name.substr(idx + 1);
-
-		idx = name.indexOf('@');
-		if (idx !== -1) name = name.substr(idx + 1);
-
-		idx = name.indexOf('?');
-		if (idx !== -1) name = name.substr(0, idx);
-
-		this.data[network] = name;
+		this.data[network] = CleanNetworkUsername(name);
 	}
 }

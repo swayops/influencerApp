@@ -148,6 +148,22 @@ export function InfInfo(user: any): any {
 		missing: !user.name || !inf.address,
 	};
 }
+
+export function CleanNetworkUsername(name: string): string {
+	let idx = name.indexOf('?');
+	if (idx !== -1) name = name.substr(0, idx);
+
+	if (name.endsWith('/')) name = name.substr(0, name.length - 1);
+
+	idx = name.lastIndexOf('/');
+	if (idx !== -1) name = name.substr(idx + 1);
+
+	idx = name.indexOf('@');
+	if (idx !== -1) name = name.substr(idx + 1);
+
+	return name;
+}
+
 // used https://github.com/substack/provinces/blob/master/provinces.json for state names
 export const CountriesAndStates = [
 	{ id: 'ad', text: 'Andorra' },

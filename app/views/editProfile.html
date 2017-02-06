@@ -110,13 +110,13 @@
 				<span>*Accounts must be publicly viewable.</span>
 			</div>
 			<div class="field two-cols">
-				<label>Instagram:</label><input type="text" name="instagram" [(ngModel)]="data.instagram" placeholder="Enter your username">
+				<label>Instagram:</label><input type="text" name="instagram" [ngModel]="data.instagram" placeholder="Enter your username" #in (blur)="cleanUsername('instagram', in.value)">
 			</div>
 			<div class="field two-cols">
 				<label>Youtube:</label><input type="text" name="youtube" [(ngModel)]="data.youtube" placeholder="Enter your username">
 			</div>
 			<div class="field two-cols">
-				<label>Twitter:</label><input type="text" name="twitter" [(ngModel)]="data.twitter" placeholder="Enter your username">
+				<label>Twitter:</label><input type="text" name="twitter" [(ngModel)]="data.twitter" placeholder="Enter your username" #tw (blur)="cleanUsername('twitter', tw.value)">
 			</div>
 			<div class="field two-cols">
 				<label>Facebook:</label><input type="text" name="facebook" [(ngModel)]="data.facebook" placeholder="Enter your username">
