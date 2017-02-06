@@ -2,7 +2,7 @@
 import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 
-import { Sway, HasAPI } from './sway';
+import { HasAPI, Sway } from './sway';
 
 @Component({
 	selector: 'connect',
@@ -25,17 +25,30 @@ export class ConnectCmp extends HasAPI {
 
 	LinkAccounts() {
 		this.loading = true;
-		this.api.Put('influencer/' + this.user.id, this.data, resp => {
+		this.api.Put('influencer/' + this.user.id, this.data, (resp) => {
 			this.api.ReloadUser();
 			this.api.GoTo('/dealFeed');
 			this.AddNotification('success', 'Successfully linked your social accounts!');
-		}, err => {
+		}, (err) => {
 			this.loading = false;
 			this.AddNotification('error', err.msg);
 		});
 	}
 
 	get hasAccounts(): boolean {
-		return Object.keys(this.data).some(k => !!this.data[k]);
+		return Object.keys(this.data).some((k) => !!this.data[k]);
+	}
+
+	cleanUsername(network: string, name: string) {
+		let idx = name.lastIndexOf('/');
+		if (idx !== -1) name = name.substr(idx + 1);
+
+		idx = name.indexOf('@');
+		if (idx !== -1) name = name.substr(idx + 1);
+
+		idx = name.indexOf('?');
+		if (idx !== -1) name = name.substr(0, idx);
+
+		this.data[network] = name;
 	}
 }

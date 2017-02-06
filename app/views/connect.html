@@ -15,7 +15,7 @@
 		</div>
 		<div class="field two-cols">
 			<label>Instagram:</label>
-			<input type="text" name="instagram" [(ngModel)]="data.instagram" placeholder="Enter your username">
+			<input type="text" name="instagram" [ngModel]="data.instagram" placeholder="Enter your username" #in (blur)="cleanUsername('instagram', in.value)">
 		</div>
 		<div class="field two-cols">
 			<label>Youtube:</label>
@@ -23,7 +23,7 @@
 		</div>
 		<div class="field two-cols">
 			<label>Twitter:</label>
-			<input type="text" name="twitter" [(ngModel)]="data.twitter" placeholder="Enter your username">
+			<input type="text" name="twitter" [ngModel]="data.twitter" placeholder="Enter your username" #tw (blur)="cleanUsername('twitter', tw.value)">
 		</div>
 		<div class="field two-cols">
 			<label>FB Page:</label>
