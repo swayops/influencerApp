@@ -16,8 +16,8 @@
 		<div class="deal-info">
 			<h2>{{ deal.cmpName }}</h2>
 			<ul>
-				<li>YOUR LIKELY EARNINGS: <span class="value">${{ deal.likelyEarnings?.toFixed(2) | fmtNum }}</span></li>
-				<li>TOTAL AVAILABLE FOR INFLUENCERS: <span class="value">${{ deal.spendable?.toFixed(2) | fmtNum }}</span></li>
+				<li>YOUR LIKELY EARNINGS: <span class="value" *ngIf="!!deal.likelyEarnings">${{ deal.likelyEarnings?.toFixed(2) }}</span><span class="value" *ngIf="!deal.likelyEarnings">Free product only</span></li>
+				<li *ngIf="deal.spendable > 0">TOTAL AVAILABLE FOR INFLUENCERS: <span class="value">${{ deal.spendable?.toFixed(2) | fmtNum }}</span></li>
 				<li *ngIf="deal.perk">Perks: <span class="value">{{ deal.perk.name }}</span> (<span class="value">{{ deal.perk.category }}</span>)</li>
 				<li *ngIf="deal.perk && deal.perk.code">
 					<p> Your coupon code is: <span class="value">{{ deal.perk.code }}</span></p>
