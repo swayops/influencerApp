@@ -13,7 +13,7 @@ import { InfInfo } from './utils';
 })
 export class DealDetailCmp extends HasAPI {
 	public confirmButtons = [
-		{ name: 'Confirm', class: 'btn-primary', click: (evt) => this.Accept(evt), xdisabledIf: () => this.info.missing },
+		{ name: 'Confirm And Accept', class: 'btn-primary', click: (evt) => this.Accept(evt), xdisabledIf: () => this.info.missing },
 		{ name: 'Edit Profile', class: 'btn-default ghost', click: (_) => this.api.GoTo('/editProfile') },
 	];
 
