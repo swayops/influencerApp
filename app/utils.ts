@@ -72,13 +72,13 @@ export function SortBy(...props: string[]): (a, b) => number {
 	};
 }
 
-export function Throttle(callback: (...args: any[]) => any, thisArg: Object, limit: number = 100) {
+export function Throttle(callback: (...args: any[]) => any, thisArg: object, limit: number = 100) {
 	let wait = false;
 	return function() {
 		if (wait) return;
 		wait = true;
 		setTimeout(() => wait = false, limit);
-		return Reflect.apply(callback, thisArg, arguments);
+		return callback.apply(thisArg, arguments);
 	};
 }
 

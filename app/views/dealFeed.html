@@ -32,17 +32,32 @@
 <div class="content">
 	<img src="/static/images/noDeals.png" class="nosel" *ngIf="!featured" style="width: 100%">
 	<ul class="endorsement-list">
-		<li class="endorsement-item" *ngFor="let d of deals">
-			<div class="thumb"><img src="{{ d.cmpImg }}"></div>
-			<div class="details">
-				<h4>{{ d.cmpName }}</h4>
-				<ul class="cat">
-					<li>YOUR LIKELY EARNINGS: <span *ngIf="!!d.likelyEarnings">${{ d.likelyEarnings?.toFixed(2) }}</span><span *ngIf="!d.likelyEarnings">Free product only</span></li>
-					<li *ngIf="d.perk">PERKS: <span>{{ d.perk.name || 'N/A' }}</span> (<span class="value">{{ d.perk.category }}</span>)</li>
-					<li>ACCEPTED: <span>{{ d.platforms?.join(', ') }}</span></li>
-				</ul>
-				<a [routerLink]="['/dealDetail', d.campaignId, d.id]" class="btn btn-view">View Endorsement</a>
-			</div>
-		</li>
+		<ng-template ngFor let-d [ngForOf]="deals">
+			<li class="endorsement-item" *ngIf="d.reqSub">
+				<div class="thumb"><img src="{{ d.cmpImg }}"></div>
+				<div class="details">
+					<h4>{{ d.cmpName }}</h4>
+					<ul class="cat">
+						<li>YOUR LIKELY EARNINGS: <span *ngIf="!!d.likelyEarnings">${{ d.likelyEarnings?.toFixed(2) }}</span><span *ngIf="!d.likelyEarnings">Free product only</span></li>
+						<li>POST APPROVAL: <span>Required</span></li>
+						<li *ngIf="d.perk">PERKS: <span>{{ d.perk.name || 'N/A' }}</span> (<span class="value">{{ d.perk.category }}</span>)</li>
+						<li>ACCEPTED: <span>{{ d.platforms?.join(', ') }}</span></li>
+					</ul>
+					<a [routerLink]="['/dealDetail', d.campaignId, d.id]" class="btn btn-view">View Endorsement</a>
+				</div>
+			</li>
+			<li class="endorsement-item" *ngIf="!d.reqSub">
+				<div class="thumb"><img src="{{ d.cmpImg }}"></div>
+				<div class="details">
+					<h4>{{ d.cmpName }}</h4>
+					<ul class="cat">
+						<li>YOUR LIKELY EARNINGS: <span *ngIf="!!d.likelyEarnings">${{ d.likelyEarnings?.toFixed(2) }}</span><span *ngIf="!d.likelyEarnings">Free product only</span></li>
+						<li *ngIf="d.perk">PERKS: <span>{{ d.perk.name || 'N/A' }}</span> (<span class="value">{{ d.perk.category }}</span>)</li>
+						<li>ACCEPTED: <span>{{ d.platforms?.join(', ') }}</span></li>
+					</ul>
+					<a [routerLink]="['/dealDetail', d.campaignId, d.id]" class="btn btn-view">View Endorsement</a>
+				</div>
+			</li>
+		</ng-template>
 	</ul>
 </div>
