@@ -40,18 +40,18 @@
 		</div>
 	</div>
 	<div class="alert alert-danger" role="alert" *ngIf="!!err">{{ err }}</div>
-	<div class="action" *ngIf="!deal.assigned && deal.reqSub">
+	<div class="action" *ngIf="deal.assigned && deal.reqSub">
 		<div class="content">
 			<div class="field-group">
 				<h3 class="field-group-hdr">POST MESSAGE</h3>
 				<div class="field" style="text-align: left">
 					<label for="msg">Message: </label>
-					<input type="text" name="msg" [(ngModel)]="data.message" placeholder="This is the message this campaign wants #mmmm" style="width: 80%">
+					<input type="text" name="msg" [(ngModel)]="data.message" required placeholder="This is the message this campaign wants #mmmm" style="width: 80%">
 				</div>
 			</div>
 			<br>
 			<div class="user-thumb">
-				<h3 class="field-group-hdr">POST PICTURE</h3>
+				<h3 class="field-group-hdr">POST</h3>
 				<img src="{{ cropData.image || '/static/images/influencer-profile.png' }}" (click)="selProfile.show()" style="cursor: pointer">
 				<modal #selProfile [buttons]=selImageButtons title="Select Your Post Picture">
 					<div class="nosel">
@@ -67,9 +67,9 @@
 			</div>
 		</div>
 		<br>
-		<button class="btn btn-deal" (click)="confirmAddr.show()" [disabled]="!!err"><span class="plus-ico"></span>Submit Post For Approval</button>
+		<button class="btn btn-deal" (click)="submitPost" [disabled]="!!err"><span class="plus-ico"></span>Submit Post For Approval</button>
 	</div>
-	<div class="action" *ngIf="!deal.assigned && !deal.reqSub">
+	<div class="action" *ngIf="!deal.assigned">
 		<button class="btn btn-deal" (click)="confirmAddr.show()" [disabled]="!!err"><span class="plus-ico"></span>Accept Endorsement</button>
 	</div>
 	<!--<div class="share-this">

@@ -78,23 +78,28 @@ export class DealDetailCmp extends HasAPI {
 		this.data.imageUrl = this.cropData.image;
 	}
 
+	submitPost() {
+		const payload = {
+			imgData: [this.data.imageUrl],
+			message: this.data.message,
+		};
+		this.api.Post('submitPost/' + this.user.id + '/' + this.deal.campaignId, payload, (data) => {
+			this.SetData('deal:' + data.assigned, data);
+			this.api.GoTo('acceptedDealAlert', data.assigned);
+		}, (err) => this.err = err.msg);
+		return;
+	}
+
 	Accept(evt: ModalEvent) {
 		evt.dlg.hide();
 		const d = this.deal,
 			uid = this.user.id;
-		// /assignDeal/:influencerId/:campaignId/:dealId/:platform
-		if (d.reqSub) {
-			const payload = {
-				imgData: [this.data.imageUrl],
-				message: this.data.message,
-			};
-			this.api.Post('submitPost/' + uid + '/' + d.campaignId, payload, (data) => {
-				this.SetData('deal:' + data.assigned, data);
-				this.api.GoTo('acceptedDealAlert', data.assigned);
-			}, (err) => this.err = err.msg);
-			return;
-		}
+		// /assignDeal/:influencerId/:campaignId/:dealId/:platform=
 		this.api.Get('assignDeal/' + uid + '/' + d.campaignId + '/' + d.id + '/' + d.platforms[0], (data) => {
+			if (d.reqSub) {
+				this.deal.assigned = data.assigned;
+				return;
+			}
 			this.SetData('deal:' + data.assigned, data);
 			this.api.GoTo('acceptedDealAlert', data.assigned);
 		}, (err) => this.err = err.msg);
