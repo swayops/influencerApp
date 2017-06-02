@@ -82,6 +82,20 @@ export function Throttle(callback: (...args: any[]) => any, thisArg: object, lim
 	};
 }
 
+export function Iter(obj: any, fn: (k: any, v?: any) => boolean | void) {
+	if (typeof obj !== 'object') return;
+	if (Array.isArray(obj)) {
+		for (const k of obj) {
+			if (fn(k) === true) return;
+		}
+		return;
+	}
+	for (const k of Object.keys(obj)) {
+		const v = obj[k];
+		if (fn(k, v) === true) return;
+	}
+}
+
 export function DateString(dayOffset = 1): string {
 	const now = new Date();
 	now.setUTCDate(now.getUTCDate() - dayOffset);
