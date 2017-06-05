@@ -32,8 +32,8 @@
 
 <div class="content">
 	<img src="/static/images/noDeals.png" class="nosel" *ngIf="!featured" style="width: 100%">
-	<h1 style="text-align: center" *ngIf="pending.length">Pending Deals!</h1>
-	<ul class="endorsement-list" id="pending" *ngIf="pending.length">
+	<h1 style="text-align: center" *ngIf="pending?.length">Pending Deals!</h1>
+	<ul class="endorsement-list" id="pending" *ngIf="pending?.length">
 		<li class="endorsement-item" *ngFor="let d of pending">
 			<div class="thumb"><img src="{{ d.cmpImg }}"></div>
 			<div class="details">
@@ -41,6 +41,7 @@
 				<ul class="cat">
 					<li>ASSIGNED: <span>{{ d.assigned * 1000 | date }}</span></li>
 					<li *ngIf="d.perks">PERKS: <span>{{ d.perks.name || 'N/A' }}</span></li>
+					<li *ngIf="d.reqSub">POST APPROVAL: <span>Required</span></li>
 					<li>PLATFORM: <span>{{ d.platforms?.join(', ') }}</span></li>
 				</ul>
 				<a [routerLink]="['/dealDetail', d.campaignId, d.id]" class="btn btn-view btn-inprogress">In Progress</a>
