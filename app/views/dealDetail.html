@@ -44,15 +44,27 @@
 		<div class="content">
 			<div class="field-group">
 				<h3 class="field-group-hdr">POST MESSAGE</h3>
-				<div class="field" style="text-align: left">
+				<div class="field two-cols" style="text-align: left">
 					<label for="msg">Message: </label>
 					<input type="text" name="msg" [(ngModel)]="data.message" required placeholder="This is the message this campaign wants #mmmm" style="width: 80%">
 				</div>
 			</div>
 			<br>
-			<div class="user-thumb">
+			<div class="field-group">
 				<h3 class="field-group-hdr">POST</h3>
-				<img src="{{ cropData.image || '/static/images/influencer-profile.png' }}" (click)="selProfile.show()" style="cursor: pointer">
+				<div>
+					<button type="button" class="btn btn-lg btn-info" (click)="data.urls.push('')">Add URL</button>
+					<button type="button" class="btn btn-lg btn-info" (click)="data.images.push('')">Add Image</button>
+					<br>
+				</div>
+				<ng-template ngFor let-i="index" [ngForOf]="data.images">
+					<img src="{{ data.images[i] || '/static/images/camera.png' }}" (click)="selProfile.show(i)" style="cursor: pointer; width: 128px; padding: 10px">
+				</ng-template>
+				<ng-template ngFor let-i="index" [ngForOf]="data.urls">
+					<br>
+					<label for="msg">Content URL: </label>
+					<input type="text" name="url[]" [(ngModel)]="data.urls[i]" required placeholder="https://youtube.com/id" style="width: 75%">
+				</ng-template>
 				<modal #selProfile [buttons]=selImageButtons title="Select Your Post Picture">
 					<div class="nosel">
 						<div>
@@ -67,7 +79,7 @@
 			</div>
 		</div>
 		<br>
-		<button class="btn btn-deal" (click)="submitPost" [disabled]="!!err"><span class="plus-ico"></span>Submit Post For Approval</button>
+		<button class="btn btn-deal" (click)="submitPost()" [disabled]="!!err"><span class="plus-ico"></span>Submit Post For Approval</button>
 	</div>
 	<div class="action" *ngIf="!deal.assigned">
 		<button class="btn btn-deal" (click)="confirmAddr.show()" [disabled]="!!err"><span class="plus-ico"></span>Accept Endorsement</button>

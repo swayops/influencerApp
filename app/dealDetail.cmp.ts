@@ -38,7 +38,10 @@ export class DealDetailCmp extends HasAPI {
 	public err: any;
 	private info_: any;
 	public cropData: any = {};
-	public data: any = {};
+	public data: any = {
+		images: new Array<string>(),
+		urls: new Array<string>(),
+	};
 
 	constructor(title: Title, public api: Sway, route: ActivatedRoute) {
 		super(api);
@@ -75,15 +78,12 @@ export class DealDetailCmp extends HasAPI {
 	setImage(evt: ModalEvent) {
 		evt.Cancel();
 		evt.dlg.hide();
-		this.data.imageUrl = this.cropData.image;
+		console.log(evt);
+		this.data.images[evt.data] = this.cropData.image;
 	}
 
 	submitPost() {
-		const payload = {
-			imgData: [this.data.imageUrl],
-			message: this.data.message,
-		};
-		this.api.Post('submitPost/' + this.user.id + '/' + this.deal.campaignId, payload, (data) => {
+		this.api.Post('submitPost/' + this.user.id + '/' + this.deal.campaignId, this.data, (data) => {
 			this.SetData('deal:' + data.assigned, data);
 			this.api.GoTo('acceptedDealAlert', data.assigned);
 		}, (err) => this.err = err.msg);
