@@ -60,10 +60,10 @@
 				<ng-template ngFor let-i="index" [ngForOf]="data.images">
 					<img src="{{ data.images[i] || '/static/images/camera.png' }}" (click)="selProfile.show(i)" style="cursor: pointer; width: 128px; padding: 10px">
 				</ng-template>
-				<ng-template ngFor let-i="index" [ngForOf]="data.urls">
+				<ng-template ngFor let-url let-i="index" [ngForOf]="data.urls">
 					<br>
 					<label for="msg">Content URL: </label>
-					<input type="text" name="url[]" [(ngModel)]="data.urls[i]" required placeholder="https://youtube.com/id" style="width: 75%">
+					<input type="text" name="url[]" [value]="url" (change)="data.urls[i] = $event.srcElement.value" required placeholder="https://youtube.com/id" style="width: 75%">
 				</ng-template>
 				<modal #selProfile [buttons]=selImageButtons title="Select Your Post Picture">
 					<div class="nosel">
