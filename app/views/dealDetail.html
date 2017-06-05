@@ -43,14 +43,14 @@
 	<div class="action" *ngIf="deal.assigned && deal.reqSub">
 		<div class="content">
 			<div class="field-group">
-				<h3 class="field-group-hdr">Caption</h3>
+				<h3 class="field-group-hdr">Submit your post for pre-approval:</h3>
 				<div class="field two-cols">
-					<input type="text" name="msg" [(ngModel)]="data.caption" required placeholder="This is the message this campaign wants #mmmm" style="width: 75%">
+					<input class="form-control" type="text" name="msg" [(ngModel)]="data.caption" required placeholder="Enter your post caption here...">
 				</div>
 			</div>
 			<br>
 			<div class="field-group">
-				<h3 class="field-group-hdr">CONTENT(s)</h3>
+				<h4 class="field-group-hdr">Upload your picture or video:</h4>
 				<div>
 					<button type="button" class="btn btn-lg btn-info" (click)="data.content.push('')">Add URL</button>
 					<button type="button" class="btn btn-lg btn-info" (click)="data.imgData.push('')">Add Image</button>
@@ -58,12 +58,13 @@
 				</div>
 				<ng-template ngFor let-url let-i="index" [ngForOf]="data.content">
 					<div *ngIf="url !='X'" style="text-align: left">
-						<label for="url-{{i}}">URL: </label>
-						<input type="text" id="url-{{i}}" name="url-{{i}}" [value]="url" (change)="data.content[i] = $event.srcElement.value" required placeholder="https://youtube.com/id" style="width: 70%">
+						<label for="url-{{i}}">Add Video: </label>
+						<input class="form-control" type="text" id="url-{{i}}" name="url-{{i}}" [value]="url" (change)="data.content[i] = $event.srcElement.value" required placeholder="https://youtube.com/id" style="width: 70%; display:inline;">
 						<a [href]="url" target="_blank" *ngIf="url.substr(0, 1) === '/'"><img [src]="url" style="width: 64px;"></a>
 						<button type="button" class="btn btn-xs btn-danger" title="Delete" (click)="data.content[i]='X'">X</button>
 						<br>
 					</div>
+					<br>
 				</ng-template>
 				<ng-template ngFor let-url let-i="index" [ngForOf]="data.imgData">
 					<div *ngIf="url !='X'" style="text-align: left">
@@ -90,6 +91,7 @@
 	<div class="action" *ngIf="!deal.assigned">
 		<button class="btn btn-deal" (click)="confirmAddr.show()" [disabled]="!!err"><span class="plus-ico"></span>Accept Endorsement</button>
 	</div>
+	<br><br>
 	<!--<div class="share-this">
 		<a href="#">Share this deal</a>
 	</div>-->
