@@ -79,7 +79,6 @@ export class DealDetailCmp extends HasAPI {
 	setImage(evt: ModalEvent) {
 		evt.Cancel();
 		evt.dlg.hide();
-		console.log(evt);
 		this.data.imgData[evt.data] = this.cropData.image;
 	}
 
