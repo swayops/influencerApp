@@ -25,7 +25,7 @@
 		<p>ACCEPTED: <span>{{ featured.platforms?.join(', ') }}</span></p>
 		<div class="banner-links">
 			<span>dot</span>
-			<a [routerLink]="['/dealDetail', featured.campaignId, featured.id]">VIEW ENDORSEMENT</a>
+			<a [routerLink]="['/dealDetail', featured.campaignId, featured.id]">VIEW OFFER</a>
 		</div>
 	</div>
 </div>
@@ -43,7 +43,7 @@
 					<li *ngIf="d.reqSub">POST APPROVAL: <span>Required</span></li>
 					<li>PLATFORM: <span>{{ d.platforms?.join(', ') }}</span></li>
 				</ul>
-				<a [routerLink]="['/dealDetail', d.campaignId, d.id]" class="btn btn-view btn-inprogress">In Progress</a>
+				<a [routerLink]="['/dealDetail', d.campaignId, d.id]" class="btn btn-view btn-inprogress"><li class="glyphicon glyphicon-refresh"></li> Accepted | See Details</a>
 			</div>
 		</li>
 	</ul>
@@ -59,7 +59,7 @@
 						<li *ngIf="d.perk">PERKS: <span>{{ d.perk.name || 'N/A' }}</span> (<span class="value">{{ d.perk.category }}</span>)</li>
 						<li>ACCEPTED: <span>{{ d.platforms?.join(', ') }}</span></li>
 					</ul>
-					<a [routerLink]="['/dealDetail', d.campaignId, d.id]" class="btn btn-view">View Endorsement</a>
+					<a [routerLink]="['/dealDetail', d.campaignId, d.id]" class="btn btn-view">View Offer</a>
 				</div>
 			</li>
 			<li class="endorsement-item" *ngIf="!d.reqSub">
@@ -71,7 +71,7 @@
 						<li *ngIf="d.perk">PERKS: <span>{{ d.perk.name || 'N/A' }}</span> (<span class="value">{{ d.perk.category }}</span>)</li>
 						<li>ACCEPTED: <span>{{ d.platforms?.join(', ') }}</span></li>
 					</ul>
-					<a [routerLink]="['/dealDetail', d.campaignId, d.id]" class="btn btn-view">View Endorsement</a>
+					<a [routerLink]="['/dealDetail', d.campaignId, d.id]" class="btn btn-view">View Offer</a>
 				</div>
 			</li>
 		</ng-template>
