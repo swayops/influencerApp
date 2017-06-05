@@ -31,6 +31,10 @@
 		</li>
 	</ul>
 	<div class="action">
+		<div *ngIf="perk.submission">
+			<a [routerLink]="['/dealDetail', perk.influencerId, perk.id]" fragment="pending" class="btn btn-deal">Submit Post For Review</a>
+			OR <!-- this needs better wording -->
+		</div>
 		<a [routerLink]="['/deals']" fragment="pending" class="btn btn-deal">Sounds good!</a>
 	</div>
 </div>

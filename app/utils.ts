@@ -72,14 +72,28 @@ export function SortBy(...props: string[]): (a, b) => number {
 	};
 }
 
-export function Throttle(callback: (...args: any[]) => any, thisArg: Object, limit: number = 100) {
+export function Throttle(callback: (...args: any[]) => any, thisArg: object, limit: number = 100) {
 	let wait = false;
 	return function() {
 		if (wait) return;
 		wait = true;
 		setTimeout(() => wait = false, limit);
-		return Reflect.apply(callback, thisArg, arguments);
+		return callback.apply(thisArg, arguments);
 	};
+}
+
+export function Iter(obj: any, fn: (k: any, v?: any) => boolean | void) {
+	if (typeof obj !== 'object') return;
+	if (Array.isArray(obj)) {
+		for (const k of obj) {
+			if (fn(k) === true) return;
+		}
+		return;
+	}
+	for (const k of Object.keys(obj)) {
+		const v = obj[k];
+		if (fn(k, v) === true) return;
+	}
 }
 
 export function DateString(dayOffset = 1): string {

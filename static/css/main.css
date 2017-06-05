@@ -1222,6 +1222,12 @@ background: transparent;
 	font-size: 16px;
 }
 
+.endorsement .endorsement-list li .details .btn-inprogress{
+	background-color: #00e800;
+	color: #000;
+	border-color: #398439;
+}
+
 
 /*	DEAL PENDING PAGE */
 

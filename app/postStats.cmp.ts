@@ -1,11 +1,11 @@
 // PostStats
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { Title } from '@angular/platform-browser';
+import { ActivatedRoute } from '@angular/router';
 
-import { Sway, HasAPI } from './sway';
+import { HasAPI, Sway } from './sway';
 
-import { DateString } from './utils';
+import { DateString, Iter } from './utils';
 
 @Component({
 	selector: 'postStats',
@@ -19,20 +19,19 @@ export class PostStatsCmp extends HasAPI {
 		title.setTitle('Post Stats');
 
 		const dealID = route.snapshot.params['id'];
-		this.api.Get('getCompletedDeal/' + this.user.id + '/' + dealID, resp => this.setStats(resp || {}));
+		this.api.Get('getCompletedDeal/' + this.user.id + '/' + dealID, (resp) => this.setStats(resp || {}));
 	}
 
 	private setStats(data: any) {
 		const stats = data.stats,
 			today = DateString(0);
 		if (!stats) return;
-
-		for (let [day, stat] of Object.entries(stats)) {
+		Iter(stats, (day, stat) => {
 			if (day === today) this.today = stat;
-			for (let [k, v] of Object.entries(stat)) {
-				if (typeof v !== 'number') continue;
+			Iter(stat, (k, v) => {
+				if (typeof v !== 'number') return;
 				this.allTime[k] = (this.allTime[k] || 0) + v;
-			}
-		}
+			});
+		});
 	}
 }

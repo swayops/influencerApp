@@ -16,7 +16,9 @@
 		<div class="deal-info">
 			<h2>{{ deal.cmpName }}</h2>
 			<ul>
-				<li>YOUR LIKELY EARNINGS: <span class="value" *ngIf="!!deal.likelyEarnings">${{ deal.likelyEarnings?.toFixed(2) }}</span><span class="value" *ngIf="!deal.likelyEarnings">Free product only</span></li>
+				<li>YOUR LIKELY EARNINGS: <span class="value" *ngIf="!!deal.likelyEarnings">${{ deal.likelyEarnings?.toFixed(2) }}</span>
+					<span class="value" *ngIf="!deal.likelyEarnings">Free product only</span>
+				</li>
 				<li *ngIf="deal.perk">Perks: <span class="value">{{ deal.perk.name }}</span> (<span class="value">{{ deal.perk.category }}</span>)</li>
 				<li *ngIf="deal.perk && deal.perk.code">
 					<p> Your coupon code is: <span class="value">{{ deal.perk.code }}</span></p>
@@ -37,10 +39,59 @@
 			</ul>
 		</div>
 	</div>
+	<div class="alert alert-danger" role="alert" *ngIf="!!err">{{ err }}</div>
+	<div class="action" *ngIf="deal.assigned && deal.reqSub">
+		<div class="content">
+			<div class="field-group">
+				<h3 class="field-group-hdr">Submit your post for pre-approval:</h3>
+				<div class="field two-cols">
+					<input class="form-control" type="text" name="msg" [(ngModel)]="data.caption" required placeholder="Enter your post caption here...">
+				</div>
+			</div>
+			<br>
+			<div class="field-group">
+				<h4 class="field-group-hdr">Upload your picture or video:</h4>
+				<div>
+					<button type="button" class="btn btn-lg btn-info" (click)="data.content.push('')">Add URL</button>
+					<button type="button" class="btn btn-lg btn-info" (click)="data.imgData.push(''); selProfile.show(data.imgData.length - 1);">Add Image</button>
+					<br><br>
+				</div>
+				<ng-template ngFor let-url let-i="index" [ngForOf]="data.content">
+					<div *ngIf="url !='X'" style="text-align: left">
+						<label for="url-{{i}}">URL: </label>
+						<input class="form-control" type="text" id="url-{{i}}" name="url-{{i}}" [value]="url" (change)="data.content[i] = $event.srcElement.value" required placeholder="https://youtube.com/id" style="width: 70%; display:inline;">
+						<a [href]="url" target="_blank" *ngIf="url.substr(0, 1) === '/'"><img [src]="url" style="width: 64px;"></a>
+						<button type="button" class="btn btn-xs btn-danger" title="Delete" (click)="data.content[i]='X'">X</button>
+						<br>
+					</div>
+					<br>
+				</ng-template>
+				<ng-template ngFor let-url let-i="index" [ngForOf]="data.imgData">
+					<div *ngIf="url !='X'" style="text-align: left">
+						<img src="{{ data.imgData[i] || '/static/images/camera.png' }}" (click)="selProfile.show(i)" style="cursor: pointer; max-width: 256px; padding: 10px">
+						<button type="button" class="btn btn-xs btn-danger" title="Delete" (click)="data.imgData[i]='X'">X</button>
+					</div>
+				</ng-template>
+				<modal #selProfile [buttons]=selImageButtons title="Select Your Post Picture">
+					<div class="nosel">
+						<div>
+							<input id="profile-input" type="file" (change)="loadImage(cropper, $event)" accept="image/*">
+							<label for="profile-input" class="btn btn-primary"><strong>Choose file &#187;</strong></label>
+						</div>
+						<br>
+						<img-cropper #cropper [image]="cropData" [settings]="cropperSettings"></img-cropper>
+						<br><br>
+					</div>
+				</modal>
+			</div>
+		</div>
+		<br>
+		<button class="btn btn-deal" (click)="submitPost()" [disabled]="loading"><span class="plus-ico"></span>Submit Post For Approval</button>
+	</div>
 	<div class="action" *ngIf="!deal.assigned">
-		<div class="alert alert-danger" role="alert" *ngIf="!!err">{{ err }}</div>
 		<button class="btn btn-deal" (click)="confirmAddr.show()" [disabled]="!!err"><span class="plus-ico"></span>Accept Endorsement</button>
 	</div>
+	<br><br>
 	<!--<div class="share-this">
 		<a href="#">Share this deal</a>
 	</div>-->

@@ -1,8 +1,10 @@
 // DealFeed
 import { Component } from '@angular/core';
-import { Title, DomSanitizer, SafeStyle } from '@angular/platform-browser';
+import { DomSanitizer, SafeStyle, Title } from '@angular/platform-browser';
 
-import { Sway, HasAPI } from './sway';
+import { HasAPI, Sway } from './sway';
+
+import * as U from './utils';
 
 declare var $: any;
 
@@ -12,6 +14,7 @@ declare var $: any;
 })
 export class DealFeedCmp extends HasAPI {
 	public deals: any[];
+	public pending: any[];
 	public featured: any;
 	public featuredImage: SafeStyle;
 
@@ -19,13 +22,13 @@ export class DealFeedCmp extends HasAPI {
 		super(api);
 		title.setTitle('Deal Feed');
 
-		// discuss the EP with Shahzil
-		this.api.Get('getDeals/' + this.user.id + '/0/0', data => {
+		this.api.Get('getDeals/' + this.user.id + '/0/0', (data) => {
 			// data.forEach(v => console.log(v)); // uncomment to see how the data looks like
 			this.deals = data || [];
+			this.deals.sort(U.SortBy('-reqSub', 'campaignId'));
 
 			let featured: any;
-			for (let d of this.deals) {
+			for (const d of this.deals) {
 				if (!featured || featured.spendable < d.spendable) {
 					featured = d;
 				}
@@ -37,7 +40,9 @@ export class DealFeedCmp extends HasAPI {
 				this.featuredImage = sanitizer.bypassSecurityTrustStyle('url("./static/images/defaultFeatured.jpg")');
 			}
 
-		}, err => this.AddNotification('error', err.msg));
+		}, (err) => this.AddNotification('error', err.msg));
+
+		this.api.Get('getDealsAssigned/' + this.user.id, (resp) => this.pending = resp || []);
 	}
 
 	toggleMenu() {
