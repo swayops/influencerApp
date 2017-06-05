@@ -52,6 +52,11 @@ export class DealDetailCmp extends HasAPI {
 
 		this.api.Get('getDeal/' + this.user.id + '/' + cmpID + '/' + dealID, (data) => {
 			this.deal = data;
+			const sub = data.submission;
+			if (sub && sub.caption) {
+				this.data.caption = sub.caption;
+				if (Array.isArray(sub.content)) this.data.content = sub.content;
+			}
 		}, (err) => this.err = err.msg);
 	}
 
@@ -83,7 +88,10 @@ export class DealDetailCmp extends HasAPI {
 	}
 
 	submitPost() {
-		this.api.Post('submitPost/' + this.user.id + '/' + this.deal.campaignId, this.data, (data) => {
+		const payload = { ... this.data };
+		payload.content = payload.content.filter((v) => v !== 'X' && v.length > 0);
+		payload.imgData = payload.imgData.filter((v) => v !== 'X' && v.length > 0);
+		this.api.Post('submitPost/' + this.user.id + '/' + this.deal.campaignId, payload, (data) => {
 			this.api.GoHome();
 			this.AddNotification('success', submitSuccess);
 			this.ScrollToTop();

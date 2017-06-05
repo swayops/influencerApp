@@ -40,46 +40,36 @@
 		</div>
 	</div>
 	<div class="alert alert-danger" role="alert" *ngIf="!!err">{{ err }}</div>
-	<div class="action" *ngIf="deal.assigned && deal.reqSub && deal.submission">
+	<div class="action" *ngIf="deal.assigned && deal.reqSub">
 		<div class="content">
 			<div class="field-group">
-				<h3 class="field-group-hdr">Caption:</h3>
-				<strong>{{deal.submission.caption}}</strong>
-			</div>
-			<div class="field-group">
-				<h3 class="field-group-hdr">Contents:</h3>
-				<ng-template ngFor let-url [ngForOf]="deal.submission.content">
-					<a [href]="url" target="_blank" *ngIf="url.substr(1) !== '/'">{{url}}</a>
-					<a [href]="url" target="_blank" *ngIf="url.substr(1) === '/'"><img [src]="url" style="max-width: 128px"></a>
-					<br>
-				</ng-template>
-			</div>
-		</div>
-	</div>
-	<div class="action" *ngIf="deal.assigned && deal.reqSub && !deal.submission">
-		<div class="content">
-			<div class="field-group">
-				<h3 class="field-group-hdr">POST MESSAGE</h3>
-				<div class="field two-cols" style="text-align: left">
-					<label for="msg">Message: </label>
-					<input type="text" name="msg" [(ngModel)]="data.caption" required placeholder="This is the message this campaign wants #mmmm" style="width: 80%">
+				<h3 class="field-group-hdr">Caption</h3>
+				<div class="field two-cols">
+					<input type="text" name="msg" [(ngModel)]="data.caption" required placeholder="This is the message this campaign wants #mmmm" style="width: 75%">
 				</div>
 			</div>
 			<br>
 			<div class="field-group">
-				<h3 class="field-group-hdr">POST CONTENT(s)</h3>
+				<h3 class="field-group-hdr">CONTENT(s)</h3>
 				<div>
 					<button type="button" class="btn btn-lg btn-info" (click)="data.content.push('')">Add URL</button>
 					<button type="button" class="btn btn-lg btn-info" (click)="data.imgData.push('')">Add Image</button>
-					<br>
+					<br><br>
 				</div>
-				<ng-template ngFor let-i="index" [ngForOf]="data.imgData">
-					<img src="{{ data.imgData[i] || '/static/images/camera.png' }}" (click)="selProfile.show(i)" style="cursor: pointer; width: 128px; padding: 10px">
-				</ng-template>
 				<ng-template ngFor let-url let-i="index" [ngForOf]="data.content">
-					<br>
-					<label for="url-{{i}}">URL: </label>
-					<input type="text" id="url-{{i}}" name="url-{{i}}" [value]="url" (change)="data.content[i] = $event.srcElement.value" required placeholder="https://youtube.com/id" style="width: 75%">
+					<div *ngIf="url !='X'" style="text-align: left">
+						<label for="url-{{i}}">URL: </label>
+						<input type="text" id="url-{{i}}" name="url-{{i}}" [value]="url" (change)="data.content[i] = $event.srcElement.value" required placeholder="https://youtube.com/id" style="width: 70%">
+						<a [href]="url" target="_blank" *ngIf="url.substr(0, 1) === '/'"><img [src]="url" style="width: 64px;"></a>
+						<button type="button" class="btn btn-xs btn-danger" title="Delete" (click)="data.content[i]='X'">X</button>
+						<br>
+					</div>
+				</ng-template>
+				<ng-template ngFor let-url let-i="index" [ngForOf]="data.imgData">
+					<div *ngIf="url !='X'" style="text-align: left">
+						<img src="{{ data.imgData[i] || '/static/images/camera.png' }}" (click)="selProfile.show(i)" style="cursor: pointer; max-width: 256px; padding: 10px">
+						<button type="button" class="btn btn-xs btn-danger" title="Delete" (click)="data.imgData[i]='X'">X</button>
+					</div>
 				</ng-template>
 				<modal #selProfile [buttons]=selImageButtons title="Select Your Post Picture">
 					<div class="nosel">
