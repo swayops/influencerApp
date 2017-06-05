@@ -36,6 +36,7 @@ export class DealDetailCmp extends HasAPI {
 
 	public deal: any;
 	public err: any;
+	public loading = false;
 	private info_: any;
 	public cropData: any = {};
 	public data: any = {
@@ -88,6 +89,7 @@ export class DealDetailCmp extends HasAPI {
 	}
 
 	submitPost() {
+		this.loading = true;
 		const payload = { ... this.data };
 		payload.content = payload.content.filter((v) => v !== 'X' && v.length > 0);
 		payload.imgData = payload.imgData.filter((v) => v !== 'X' && v.length > 0);
@@ -95,7 +97,10 @@ export class DealDetailCmp extends HasAPI {
 			this.api.GoHome();
 			this.AddNotification('success', submitSuccess);
 			this.ScrollToTop();
-		}, (err) => this.err = err.msg);
+		}, (err) => {
+			this.err = err.msg;
+			this.loading = false;
+		});
 		return;
 	}
 
