@@ -14,6 +14,7 @@ declare var $: any;
 })
 export class DealFeedCmp extends HasAPI {
 	public deals: any[];
+	public pending: any[];
 	public featured: any;
 	public featuredImage: SafeStyle;
 
@@ -40,6 +41,8 @@ export class DealFeedCmp extends HasAPI {
 			}
 
 		}, (err) => this.AddNotification('error', err.msg));
+
+		this.api.Get('getDealsAssigned/' + this.user.id, (resp) => this.pending = resp || []);
 	}
 
 	toggleMenu() {
