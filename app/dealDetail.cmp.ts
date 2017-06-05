@@ -39,8 +39,9 @@ export class DealDetailCmp extends HasAPI {
 	private info_: any;
 	public cropData: any = {};
 	public data: any = {
-		images: new Array<string>(),
-		urls: new Array<string>(),
+		caption: '',
+		imgData: new Array<string>(),
+		content: new Array<string>(),
 	};
 
 	constructor(title: Title, public api: Sway, route: ActivatedRoute) {
@@ -79,13 +80,14 @@ export class DealDetailCmp extends HasAPI {
 		evt.Cancel();
 		evt.dlg.hide();
 		console.log(evt);
-		this.data.images[evt.data] = this.cropData.image;
+		this.data.imgData[evt.data] = this.cropData.image;
 	}
 
 	submitPost() {
 		this.api.Post('submitPost/' + this.user.id + '/' + this.deal.campaignId, this.data, (data) => {
-			this.SetData('deal:' + data.assigned, data);
-			this.api.GoTo('acceptedDealAlert', data.assigned);
+			this.api.GoHome();
+			this.AddNotification('success', submitSuccess);
+			this.ScrollToTop();
 		}, (err) => this.err = err.msg);
 		return;
 	}
@@ -96,12 +98,11 @@ export class DealDetailCmp extends HasAPI {
 			uid = this.user.id;
 		// /assignDeal/:influencerId/:campaignId/:dealId/:platform=
 		this.api.Get('assignDeal/' + uid + '/' + d.campaignId + '/' + d.id + '/' + d.platforms[0], (data) => {
-			if (d.reqSub) {
-				this.deal.assigned = data.assigned;
-				return;
-			}
 			this.SetData('deal:' + data.assigned, data);
 			this.api.GoTo('acceptedDealAlert', data.assigned);
 		}, (err) => this.err = err.msg);
 	}
 }
+
+const submitSuccess = `Your post draft has been submitted!
+You should receive correspondence within the next 2- 3 days as the advertiser will either approve your post submission or request changes.`;

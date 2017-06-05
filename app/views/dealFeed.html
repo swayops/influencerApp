@@ -33,7 +33,7 @@
 	<img src="/static/images/noDeals.png" class="nosel" *ngIf="!featured" style="width: 100%">
 	<ul class="endorsement-list">
 		<ng-template ngFor let-d [ngForOf]="deals">
-			<li class="endorsement-item" *ngIf="d.reqSub">
+			<li class="endorsement-item" *ngIf="d.reqSub && !d.submission">
 				<div class="thumb"><img src="{{ d.cmpImg }}"></div>
 				<div class="details">
 					<h4>{{ d.cmpName }}</h4>
