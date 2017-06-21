@@ -31,7 +31,6 @@
 </div>
 
 <div class="content">
-	<img src="/static/images/noDeals.png" class="nosel" *ngIf="!featured" style="width: 100%">
 	<ul class="endorsement-list" id="pending" *ngIf="pending?.length">
 		<li class="endorsement-item" *ngFor="let d of pending">
 			<div class="thumb"><img src="{{ d.cmpImg }}"></div>
@@ -47,6 +46,7 @@
 			</div>
 		</li>
 	</ul>
+	<img src="/static/images/noDeals.png" class="nosel" *ngIf="!featured" style="width: 100%">
 	<ul class="endorsement-list">
 		<ng-template ngFor let-d [ngForOf]="deals">
 			<li class="endorsement-item" *ngIf="d.reqSub && !d.submission">
