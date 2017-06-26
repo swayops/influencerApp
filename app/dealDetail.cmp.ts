@@ -35,6 +35,7 @@ export class DealDetailCmp extends HasAPI {
 	};
 
 	public deal: any;
+	public agreed: boolean = false;
 	public err: any;
 	public loading = false;
 	private info_: any;
@@ -52,6 +53,7 @@ export class DealDetailCmp extends HasAPI {
 			dealID = route.snapshot.params['id'];
 
 		this.api.Get('getDeal/' + this.user.id + '/' + cmpID + '/' + dealID, (data) => {
+			if (!data.terms) this.agreed = true;
 			this.deal = data;
 			const sub = data.submission;
 			if (sub && sub.caption) {
