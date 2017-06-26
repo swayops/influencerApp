@@ -38,6 +38,13 @@
 				<li *ngIf="deal.mention">Mentions to do: <span class="value">{{ deal.mention }}</span></li>
 			</ul>
 		</div>
+		<div class="deal-content field-group" *ngIf="deal.terms && !deal.assigned">
+			<h4>TERMS AND CONDITIONS:</h4>
+			<div><textarea class="value" [value]=deal.terms readonly style="width: 100%; resize:vertical; max-height:600px; min-height:150px;"></textarea></div>
+			<div class="field checkbox-field">
+				<label><input type="checkbox" name="iagree" id="iagree" [(ngModel)]="agreed" required> <strong> I Agree!</strong></label>
+			</div>
+		</div>
 	</div>
 	<div class="alert alert-danger" role="alert" *ngIf="!!err">{{ err }}</div>
 	<div class="action" *ngIf="deal.assigned && deal.reqSub">
@@ -86,10 +93,10 @@
 			</div>
 		</div>
 		<br>
-		<button class="btn btn-deal" (click)="submitPost()" [disabled]="loading"><span class="plus-ico"></span>Submit Post For Approval</button>
+		<button class="btn btn-deal" (click)="submitPost()" [disabled]="loading || !agreedToTerms"><span class="plus-ico"></span>Submit Post For Approval</button>
 	</div>
 	<div class="action" *ngIf="!deal.assigned">
-		<button class="btn btn-deal" (click)="confirmAddr.show()" [disabled]="!!err"><span class="plus-ico"></span>Accept Endorsement</button>
+		<button class="btn btn-deal" (click)="confirmAddr.show()" [disabled]="!!err || !agreed"><span class="plus-ico"></span>Accept Endorsement</button>
 	</div>
 	<br><br>
 	<!--<div class="share-this">
