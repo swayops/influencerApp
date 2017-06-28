@@ -93,7 +93,7 @@
 			</div>
 		</div>
 		<br>
-		<button class="btn btn-deal" (click)="submitPost()" [disabled]="loading || !agreed"><span class="plus-ico"></span>Submit Post For Approval</button>
+		<button class="btn btn-deal" (click)="submitPost()" [disabled]="loading"><span class="plus-ico"></span>Submit Post For Approval</button>
 	</div>
 	<div class="action" *ngIf="!deal.assigned">
 		<button class="btn btn-deal" (click)="confirmAddr.show()" [disabled]="!!err || !agreed"><span class="plus-ico"></span>Accept Endorsement</button>
