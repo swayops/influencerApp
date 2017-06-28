@@ -38,7 +38,7 @@
 				<li *ngIf="deal.mention">Mentions to do: <span class="value">{{ deal.mention }}</span></li>
 			</ul>
 		</div>
-		<div class="deal-content field-group" *ngIf="deal.terms && !deal.assigned">
+		<div class="deal-content field-group" *ngIf="!agreed">
 			<h4>TERMS AND CONDITIONS:</h4>
 			<div><textarea class="value" [value]=deal.terms readonly style="width: 100%; resize:vertical; max-height:600px; min-height:150px;"></textarea></div>
 			<div class="field checkbox-field">
@@ -93,7 +93,7 @@
 			</div>
 		</div>
 		<br>
-		<button class="btn btn-deal" (click)="submitPost()" [disabled]="loading"><span class="plus-ico"></span>Submit Post For Approval</button>
+		<button class="btn btn-deal" (click)="submitPost()" [disabled]="loading || !agreed"><span class="plus-ico"></span>Submit Post For Approval</button>
 	</div>
 	<div class="action" *ngIf="!deal.assigned">
 		<button class="btn btn-deal" (click)="confirmAddr.show()" [disabled]="!!err || !agreed"><span class="plus-ico"></span>Accept Endorsement</button>

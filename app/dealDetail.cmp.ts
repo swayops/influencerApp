@@ -53,7 +53,7 @@ export class DealDetailCmp extends HasAPI {
 			dealID = route.snapshot.params['id'];
 
 		this.api.Get('getDeal/' + this.user.id + '/' + cmpID + '/' + dealID, (data) => {
-			if (!data.terms) this.agreed = true;
+			if (!data.terms || data.assigned) this.agreed = true;
 			this.deal = data;
 			const sub = data.submission;
 			if (sub && sub.caption) {
