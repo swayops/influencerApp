@@ -6,5 +6,5 @@
 	"isShellCommand": true,
 	"args": ["run", "build:w"],
 	"showOutput": "silent",
-	"isWatching": true
+	"isBackground": true
 }
