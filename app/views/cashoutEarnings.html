@@ -18,21 +18,7 @@
 </div>
 <div class="content" *ngIf="!user.inf.requestedCheck">
 	<h2>You have ${{ amount.toFixed(2) }} available <br>to <span class="italic">CASHOUT!</span></h2>
-	<ul class="deal-list">
-		<li *ngIf="user.inf.hasSigned">
-			Click the button below to request a check. This can take up to 48 hours for an admin to approve.
-		</li>
-		<li *ngIf="!user.inf.hasSigned">
-			In order to receive a check for this amount, Sway must first verify your identity and collect required USA tax information
-			via electronic signature.
-		</li>
-		<li *ngIf="!user.inf.hasSigned">
-			This process takes only a few minutes and only needs to be completed once per year.
-		</li>
-		<li *ngIf="!user.inf.hasSigned">
-			Please click the button below and we will EMAIL you your secure forms via HelloSign.
-		</li>
-	</ul>
+	<p>Click the button below to request a check. This can take up to 48 hours for an admin to approve.</p>
 	<div class="action">
 		<a class="btn btn-deal" [routerLink]="['/dealFeed']" *ngIf="amount === 0">Go Back</a>
 		<a class="btn btn-deal" (click)="confirmAddr.show()" *ngIf="amount > 0">Sounds good!</a>
