@@ -67,7 +67,6 @@ export class DealDetailCmp extends HasAPI {
 					this.data.caption = sub.caption;
 					if (Array.isArray(sub.content)) this.data.content = sub.content;
 				}
-				if (data.task) data.task = data.task.replace(/\n/g, '<br>');
 			},
 			(err) => (this.err = err.msg),
 		);
