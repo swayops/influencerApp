@@ -14,7 +14,12 @@ import { InfInfo } from './utils';
 })
 export class DealDetailCmp extends HasAPI {
 	public confirmButtons = [
-		{ name: 'Confirm And Accept', class: 'btn-primary', click: (evt) => this.Accept(evt), xdisabledIf: () => this.info.missing },
+		{
+			name: 'Confirm And Accept',
+			class: 'btn-primary',
+			click: (evt) => this.Accept(evt),
+			xdisabledIf: () => this.info.missing,
+		},
 		{ name: 'Edit Profile', class: 'btn-default ghost', click: (_) => this.api.GoTo('/editProfile') },
 	];
 
@@ -24,7 +29,7 @@ export class DealDetailCmp extends HasAPI {
 	];
 
 	public cropperSettings = {
-		... new CropperSettings(),
+		...new CropperSettings(),
 		keepAspect: true,
 		responsive: true,
 		noFileInput: true,
@@ -52,15 +57,20 @@ export class DealDetailCmp extends HasAPI {
 		const cmpID = route.snapshot.params['cid'],
 			dealID = route.snapshot.params['id'];
 
-		this.api.Get('getDeal/' + this.user.id + '/' + cmpID + '/' + dealID, (data) => {
-			if (!data.terms || data.assigned) this.agreed = true;
-			this.deal = data;
-			const sub = data.submission;
-			if (sub && sub.caption) {
-				this.data.caption = sub.caption;
-				if (Array.isArray(sub.content)) this.data.content = sub.content;
-			}
-		}, (err) => this.err = err.msg);
+		this.api.Get(
+			'getDeal/' + this.user.id + '/' + cmpID + '/' + dealID,
+			(data) => {
+				if (!data.terms || data.assigned) this.agreed = true;
+				this.deal = data;
+				const sub = data.submission;
+				if (sub && sub.caption) {
+					this.data.caption = sub.caption;
+					if (Array.isArray(sub.content)) this.data.content = sub.content;
+				}
+				if (data.task) data.task = data.task.replace(/\n/g, '');
+			},
+			(err) => (this.err = err.msg),
+		);
 	}
 
 	get info(): any {
@@ -92,17 +102,22 @@ export class DealDetailCmp extends HasAPI {
 
 	submitPost() {
 		this.loading = true;
-		const payload = { ... this.data };
+		const payload = { ...this.data };
 		payload.content = payload.content.filter((v) => v !== 'X' && v.length > 0);
 		payload.imgData = payload.imgData.filter((v) => v !== 'X' && v.length > 0);
-		this.api.Post('submitPost/' + this.user.id + '/' + this.deal.campaignId, payload, (data) => {
-			this.api.GoHome();
-			this.AddNotification('success', submitSuccess);
-			this.ScrollToTop();
-		}, (err) => {
-			this.err = err.msg;
-			this.loading = false;
-		});
+		this.api.Post(
+			'submitPost/' + this.user.id + '/' + this.deal.campaignId,
+			payload,
+			(data) => {
+				this.api.GoHome();
+				this.AddNotification('success', submitSuccess);
+				this.ScrollToTop();
+			},
+			(err) => {
+				this.err = err.msg;
+				this.loading = false;
+			},
+		);
 		return;
 	}
 
@@ -111,10 +126,14 @@ export class DealDetailCmp extends HasAPI {
 		const d = this.deal,
 			uid = this.user.id;
 		// /assignDeal/:influencerId/:campaignId/:dealId/:platform=
-		this.api.Get('assignDeal/' + uid + '/' + d.campaignId + '/' + d.id + '/' + d.platforms[0], (data) => {
-			this.SetData('deal:' + data.assigned, data);
-			this.api.GoTo('acceptedDealAlert', data.assigned);
-		}, (err) => this.err = err.msg);
+		this.api.Get(
+			'assignDeal/' + uid + '/' + d.campaignId + '/' + d.id + '/' + d.platforms[0],
+			(data) => {
+				this.SetData('deal:' + data.assigned, data);
+				this.api.GoTo('acceptedDealAlert', data.assigned);
+			},
+			(err) => (this.err = err.msg),
+		);
 	}
 }
 
