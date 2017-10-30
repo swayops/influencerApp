@@ -54,7 +54,7 @@
 				<div class="details">
 					<h4>{{ d.cmpName }}</h4>
 					<ul class="cat">
-						<li>YOUR EARNINGS: <span *ngIf="!!d.likelyEarnings">${{ d.likelyEarnings?.toFixed(2) }}</span><span *ngIf="!d.likelyEarnings">Free product only</span></li>
+						<li>AMOUNT OFFERED: <span *ngIf="!!d.likelyEarnings">${{ d.likelyEarnings?.toFixed(2) }}</span><span *ngIf="!d.likelyEarnings">Free product only</span></li>
 						<li>POST APPROVAL: <span>Required</span></li>
 						<li *ngIf="d.perk">PERKS: <span>{{ d.perk.name || 'N/A' }}</span> (<span class="value">{{ d.perk.category }}</span>)</li>
 						<li>ACCEPTED: <span>{{ d.platforms?.join(', ') }}</span></li>
