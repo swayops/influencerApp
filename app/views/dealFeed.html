@@ -20,7 +20,7 @@
 	<div class="banner-content" *ngIf="featured">
 		<h3>Featured:</h3>
 		<h2>{{ featured.cmpName }}</h2>
-		<p>YOUR LIKELY EARNINGS: <span *ngIf="!!featured.likelyEarnings">${{ featured.likelyEarnings?.toFixed(2) }}</span><span *ngIf="!featured.likelyEarnings">Free product only</span></p>
+		<p>YOUR EARNINGS: <span *ngIf="!!featured.likelyEarnings">${{ featured.likelyEarnings?.toFixed(2) }}</span><span *ngIf="!featured.likelyEarnings">Free product only</span></p>
 		<p *ngIf="featured.perk">PERKS: <span>{{ featured.perk.name || 'N/A' }}</span> (<span class="value">{{ featured.perk.category }}</span>)</p>
 		<p>ACCEPTED: <span>{{ featured.platforms?.join(', ') }}</span></p>
 		<div class="banner-links">
@@ -54,7 +54,7 @@
 				<div class="details">
 					<h4>{{ d.cmpName }}</h4>
 					<ul class="cat">
-						<li>YOUR LIKELY EARNINGS: <span *ngIf="!!d.likelyEarnings">${{ d.likelyEarnings?.toFixed(2) }}</span><span *ngIf="!d.likelyEarnings">Free product only</span></li>
+						<li>YOUR EARNINGS: <span *ngIf="!!d.likelyEarnings">${{ d.likelyEarnings?.toFixed(2) }}</span><span *ngIf="!d.likelyEarnings">Free product only</span></li>
 						<li>POST APPROVAL: <span>Required</span></li>
 						<li *ngIf="d.perk">PERKS: <span>{{ d.perk.name || 'N/A' }}</span> (<span class="value">{{ d.perk.category }}</span>)</li>
 						<li>ACCEPTED: <span>{{ d.platforms?.join(', ') }}</span></li>
@@ -67,7 +67,7 @@
 				<div class="details">
 					<h4>{{ d.cmpName }}</h4>
 					<ul class="cat">
-						<li>YOUR LIKELY EARNINGS: <span *ngIf="!!d.likelyEarnings">${{ d.likelyEarnings?.toFixed(2) }}</span><span *ngIf="!d.likelyEarnings">Free product only</span></li>
+						<li>YOUR EARNINGS: <span *ngIf="!!d.likelyEarnings">${{ d.likelyEarnings?.toFixed(2) }}</span><span *ngIf="!d.likelyEarnings">Free product only</span></li>
 						<li *ngIf="d.perk">PERKS: <span>{{ d.perk.name || 'N/A' }}</span> (<span class="value">{{ d.perk.category }}</span>)</li>
 						<li>ACCEPTED: <span>{{ d.platforms?.join(', ') }}</span></li>
 					</ul>
