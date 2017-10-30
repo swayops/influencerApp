@@ -20,7 +20,7 @@
 	<div class="banner-content" *ngIf="featured">
 		<h3>Featured:</h3>
 		<h2>{{ featured.cmpName }}</h2>
-		<p>YOUR EARNINGS: <span *ngIf="!!featured.likelyEarnings">${{ featured.likelyEarnings?.toFixed(2) }}</span><span *ngIf="!featured.likelyEarnings">Free product only</span></p>
+		<p>AMOUNT OFFERED: <span *ngIf="!!featured.likelyEarnings">${{ featured.likelyEarnings?.toFixed(2) }}</span><span *ngIf="!featured.likelyEarnings">Free product only</span></p>
 		<p *ngIf="featured.perk">PERKS: <span>{{ featured.perk.name || 'N/A' }}</span> (<span class="value">{{ featured.perk.category }}</span>)</p>
 		<p>ACCEPTED: <span>{{ featured.platforms?.join(', ') }}</span></p>
 		<div class="banner-links">
