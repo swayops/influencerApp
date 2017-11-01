@@ -16,7 +16,7 @@
 		<div class="deal-info">
 			<h2>{{ deal.cmpName }}</h2>
 			<ul>
-				<li>YOUR LIKELY EARNINGS: <span class="value" *ngIf="!!deal.likelyEarnings">${{ deal.likelyEarnings?.toFixed(2) }}</span>
+				<li>AMOUNT OFFERED: <span class="value" *ngIf="!!deal.likelyEarnings">${{ deal.likelyEarnings?.toFixed(2) }}</span>
 					<span class="value" *ngIf="!deal.likelyEarnings">Free product only</span>
 				</li>
 				<li *ngIf="deal.perk">Perks: <span class="value">{{ deal.perk.name }}</span> (<span class="value">{{ deal.perk.category }}</span>)</li>
